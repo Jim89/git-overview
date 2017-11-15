@@ -1,0 +1,910 @@
+615abf4	Nicola McCabe	2017-05-17 13:49:10 +0100	update s1
+4ceb6f3	Nicola McCabe	2017-05-17 11:14:38 +0100	Change schema back to build_012
+ed96ef4	Nicola McCabe	2017-05-16 14:11:20 +0100	Change s1 script to point to refreshed data
+08d05a9	Nicola McCabe	2017-05-16 13:56:35 +0100	Change to build_012b
+5899548	Sara Young	2017-05-02 10:30:21 +0100	 updated output script
+73e995e	Nicola McCabe	2017-04-28 16:21:47 +0100	Create totals script for non bank breaches
+f0e0d61	Nicola McCabe	2017-04-28 16:18:07 +0100	Create totals script for non bank breaches
+041cc7b	Sara Young	2017-04-27 13:15:20 +0100	added grp to scipt 7 in s6
+c3a3146	Sara Young	2017-04-27 13:13:42 +0100	updated turncash flag < 0
+2affd57	Sara Young	2017-04-27 10:36:23 +0100	added new exclusion logic for negative turncash
+0218696	Nicola McCabe	2017-04-26 16:08:43 +0100	Edit output file scripts to only pull through records for bank employees
+f64f61d	Nicola McCabe	2017-04-26 16:08:13 +0100	Add script to pull through list of non bank employees who breached in the continuous monitoring
+9be12be	Sara Young	2017-04-25 11:05:47 +0100	removed two exclusions where remediation is greater than 250 and where net hourly rate is negative
+a9a42bd	Sara Young	2017-04-25 10:11:02 +0100	updated exclusions script to reference updated exclusions
+b6bac9b	Thanachai Wudhapitak	2017-04-12 16:32:31 +0100	Updated filename for leaver calculation.
+2cdc4f4	Nicola McCabe	2017-04-11 17:25:11 +0100	comment out basic calc s5
+1625131	Nicola McCabe	2017-04-11 17:05:17 +0100	Move hrly_rte_raw code from step 107 to 108 as step 107 is commented out
+3ad6ff7	Nicola McCabe	2017-04-11 16:55:14 +0100	 Change s1 to only pull file L1704
+d263534	Nicola McCabe	2017-04-11 16:40:01 +0100	Change to build_012
+38cdca4	Nicola McCabe	2017-04-11 14:47:36 +0100	Change bank grp from 020, 208, 9ZZ to 020, 021, 9ZZ. Client had previously said 208 was bank but has sinced said it is clubcard and that bank grp are 020, 021 and 9ZZ
+254a633	Nicola McCabe	2017-04-11 14:42:59 +0100	Comment out basic calc reporting as it is not used
+bf1e28d	Nicola McCabe	2017-04-11 14:36:35 +0100	Update exclusion criteria so to only contian special ref no, high smartps, basicpay < 4, negative rem cost, negative net hourly rate and rem cost > 250 as per Sam's email 2017-04-11
+a4812c5	Nicola McCabe	2017-04-10 13:58:58 +0100	Update hourly rate override logic to match logic received from Chris 10/04/17
+b7272b6	Nicola McCabe	2017-04-10 13:33:25 +0100	Comment out hourly rate overrides because all logic is in step 108, from Chris' email
+f19c92e	Nicola McCabe	2017-04-10 13:31:53 +0100	Change the max tax week to 2016, week 52 for employee is leaver logic
+485c303	Nicola McCabe	2017-04-07 17:09:14 +0100	s2 prep a modded to include 2016 weekly flag update, N.B. This was done by NICOLA, every single bit of it. SOMTO was NOT involved in this change at all. He did NOT write one word....seriously. It was NOT Somto. Promise
+9233e0a	Nicola McCabe	2017-04-07 09:48:21 +0100	Change join for where is_bank_calc has been added to step 10 of calc
+7408057	Nicola McCabe	2017-04-06 16:52:32 +0100	Merge branch 'build_010' of //na02/da/Projects/Osbourne/osbourne-repo into build_010
+1a8c1e7	Nicola McCabe	2017-04-06 16:52:22 +0100	Alter to correspond to step 10 of the calc so hol_pay_968 is only included for is_bank_calc records
+4ddb1db	Somto Okoye	2017-04-06 16:51:55 +0100	Merge branch 'build_010' of //na02/da/Projects/Osbourne/osbourne-repo into build_010
+ed17f45	Somto Okoye	2017-04-06 16:51:41 +0100	deleted mod to s1
+4cf2737	Nicola McCabe	2017-04-06 16:50:26 +0100	Merge branch 'build_010' of //na02/da/Projects/Osbourne/osbourne-repo into build_010
+d674c95	Nicola McCabe	2017-04-06 16:49:52 +0100	Change is_bank_calc to include all records for 2017 as well as from week 4-52 2016
+36b51f4	Somto Okoye	2017-04-06 15:21:50 +0100	2017 file added to s1-payments script
+ad56444	Nicola McCabe	2017-04-05 15:56:29 +0100	Add remediated_17march = 0 to where clause as to only include records we have not already remediated
+8ff2330	Nicola McCabe	2017-04-04 17:32:46 +0100	Change hourly rate override to salaried rate for salaried employees
+baccfd1	Nicola McCabe	2017-04-03 15:07:17 +0100	Add W1652 file recieved to S1 payments union
+7d69135	Nicola McCabe	2017-04-03 14:37:31 +0100	change filenm for gap period weekly data
+b76b6b2	Nicola McCabe	2017-03-31 16:58:27 +0100	change reporting layer to take remediation cost april rate
+11a859e	Sara Young	2017-03-30 17:06:12 +0100	union script update was missing a go statement
+54d3910	Sara Young	2017-03-30 16:49:19 +0100	remove the two bank tables from the union script. we only need to union two tables now, not 4
+df1eec2	Sara Young	2017-03-30 16:47:35 +0100	change file name
+a98fe14	Sara Young	2017-03-30 16:17:07 +0100	 removed the clause to say only include nono bank employees as this calc has now been removed
+bc910c9	Sara Young	2017-03-30 16:09:45 +0100	updated 108 after somto foundan errrroeeeerrrr
+7b3628c	Sara Young	2017-03-30 16:00:48 +0100	 removed all files that were in the seperate calculation associated to bank. we dont need this calculation anymore
+27de791	Sara Young	2017-03-30 15:42:57 +0100	updated step 208 in s2 payments to update new hrly rate overrides provided by sam 2017-03-30. added new scripts to the union file. after the union script happens, we update the union script to have the new flags 17marchremediated flag and is terminated
+70fede5	Nicola McCabe	2017-03-30 14:48:43 +0100	Add termination payments data to S2
+3b0b0b7	Nicola McCabe	2017-03-30 14:18:50 +0100	Add termination payments data to the build
+19d2e48	Nicola McCabe	2017-03-30 12:02:11 +0100	Merge branch 'build_010' of //na02/da/Projects/Osbourne/osbourne-repo into build_010
+bc6b131	Nicola McCabe	2017-03-30 12:02:00 +0100	Change remediation cost to april rate remediation cost in s6
+12ac88b	Sara Young	2017-03-30 12:01:09 +0100	Merge branch 'build_010' of //na02/da/Projects/Osbourne/osbourne-repo into build_010
+46f4b89	Sara Young	2017-03-30 12:00:57 +0100	updated the union script in s4 - added a new script (step 2 ) to do an update statement to add the 17march remediated flag
+eb272ee	Nicola McCabe	2017-03-30 11:48:09 +0100	Change remediation cost to april rate remediation cost in s6 output files
+975daca	Sara Young	2017-03-30 11:33:04 +0100	updated s4 - exclusions table to reference remediation cost april rate as apposed to the remediation cost previously used in build 009
+5b3a8a1	Sara Young	2017-03-30 11:29:55 +0100	Merge branch 'build_010' of //na02/da/Projects/Osbourne/osbourne-repo into build_010
+b44ed8b	Sara Young	2017-03-30 11:29:42 +0100	 added the table from build_009 all the payments that were remediatied and paid back on the 17 march
+d45e5bc	Jim Leach	2017-03-30 09:53:40 +0100	Add simple bash script to list all files in the repository and when they were last modified
+ee53acf	Sara Young	2017-03-29 18:03:47 +0100	updated logic to match sams document - not janets email
+cc2eaa6	Sara Young	2017-03-29 17:33:55 +0100	 added new step to logic to update the hrly rate if it is still null after step 107
+69b00d1	Sara Young	2017-03-29 17:33:06 +0100	made changes to 107 to fix errof with updated rate flag. Updated the union script to make sure that the updated hrly rate flag comes throught to s4 and s5
+ca59440	Sara Young	2017-03-29 15:46:28 +0100	Merge branch 'build_010' of //na02/da/Projects/Osbourne/osbourne-repo into build_010
+96f58f8	Sara Young	2017-03-29 15:46:16 +0100	changed the flag in s4 to match s3 payments to employees which is called isbankcalc
+3a72add	Nicola McCabe	2017-03-29 15:43:27 +0100	Edit update statement which was updating s2_payments not s2_payments_prep_b
+0c033b9	Nicola McCabe	2017-03-29 11:08:59 +0100	Change 13 pay periods bank data to correct data schema data_031
+12c8a9a	Nicola McCabe	2017-03-29 10:43:53 +0100	Add gap period and bank data to s1 payments union script
+97a3531	Sara Young	2017-03-28 14:14:47 +0100	 Ohhkay. 1. added two new folders for the bank logic calulations. 2. added a new flag in s3 payments to employees which will flag if a payment is in grp 20 and after txweek 4 tax year 2016.
+e976a49	Sara Young	2017-03-27 14:58:11 +0100	updated the s1 payments union script to include the files from gap period. Ask Nicola how we can confirm all the headers match the data (missing hol  pay ) updated s2 step 107 to set a new field hrly_rte_raw to keep the raw hrly rate and then update hrly rate based on logic provided by tax team. Updated s3 to add a flag for grp 020 201 and 9zz
+1883522	Jim Leach	2017-03-20 10:17:22 +0000	Update to build_010
+5852f93	Jim Leach	2017-03-20 08:16:32 +0000	Add comment blocks to ensure code runs end-to-end
+8064f6f	Nicola McCabe	2017-03-17 18:45:50 +0000	Add number of breaches per employee to s6
+787c45e	Nicola McCabe	2017-03-17 17:14:09 +0000	Only selet relevant fields from prep table into output
+e895ffc	Nicola McCabe	2017-03-17 16:39:55 +0000	Update s6 script to create flag for employees with zero remediation cost and then exclude them in the output
+0a6659f	Jim Leach	2017-03-17 13:58:13 +0000	Add come comments and clean up the code
+3074b0a	Jim Leach	2017-03-17 13:53:51 +0000	Ensure script writes to table not to stdout
+711c80d	Jim Leach	2017-03-17 13:53:30 +0000	Check on exclusion criteria. Mild panic over some basic mathematics.
+b68581a	Nicola McCabe	2017-03-17 13:26:38 +0000	Remove employees with total remediation cost of zero from the S6 output
+94d1509	Nicola McCabe	2017-03-17 13:16:28 +0000	Add additional exclusions to S4 exclusions table
+4e67a80	Jim Leach	2017-03-17 11:07:11 +0000	QA and tidy up of code
+ee3b63a	Nicola McCabe	2017-03-17 10:56:44 +0000	Add non-breaches to exclusions
+2d0a813	Jim Leach	2017-03-17 10:55:46 +0000	Merge branch 'build_009' of //na02/da/Projects/Osbourne/./osbourne-repo into build_009
+68d9b03	Jim Leach	2017-03-17 10:55:29 +0000	Add some formatting
+d64382e	Jim Leach	2017-03-17 10:55:11 +0000	Add some formatting
+e9ec74c	Jim Leach	2017-03-17 10:54:46 +0000	Add some formatting
+3315a18	Nicola McCabe	2017-03-17 10:51:16 +0000	Add additional exclusions to S4 exclusion script
+2d3be72	Nicola McCabe	2017-03-16 20:51:19 +0000	only sum remediation cost where record is breach
+aaec5a6	Nicola McCabe	2017-03-16 19:59:00 +0000	Change drop at start of script to information_schema.tables
+30cc7b2	Sara Young	2017-03-16 19:56:08 +0000	updated pensionable scipt because there was a devide by zero error. Im realy hungry and would like some pizza
+9f526d5	Sara Young	2017-03-16 17:42:39 +0000	 NICOLA didnt sort out the ambiguous column name problem.... hashtag typical nicola. jk
+a00ff97	Sara Young	2017-03-16 16:48:49 +0000	Merge branch 'build_009' of //na02/da/Projects/Osbourne/osbourne-repo into build_009
+6cd4cd2	Sara Young	2017-03-16 16:48:41 +0000	updated the exclusion criterie... removed all previous s5 exclusions and only have exclusions that are created in the s4-exclusions table
+453686e	Jim Leach	2017-03-16 11:21:43 +0000	Delete old, loose file
+63fa52f	Jim Leach	2017-03-16 11:19:37 +0000	Remove old S1 folder from build directory (as it is just a duplicate of S1 inside src)
+20d4fc1	Jim Leach	2017-03-16 08:46:25 +0000	Add extra check in to case statement for non salaried individuals
+1c8107f	Sara Young	2017-03-15 17:53:16 +0000	forgot to take out the top 100 - sorry not sorry
+0958874	Nicola McCabe	2017-03-15 17:49:33 +0000	Update exclusions flag table to add flag for maternity paid less than 5.99
+8537961	Nicola McCabe	2017-03-15 17:48:21 +0000	Fix merge
+66c7c36	Sara Young	2017-03-15 17:41:16 +0000	Project has been live for circa two and a half months which equals roughtly one thousand seven hundred and seventy six minutes and 15 seconds. Just received an update from tax team at seventeen thirty nine hundred hours....for an update to s2.. the second layer... circa tweny six hours 13 minutes and 15 secondsbefore we want to have everything finalised and hand over..... good times. keep smiling... try remain calm and happy. (updated s2 to include a hourly update for materninty people
+fd262cc	Nicola McCabe	2017-03-15 17:39:09 +0000	Update exclusions flag table to add flag for maternity paid less than 5.99
+cead41c	Sara Young	2017-03-15 16:49:13 +0000	changed from an OR statement to teo when statements
+d93627c	Sara Young	2017-03-15 14:38:32 +0000	updateeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+8e3af73	Sara Young	2017-03-15 14:11:13 +0000	 made a change to exclusions - if you wanna know what it was then come find me. jk updated flag to be 0 instead of null
+3ee6cf5	Sara Young	2017-03-15 13:30:14 +0000	exclusions tables
+67a4317	Sara Young	2017-03-15 13:28:28 +0000	two new steps in logic to create exclusions
+ccae09d	Sara Young	2017-03-15 12:07:12 +0000	deleted steps 23 because we dont want to manually set remediation to 0. we want to create a new step in the calculation step 4 where we creatae an exclusion table based on different criteris
+9742dbf	Sara Young	2017-03-15 11:19:55 +0000	removed the manual setting of remediation to zero for refno 18012883
+c519518	Sara Young	2017-03-15 10:53:10 +0000	 Oh whats that tax team? Just one more logic change. Ohhh???? just two days before client is repaying all customers. thats cool that cool. Added bholpay_919 to zero rate calc (step1) BS
+36a2063	Lizzie Nairn	2017-03-15 09:32:23 +0000	Merge branch 'build_009' of //na02/da/Projects/Osbourne/osbourne-repo into build_009
+800ef97	Lizzie Nairn	2017-03-15 09:27:25 +0000	fix merge issues
+b468db1	Thanachai Wudhapitak	2017-03-14 20:23:31 +0000	Updated script 107 to replace the hourly rates with the agreed hourly rates for statutory payments with 0 hourly rates excluding maternity pay groups.
+8f6cd51	Lizzie Nairn	2017-03-14 19:47:35 +0000	updated script 107 in S2 with hourly update for records with a stat payment and and hourly rate of zero where the pay group is not 900
+0a23b61	Nicola McCabe	2017-03-14 18:37:42 +0000	Update s4 basic and zero rate calc paid less than nmw tables to set remediation cost and paid less than nmw to zero for employee with ref no 18012883
+d4613f4	Sara Young	2017-03-14 17:43:42 +0000	updated s2 decimals
+0884ea0	Lizzie Nairn	2017-03-14 17:34:38 +0000	Merge branch 'build_009' of //na02/da/Projects/Osbourne/osbourne-repo into build_009
+61ff1da	Lizzie Nairn	2017-03-14 17:34:09 +0000	updated script 101 in S2 to replace all cast as decimal with cast as float
+25a49b1	Lizzie Nairn	2017-03-14 17:29:19 +0000	updated script 101 in S2 to replace all cast as decimal to cast as float
+116192e	Sara Young	2017-03-14 17:21:23 +0000	 remove decimal casting from comment section to avoid confusion
+b4b21a0	Sara Young	2017-03-14 17:17:48 +0000	forgot to take away top 100
+ef521c2	Sara Young	2017-03-14 17:15:35 +0000	Updated all of s4 to change data types to float
+b661967	Nicola McCabe	2017-03-14 14:34:29 +0000	Update scripts for output files
+faa57d9	Nicola McCabe	2017-03-14 10:50:50 +0000	comment out totals code
+bed0ea4	Sara Young	2017-03-13 17:58:53 +0000	took away top 100 in prepa
+8c6236d	Sara Young	2017-03-13 17:53:18 +0000	 janet requested changed for salaried people - include a min salary amount
+80ad4f4	Sara Young	2017-03-13 17:23:41 +0000	Merge branch 'build_009' of //na02/da/Projects/Osbourne/osbourne-repo into build_009
+3b93ad8	Sara Young	2017-03-13 17:23:32 +0000	updated 107 to add salaried hrly rate
+f8cc7bd	Jim Leach	2017-03-13 17:12:23 +0000	Merge branch 'build_009' of //na02/da/Projects/Osbourne/./osbourne-repo into build_009
+9491f8e	Jim Leach	2017-03-13 17:11:59 +0000	Remove holiday pay fields from reporting
+3c377e5	Sara Young	2017-03-13 16:51:27 +0000	removed expbonus-9cb from bonus appoirtionment calc_002 step 000
+c6c2cf8	Sara Young	2017-03-13 15:55:11 +0000	added bonus based on new logic - bonus expbonus9cb
+b116a64	Sara Young	2017-03-13 15:48:33 +0000	added two steps 23 to update remediation to 0 and no breach if there is basic pay < 4
+6d7a5f5	Sara Young	2017-03-13 15:47:54 +0000	added two steps 23 to update remediation to 0 and no breach if there is basic pay < 4
+6df1729	Sara Young	2017-03-13 15:47:08 +0000	not using data q tests
+592094d	Sara Young	2017-03-13 11:33:38 +0000	 added a flag in s4 layers, both step 22's to flag where is a breach pre sal sac
+bd3341c	Somto Okoye	2017-03-13 09:29:33 +0000	004 s6 script corrected
+e189979	Sara Young	2017-03-10 17:27:20 +0000	ambiguious column name
+9507695	Sara Young	2017-03-10 17:21:07 +0000	add a dot on the run powershell script to remind me of code needed.
+a2860af	Sara Young	2017-03-10 16:33:16 +0000	Merge branch 'build_009' of //na02/da/Projects/Osbourne/osbourne-repo into build_009
+61babec	Sara Young	2017-03-10 16:33:08 +0000	remove top 10
+9a89094	Somto Okoye	2017-03-10 16:25:40 +0000	extra exclusion deleted
+06d7e5d	Somto Okoye	2017-03-10 16:16:12 +0000	high smartps_9xn excluded
+a3e1f21	Sara Young	2017-03-10 16:10:50 +0000	leaver flag updated
+b4c7cad	Sara Young	2017-03-10 15:56:04 +0000	 exclude maternity
+3aa8236	Sara Young	2017-03-10 15:48:21 +0000	Merge branch 'build_009' of //na02/da/Projects/Osbourne/osbourne-repo into build_009
+21af0e6	Sara Young	2017-03-10 15:48:10 +0000	added hrly_rte_update table to s1 and s2 and updated step 107 to change the hrly rate different for salaried and non salaried people
+f139e51	Somto Okoye	2017-03-10 15:12:19 +0000	s6 004 modded
+613368e	Somto Okoye	2017-03-10 15:04:14 +0000	s6 004 logic updated
+c2e9d81	Sara Young	2017-03-10 12:45:39 +0000	Merge branch 'build_009' of //na02/da/Projects/Osbourne/osbourne-repo into build_009
+1c5e7cc	Sara Young	2017-03-10 12:45:22 +0000	updating the leaver flag in s3 edited out out flag creation and created a new step 13 to update paymentsto employyees
+e3a9026	Somto Okoye	2017-03-10 12:22:39 +0000	004 in s6 changed to refer to build_009
+aa237ef	Somto Okoye	2017-03-10 12:05:53 +0000	small typo fixed in ss6 004
+24248cf	Somto Okoye	2017-03-10 12:00:12 +0000	s6 table plus flags created - the usual
+dd4f12f	Nicola McCabe	2017-03-10 11:48:09 +0000	Update pensionable flag based on Janet's logic
+e496a2f	Nicola McCabe	2017-03-10 11:30:36 +0000	Merge branch 'build_009' of //na02/da/Projects/Osbourne/osbourne-repo into build_009
+3bc35e0	Nicola McCabe	2017-03-10 11:30:08 +0000	Update s6 testing script
+f85cf62	Sara Young	2017-03-09 17:39:18 +0000	ooopss I forgot to take awy the top 100 from s3 payments to employees
+ec90124	Sara Young	2017-03-09 17:36:20 +0000	added go before nay get dates!
+b0893c8	Sara Young	2017-03-09 17:21:00 +0000	in some places the timestamp added did not have a go before it and caused problems
+cf58a9c	Nicola McCabe	2017-03-09 15:58:12 +0000	Update step 2 of zero hours calc based on logic from the tax team
+52f1f54	Jim Leach	2017-03-09 15:40:47 +0000	Merge branch 'build_009' of //na02/da/Projects/Osbourne/osbourne-repo into build_009
+4297899	Jim Leach	2017-03-09 15:40:27 +0000	Fix conflicts in turncash calc
+b44bf28	Nicola McCabe	2017-03-08 11:55:48 +0000	Update output to split pensionable remediation pre and post november 2015
+a0a2b2e	Sara Young	2017-03-07 16:02:51 +0000	turncash
+56f0ef5	Jim Leach	2017-03-07 15:43:52 +0000	Add some code comments and re-format the code
+515921f	Sara Young	2017-03-07 14:03:59 +0000	updating step for turncash offsetting
+916bf60	Jim Leach	2017-03-07 12:10:27 +0000	Update join to ensure the correct NMW is assigned to each payment
+de00626	Jim Leach	2017-03-07 12:08:04 +0000	Update join to ensure the correct NMW is assigned to each payment
+5a57930	Jim Leach	2017-03-07 12:05:57 +0000	Merge branch 'build_009' of //na02/da/Projects/Osbourne/./osbourne-repo into build_009
+cd3443f	Sara Young	2017-03-07 11:53:12 +0000	turncash step in process
+165ddb6	Jim Leach	2017-03-07 11:42:41 +0000	Moved script out of build into wp-009/wp201-pensionable
+f15428a	Sara Young	2017-03-07 11:34:31 +0000	Merge branch 'build_009' of //na02/da/Projects/Osbourne/osbourne-repo into build_009
+945fe6e	Sara Young	2017-03-07 11:32:36 +0000	added gettime to a few scripts, updated s3payemnts to include a flag for smartps9xn eqls 10695
+e2e855d	Jim Leach	2017-03-07 11:28:27 +0000	Add index to base table before performing the joins (should speed up the query)
+297a456	Jim Leach	2017-03-07 11:27:52 +0000	Add script to create indexes on all test tables to speed up joins in code file 500
+8e62f45	Sara Young	2017-03-07 10:25:04 +0000	Merge branch 'build_009' of //na02/da/Projects/Osbourne/osbourne-repo into build_009
+250683f	Sara Young	2017-03-07 10:24:49 +0000	adding step in s2 top update turnchassh due to new logic
+91c1baa	Jim Leach	2017-03-07 09:39:31 +0000	Update tests to build_009
+5b85f57	Jim Leach	2017-03-07 09:35:54 +0000	Merge branch 'build_009' of //na02/da/Projects/Osbourne/./osbourne-repo into build_009
+db349f6	Jim Leach	2017-03-07 09:35:40 +0000	Remove duplicate file
+db8e07f	Jim Leach	2017-03-07 09:32:36 +0000	Bring tests into build_009 with a "merge-like" approach (not actually a merge but close)
+1b7c397	Sara Young	2017-03-07 09:31:00 +0000	adding s1 to build009 - copied from build008
+3d3ec1b	Sara Young	2017-03-06 15:07:16 +0000	updated
+0d27675	Sara Young	2017-03-06 12:09:41 +0000	Merge branch 'build_009' of //na02/da/Projects/Osbourne/osbourne-repo into build_009
+3456340	Sara Young	2017-03-06 12:09:08 +0000	 updated pensionable logic to group smart people as one
+75ee912	Nicola McCabe	2017-03-06 12:00:55 +0000	Merge branch 'build_009' of //na02/da/Projects/Osbourne/osbourne-repo into build_009
+ddebe50	Nicola McCabe	2017-03-06 12:00:33 +0000	Update output scripts to get pensionable remediation values
+6ca29db	Sara Young	2017-03-06 11:56:52 +0000	 updated pensionable logic to group smart people as one
+92bc8ac	Sara Young	2017-03-03 16:55:37 +0000	running build009 - dont need s1, s2 only refers to s2 from build_008 and creates a view
+4075b38	Sara Young	2017-03-03 13:45:42 +0000	updated to post sal sac for when post sal sac is needed
+7187e99	Sara Young	2017-03-03 12:26:36 +0000	dont need s1 in build009
+badced1	Sara Young	2017-03-03 12:25:59 +0000	 added for pensionable logic
+c4aa898	Sara Young	2017-03-03 10:30:25 +0000	updated s3 to match build008 s3
+bdf4058	Sara Young	2017-03-01 09:47:53 +0000	replcaes build008 with build009
+344f1d5	Nicola McCabe	2017-02-28 14:56:58 +0000	Add s6 layer to sum remediation cost by employee
+cb4b52c	Sara Young	2017-02-28 11:27:21 +0000	 put back into s2
+b0653ca	Sara Young	2017-02-28 09:51:54 +0000	updated s15 exclusions
+c58241c	Sara Young	2017-02-27 22:37:15 +0000	updated pop identificaion
+17b7ff8	Somto Okoye	2017-02-27 19:57:46 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+26526cd	Somto Okoye	2017-02-27 19:57:21 +0000	013 s5 changed to include all new salary sacrifices
+322ef5e	Nicola McCabe	2017-02-27 19:54:15 +0000	take basicpay900 from s3 table not s2
+87c387d	Nicola McCabe	2017-02-27 19:29:48 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+8bcc0fe	Nicola McCabe	2017-02-27 19:29:38 +0000	Update leaver flag in s5 table
+b03819d	Sara Young	2017-02-27 19:19:00 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+cd32377	Sara Young	2017-02-27 19:18:46 +0000	canrt rememberr  - sorry jim incase your watching
+5bc4aeb	Nicola McCabe	2017-02-27 18:31:43 +0000	Update prep b script so as not to change work days to null when zero
+27a29d3	Somto Okoye	2017-02-27 17:50:42 +0000	new salary sacrifices added to s5 reporting layer
+db2c1b1	Sara Young	2017-02-27 16:43:13 +0000	moving all from tesing out of calc002
+7355d7f	Sara Young	2017-02-27 15:12:54 +0000	making changes to accom for working hours is 0
+ac976be	Somto Okoye	2017-02-27 10:54:13 +0000	exclusions table modified to include NEW EXCLUSIONS
+aafa28c	Sara Young	2017-02-27 10:34:33 +0000	changed to use the flag from s3
+253f54c	Sara Young	2017-02-27 10:33:45 +0000	changed names to zaero rate
+e396723	Sara Young	2017-02-27 10:31:53 +0000	 added time stamps
+a597fe4	Sara Young	2017-02-27 09:09:20 +0000	modified changes to the testing due to errors
+c0fe3ba	Sara Young	2017-02-27 09:03:11 +0000	add a timestamp
+6b8c39a	Sara Young	2017-02-26 18:37:27 +0000	updating exclusions to exclude where the newly calculated hrly_rte is less than 4
+1b8f868	Sara Young	2017-02-26 17:20:51 +0000	updating exclusions to exclude where the newly calculated hrly_rte is less than 4
+acca33d	Sara Young	2017-02-26 15:59:25 +0000	leaving option of changing exclusion open
+874ac4f	Sara Young	2017-02-26 14:55:00 +0000	updated the calc logic in step 22 so that we use start_payroll-date to get the nmw instead of payroll_end_date
+25b2e02	Somto Okoye	2017-02-25 18:15:22 +0000	more exclusions
+0333da2	Somto Okoye	2017-02-24 21:27:24 +0000	 errors fixed
+791da4d	Somto Okoye	2017-02-24 19:55:48 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+702a306	Sara Young	2017-02-24 19:54:17 +0000	testing changed from views to tables
+b437b83	Somto Okoye	2017-02-24 19:02:10 +0000	test results changed from views to tables
+35daaf9	Somto Okoye	2017-02-24 18:41:43 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+962431b	Somto Okoye	2017-02-24 18:38:31 +0000	tests changed
+fb5a7ad	Lizzie Nairn	2017-02-24 17:36:36 +0000	updated remediation calc to match logic doc
+c45f253	Lizzie Nairn	2017-02-24 17:31:05 +0000	updated remediation calc to match logic doc
+226533c	Lizzie Nairn	2017-02-24 17:28:00 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+e943d0b	Lizzie Nairn	2017-02-24 17:27:42 +0000	updated remediation calc to match logic doc
+cd9db82	Nicola McCabe	2017-02-24 16:13:26 +0000	Comment out age decreasing check script as takes very long to run
+fb2e316	Nicola McCabe	2017-02-24 16:12:24 +0000	Update test logic to identify duplicate employees in same pay period
+97c94d1	Somto Okoye	2017-02-24 15:23:22 +0000	new exclusions added
+2dd0482	Somto Okoye	2017-02-24 15:20:09 +0000	new exclusions added
+ef9f6a5	Somto Okoye	2017-02-24 12:23:50 +0000	001_s5_main table modified to change exclusions
+d1f5fbf	Sara Young	2017-02-23 16:29:31 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+3f3866d	Sara Young	2017-02-23 16:29:18 +0000	ambig columns
+59f6146	Nicola McCabe	2017-02-23 16:27:18 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+621222a	Nicola McCabe	2017-02-23 16:27:04 +0000	Update hours adjusted code
+deb3912	Somto Okoye	2017-02-23 16:15:55 +0000	cant be bothered to keep writing in exqiuisite detail - s5 main reporting table final where clause modified. Wanna know how? Check by yourself
+1d213e8	Somto Okoye	2017-02-23 15:54:45 +0000	s5 main results table modded to refer to prefix hrly_rte with bk.
+300303e	Nicola McCabe	2017-02-23 15:47:19 +0000	Update case when statements for postive values in calc step 10
+f033810	Nicola McCabe	2017-02-23 15:40:42 +0000	Update s2 dedupe so not to sum fields in calc step 10 when positive
+e9d12f3	Somto Okoye	2017-02-23 15:36:59 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+ba7c1c3	Somto Okoye	2017-02-23 15:36:32 +0000	s5 payments modified to add more exclusions
+10a5d98	Sara Young	2017-02-23 15:34:44 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+2e2a75c	Sara Young	2017-02-23 15:34:29 +0000	updated test scipts to get rid of problem with ambiguous columns
+92b53ab	Nicola McCabe	2017-02-23 14:54:11 +0000	Update join to payroll dates to join on file and tax week
+3c65fc3	Somto Okoye	2017-02-23 12:51:52 +0000	s5 basic calc results testing sample table modded to pull is_weekly column from s2_payments table and not s3_payments_to_employees
+13cef02	Somto Okoye	2017-02-23 12:42:43 +0000	s5 main table modded to pull is_weekly column from s4_final table and not s3_payments_to_employees
+9ffaa2d	Somto Okoye	2017-02-23 11:22:51 +0000	removed all rferences to critical fails in s5 003, and commented out s 014 which is wholly dependent on critical fails
+b768a0f	Somto Okoye	2017-02-23 11:12:20 +0000	modified reporting layer to ignore test results
+9951262	Somto Okoye	2017-02-23 11:08:26 +0000	all testing files have start_date and end_date prefixed with payroll_  - light work
+388ba31	Sara Young	2017-02-23 10:30:25 +0000	Remove S1 from base build directory (it was moved there for convenience running build but shouldnt live there)
+147cef4	Sara Young	2017-02-23 10:17:01 +0000	wrong fields unioning together
+487fab4	Sara Young	2017-02-23 01:08:46 +0000	whay am I gitting at this hour of the night ??????? sad face. changes s2payments to rearrange order has to be same order as prep oreder. a few plaes in s4 where double fields pulled thro
+3af6ccd	Jim Leach	2017-02-22 17:44:54 +0000	Remove tax wk and tax year from union (they were aldready there)
+60f1f6b	Jim Leach	2017-02-22 17:44:35 +0000	Fix date of joining lookup where it was still nULL
+af585b5	Jim Leach	2017-02-22 17:31:41 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/./osbourne-repo into build_008
+9687be0	Jim Leach	2017-02-22 17:31:21 +0000	Ensure tax week and year (from data) are in final table
+1d33b4a	Sara Young	2017-02-22 16:55:13 +0000	changes didnt push last time, thanks alot git
+94f3193	Sara Young	2017-02-22 16:49:31 +0000	made changes to accom for the changes that will occur in s2 now using payroll start and end date
+1e37344	Nicola McCabe	2017-02-22 16:03:13 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+a6b9189	Nicola McCabe	2017-02-22 16:02:51 +0000	Update s2 payments prep scripts to include new fields from payroll dates
+38ab0fc	Sara Young	2017-02-22 15:49:50 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+50688af	Somto Okoye	2017-02-22 15:12:00 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+6551d70	Somto Okoye	2017-02-22 15:11:33 +0000	500_payments_to_test_results modified to include the rigt tests
+8fbc008	Sara Young	2017-02-22 15:02:17 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+0b244c9	Sara Young	2017-02-22 15:01:25 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+1975523	Sara Young	2017-02-22 15:01:05 +0000	updated flag
+e66cc1c	Nicola McCabe	2017-02-22 15:01:04 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+d432a8d	Nicola McCabe	2017-02-22 15:00:46 +0000	Add s1 and s2 scripts for payroll dates
+f0aa85c	Somto Okoye	2017-02-22 14:56:51 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+ee1675b	Somto Okoye	2017-02-22 14:56:17 +0000	tests 91 and 92 tweaked to join on ref_no, grp_payment_year, tax_wk instead of payment_hash
+26e29c8	Jim Leach	2017-02-22 14:54:23 +0000	Add logic to create is_weekly flags, use those flags to create multiplier field, and set up payroll start date using multiplier
+c821c77	Jim Leach	2017-02-22 14:53:05 +0000	Use new payroll dates to add payroll date to each payment
+cdc188c	Somto Okoye	2017-02-22 12:59:33 +0000	tests 91 and 92 updated to refer to the version of s2_payments in build_008
+48af541	Somto Okoye	2017-02-22 12:34:17 +0000	tests 91 - 94 recreated, rescripted
+f5d3b1b	Jim Leach	2017-02-22 12:17:28 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/./osbourne-repo into build_008
+2632d87	Jim Leach	2017-02-22 12:17:15 +0000	Update script to correctly set totals fields
+26401f0	Sara Young	2017-02-22 11:59:30 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+060dc63	Sara Young	2017-02-22 11:59:19 +0000	changed all to distinct selects to avoid dupes
+e9b5921	Jim Leach	2017-02-22 11:58:47 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/./osbourne-repo into build_008
+2578e58	Jim Leach	2017-02-22 11:58:38 +0000	Change how script works so we dont need the whole thing in memory (which breaks the build)
+2a35c87	Somto Okoye	2017-02-22 11:35:58 +0000	test 77 re-activated - will be tested later
+7d4e0b0	Somto Okoye	2017-02-22 11:31:05 +0000	tests 40, 42, 68, 70 tested and re-activated
+772078b	Nicola McCabe	2017-02-22 10:53:21 +0000	Update pay calendar so null age values can be populated
+65c2c86	Nicola McCabe	2017-02-22 10:52:10 +0000	Update null ages in 13pp with those provided by the client
+9cde2ac	Jim Leach	2017-02-22 10:47:42 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/./osbourne-repo into build_008
+5aeaeb6	Jim Leach	2017-02-22 10:47:32 +0000	Minor update to test logic for speed
+f1cb061	Sara Young	2017-02-22 10:21:45 +0000	moved the bonus script to occur before two calculations
+bc1e609	Sara Young	2017-02-22 10:09:12 +0000	should have a distinct
+7c221ea	Sara Young	2017-02-22 10:07:19 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+13c7cd5	Sara Young	2017-02-22 10:05:02 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+40e0bc7	Somto Okoye	2017-02-22 10:00:22 +0000	001_basic_calc_summary modified to point to right table and 009_s5_basic_calc... modified to actually reference tables - whoever wrote it and had it run for so long is a LEGEND
+2766460	Sara Young	2017-02-22 09:59:08 +0000	made changes to 021 in basic and zero rate to accomodate for the null ages. iff null then 900
+5200421	Somto Okoye	2017-02-22 08:56:35 +0000	001_s5_payments_to_breaches now points at right table
+ed7ef75	Jim Leach	2017-02-22 08:13:30 +0000	Tidy up code
+480a58c	Jim Leach	2017-02-22 08:05:43 +0000	Rename file such that it matches the table it creates
+0e00dd9	Jim Leach	2017-02-22 08:04:49 +0000	Add comments and reformat
+7103087	Sara Young	2017-02-21 19:44:13 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+9545d6d	Sara Young	2017-02-21 19:43:57 +0000	added a case statement in s4step 000 to replace age with 900 if null and fixed devide by zero issue
+a1b7641	Somto Okoye	2017-02-21 18:44:55 +0000	500_payments_to_test_results scripot modified to comment out 40, 42, 68, 70, 77, as they cannot be tested due to build being run
+b9edcd9	Sara Young	2017-02-21 18:23:18 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+65fe413	Sara Young	2017-02-21 18:23:00 +0000	updated
+d24c974	Somto Okoye	2017-02-21 18:13:29 +0000	c_09 modified to remove prefix bk.
+7b4d27a	Nicola McCabe	2017-02-21 18:09:52 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+f68f57b	Nicola McCabe	2017-02-21 18:09:39 +0000	Update weeks in client year to ensure bonus apportionment is accurate
+a674df8	Somto Okoye	2017-02-21 18:06:59 +0000	test tc_033 updated to remove error, and saved like a bawsss
+7adad27	Sara Young	2017-02-21 17:58:46 +0000	I changed something that I am not bothered to explain - chnags to s4
+228e101	Somto Okoye	2017-02-21 17:41:46 +0000	999_join_two_results table corrected to replace NULL with NULL
+095c2e6	Somto Okoye	2017-02-21 17:31:32 +0000	500_payments_to_test_results modified to include tests 43, 4 and 80
+ac724c4	Somto Okoye	2017-02-21 17:29:58 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+4472d74	Nicola McCabe	2017-02-21 16:58:52 +0000	Update S2 scripts so they run without erroring. Finally
+52fd79d	Nicola McCabe	2017-02-21 16:57:56 +0000	Update hourly rate DQ checks to include basicpay 900 instead of basicpay 200
+1c2e71e	Nicola McCabe	2017-02-21 16:56:28 +0000	Separate index from s2 payments script
+59e4c97	Jim Leach	2017-02-21 15:52:54 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/./osbourne-repo into build_008
+d8f6877	Somto Okoye	2017-02-21 15:52:29 +0000	tests 3,  and 80 modified to check if zero_hrly_rate before labelling a NULL value in pay_pre_ss as a FAIL
+b3d09c2	Sara Young	2017-02-21 15:46:59 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+b3e2fa0	Sara Young	2017-02-21 15:46:48 +0000	cannot update a table with a select from . have to say from table you are updating and then do a join
+ffeb668	Somto Okoye	2017-02-21 15:39:40 +0000	modified 999_join_two_results to include a flag zero_hrl_rte which is 1 where hrly_rate is zero, and the column pay_pre_ss which is specific to where hrly_rate is zero, for testing puposes.
+202e635	Jim Leach	2017-02-21 15:28:07 +0000	QA review/clean-up and add comments
+584b521	Somto Okoye	2017-02-21 15:23:24 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+7898128	Somto Okoye	2017-02-21 15:23:11 +0000	500_paymemnts_to_test_results modified to add all new tests up to tc_111
+2723401	Jim Leach	2017-02-21 15:17:18 +0000	Fix merge conflicts
+02105e2	Jim Leach	2017-02-21 15:15:00 +0000	Add QA notes
+33cf96d	Sara Young	2017-02-21 15:07:44 +0000	updated logic
+1988156	Somto Okoye	2017-02-21 14:52:27 +0000	tc_077 modified to add the right prefix bk.
+9bf4ced	Somto Okoye	2017-02-21 14:13:42 +0000	tc_049 modified to make sure it referred to the ight table with prefix bk.
+0166321	Somto Okoye	2017-02-21 14:00:54 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+35671a1	Somto Okoye	2017-02-21 14:00:33 +0000	s first table modifid to emov reference to non-existent test-fails rsults table
+a4b12a3	Sara Young	2017-02-21 13:49:20 +0000	updating union script for somto
+43636b4	Sara Young	2017-02-21 13:43:35 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+d550e72	Sara Young	2017-02-21 13:43:21 +0000	remove exclusions in s0
+a37dd6e	Somto Okoye	2017-02-21 13:41:28 +0000	tc_030 modified to display tested column/field instead of basic_pay column
+89f97e3	Somto Okoye	2017-02-21 13:39:31 +0000	tc_031 field changed from bk.lk.basic_hrs, to bk.basic_hrs
+9156023	Sara Young	2017-02-21 13:36:43 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+443771d	Sara Young	2017-02-21 13:36:20 +0000	changed clustered to non clustered becase its an index which does something to make joins faster or something. not sure - jim talks too fast
+e711460	Somto Okoye	2017-02-21 13:27:44 +0000	tc_028 and 29 modified to display tested column/field instead of basic_pay column
+235d8ec	Somto Okoye	2017-02-21 13:25:18 +0000	tc_026 and 27 modified to display tested column/field instead of basic_pay column
+c30485e	Somto Okoye	2017-02-21 12:18:17 +0000	all tets modified to refer to final_calc_paid_less_than_nmw
+5c0f6c2	Sara Young	2017-02-21 12:03:28 +0000	updating calc for zero rate and added new folder to union results from two calc
+9e225be	Sara Young	2017-02-21 10:47:14 +0000	made changed to accom for the sneaky new line tax team gave for bi weekly employees. Lizzie provide 4 distinct files where employees are biweekly
+db1ce5b	Sara Young	2017-02-21 09:50:50 +0000	deleted unneeded files fot hrly rate calc
+7f6c6b4	Sara Young	2017-02-21 09:49:28 +0000	 added new files to hrly rate zero calc
+2e3d0dd	Sara Young	2017-02-21 09:46:57 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+b12843a	Sara Young	2017-02-21 09:44:56 +0000	Fix merge errors
+6c2a709	Nicola McCabe	2017-02-20 18:31:06 +0000	Update scripts for new data
+4378ddf	Sara Young	2017-02-20 18:01:25 +0000	changes made to new scripts nethrly rate is zero or null
+751f8d3	Nicola McCabe	2017-02-20 17:15:35 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+9febcee	Nicola McCabe	2017-02-20 17:15:19 +0000	Update cleaning and DQ scripts for new data
+252ed76	Jim Leach	2017-02-20 17:05:17 +0000	Fix bugin calc that I just introduced in my last commit
+74a86a7	Jim Leach	2017-02-20 16:55:03 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/./osbourne-repo into build_008
+d94235c	Jim Leach	2017-02-20 16:54:51 +0000	Check and minor ammend to remediation cost calc step for April 2017 NMW calcs (3 and 4) to ensure they were correct)
+f9b5075	Jim Leach	2017-02-20 16:54:12 +0000	Fix minor bug in calc of total hours (couple of fields not included correctly
+4d057b9	Jim Leach	2017-02-20 16:53:40 +0000	Add QA notes and minor code reformat
+3f9636b	Jim Leach	2017-02-20 16:52:31 +0000	Fix minor bug in sal-sac calc that double counted some fields, and included others not in calc logic doc
+a8ea793	Jim Leach	2017-02-20 16:51:55 +0000	Add QA notes and minor code reformat
+ba8f227	Nicola McCabe	2017-02-20 16:36:55 +0000	Update DQ checks for new data
+b8e50c7	Nicola McCabe	2017-02-20 16:36:25 +0000	Update s2 payments prep a script
+d19fc1e	Nicola McCabe	2017-02-20 16:35:42 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+9350f20	Nicola McCabe	2017-02-20 16:35:31 +0000	Add w1543 to s1 payments
+be19dfb	Somto Okoye	2017-02-20 16:25:23 +0000	tc_107 created and scripted
+cb1b338	Somto Okoye	2017-02-20 16:15:58 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+c8e2197	Somto Okoye	2017-02-20 16:15:36 +0000	tc_107 created and scripted, tc_106 modified
+871c939	Somto Okoye	2017-02-20 16:14:27 +0000	tc_107 created and scripted
+9c29ab8	Jim Leach	2017-02-20 15:29:58 +0000	Add some comment flags and code review header
+fcae01a	Jim Leach	2017-02-20 15:29:40 +0000	Remove old filter flags and add comments for new ones
+183dc77	Somto Okoye	2017-02-20 15:08:21 +0000	tc_107 deleted, as tc_079 disqualifies its meare existence
+5ba0fb8	Somto Okoye	2017-02-20 14:59:09 +0000	tc_107 created and scripted
+30d3eae	Sara Young	2017-02-20 14:02:26 +0000	step 13 changes calc logic v16
+102e236	Sara Young	2017-02-20 13:49:45 +0000	made changes to adjust for new changes sent on friday 5.30 pm.waiting for new data before smartpb9zi can be added to s3 values and then step 10 , need to update step 13
+cb52271	Sara Young	2017-02-20 13:15:36 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+88bcf74	Sara Young	2017-02-20 13:14:41 +0000	updated build_008 to fix remedictioncost = 0 problem. updated s3 to include a new flag basicpay 900 is neg. updated s4_06 to include no weekly people, copied previous calc folder for new calc logic associated with where zero houry rate is zero
+7a2bc90	Nicola McCabe	2017-02-20 13:14:29 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+0745aee	Nicola McCabe	2017-02-20 13:13:01 +0000	Update s1 payments script
+b112124	Somto Okoye	2017-02-20 12:24:27 +0000	tc_033 append evey relevant field with bk.
+1597ee4	Somto Okoye	2017-02-20 12:11:58 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+e72e59e	Somto Okoye	2017-02-20 12:11:31 +0000	s2_paymemnts_dedupe modified to include smartpb_2zi and smartpb_9zi
+6de68ae	unknown	2017-02-20 11:53:01 +0000	Update s1 payments script with new data to include smartpb fields
+b8defbe	Somto Okoye	2017-02-20 11:42:29 +0000	s2_paymemnts_prep_b modified to include smartpb_2zi and smartpb_9zi
+e53f708	Somto Okoye	2017-02-20 11:40:15 +0000	s2_paymemnts_prep_a modified to include smartpb_2zi and smartpb_9zi
+e71a4b9	Somto Okoye	2017-02-20 10:23:30 +0000	most fields APPENDED with bk. in tc_069, 70, 71, 72 and 76 - this is getting very very tideous.
+f8b3709	Somto Okoye	2017-02-20 10:18:32 +0000	most fields APPENDED with bk. in tc_062, 64, 65 and 66 - this is getting very very tideous.
+581c618	Somto Okoye	2017-02-20 10:15:07 +0000	most fields APPENDED with bk. in tc_051 and 52 - this is getting very very tideous.
+8810a36	Somto Okoye	2017-02-20 10:12:56 +0000	most fields APPENDED with bk. in tc_041 and 42 - this is getting very very tideous.
+b5c756e	Somto Okoye	2017-02-20 10:10:52 +0000	most fields APPENDED with bk. in tc_040 - this is getting very very tideous.
+f4a636e	Somto Okoye	2017-02-20 10:05:06 +0000	basic_hrs replaced with bk.basic_hrs in tc_039
+b7386d0	Somto Okoye	2017-02-20 10:04:13 +0000	basic_hrs, work_days, date_left, date_of_joining appended with bk. in tc_038
+fe2bda4	Somto Okoye	2017-02-20 10:01:54 +0000	basic_hrs replaced with bk.basic_hrs in tc_037
+565c4d3	Somto Okoye	2017-02-20 10:00:25 +0000	basic_hrs replaced with lk.basic_hrs in tc_034
+179cba4	Somto Okoye	2017-02-20 09:54:39 +0000	everyu file which referred to basic_calc_hours_worked now refers to basic_calc_paid_less_than_nmw which is the final table with ALL FIELDS INCLUDED!
+3638d04	Somto Okoye	2017-02-20 09:44:51 +0000	tc0026, 27, 28, 29 modified to change basic_hrs to bk.basic_hrs. Still many more changes exactly like this to come. More yaaaay
+fdbcb79	Somto Okoye	2017-02-20 09:42:04 +0000	tc001 modified to change basic_hrs to bk.basic_hrs. Many more changes exactly like this to come. So much fun. yaaaay
+ae0a10f	Somto Okoye	2017-02-17 18:14:20 +0000	commented out parts of reporting layer 007 and 008 which used pay_pre_ss for test fail reports as it is unnecessary and pay_pre_ss  does not exist anymore
+5e9a596	Somto Okoye	2017-02-17 18:09:52 +0000	commented out tc043, 44 and 80 which are the maion places which use the pay_pre_ss field
+4df13f8	Somto Okoye	2017-02-17 18:01:28 +0000	changed  the old field - total_hours_adjusted with new field total_hours_worked_in_prd, as this is the equivalent in new calc
+d2ba4f9	Sara Young	2017-02-17 15:46:21 +0000	updated s4 calc to remove intermediate tables and instead only have one table that will be updated/altered in each step. S3 payments_to_employees ahs been updated to join on weekly tax week when weekly and monthly tax week when monthly
+226f8d1	Somto Okoye	2017-02-17 14:06:17 +0000	tc072 modified to group duplicates by tax week, tax year and is_weekly instead of just tax_week
+991fc0b	Somto Okoye	2017-02-16 18:41:33 +0000	tc101 to tc107 for build_008_data created abnd scripted
+c4c5448	Somto Okoye	2017-02-16 16:41:02 +0000	deleted all weekly references in reporting layer scripts
+1afddcb	Somto Okoye	2017-02-16 16:33:02 +0000	delete weekly test files  - pretty much uyseless now
+2b50a1e	Somto Okoye	2017-02-16 15:29:45 +0000	test scripts for tests tc095 to tc100 created and scripted
+d4dab9d	Sara Young	2017-02-16 15:26:24 +0000	tax team send more changes suprise suprise
+aaa42f5	Sara Young	2017-02-16 14:55:16 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+21e5652	Sara Young	2017-02-16 14:54:37 +0000	added new data - calendar from client to compare if current tax weeks and year is correcct. also updating changed that tax team send over today
+77bdb3b	Nicola McCabe	2017-02-16 13:47:08 +0000	Add de-dupe prep table to s2 payments prep cleardown script
+d304dae	Sara Young	2017-02-16 10:27:34 +0000	deleteing old calc files
+d106c67	Sara Young	2017-02-16 10:23:42 +0000	new calculation logic for build 008
+31d0681	Nicola McCabe	2017-02-15 17:29:57 +0000	Script to merge duplicates for individual employees in same pay period
+e75d648	Nicola McCabe	2017-02-15 17:28:25 +0000	Update s2 payments script to point at s2_payments_prep_dedupe
+b1f3c43	Nicola McCabe	2017-02-15 15:54:22 +0000	Rename s2 payments script so that additional de-dupe script can be added
+c6dc9e5	Nicola McCabe	2017-02-15 15:52:28 +0000	Update s2 payments prep b script to include new fields
+a0c65b0	Somto Okoye	2017-02-15 15:33:46 +0000	s2 payments prep b updated with 18 new fields
+523aa7a	Nicola McCabe	2017-02-15 15:25:41 +0000	Update s2_payments_prep_a to include new fields
+a20c8aa	Nicola McCabe	2017-02-15 13:51:12 +0000	Update s2_payments_prep_a table to include new fields
+2204255	Jim Leach	2017-02-15 12:39:13 +0000	Add flag for if weekly file payment
+ca71fc6	Jim Leach	2017-02-15 12:25:05 +0000	Change cleaning of paterpay back to old script now missing delimiters appear to have been fixed
+36cde1e	Jim Leach	2017-02-15 12:24:14 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/./osbourne-repo into build_008
+5c754d0	Sara Young	2017-02-15 12:04:40 +0000	 changes made to s3 to add new flag weekly file or from monthly file. s4 calc updated to exlcude hrly rate is null or zero
+992d67f	Jim Leach	2017-02-15 12:02:29 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/./osbourne-repo into build_008
+d4778c2	Jim Leach	2017-02-15 12:02:17 +0000	Put cleaning steps in place for ages where we need to backfill
+78854fd	Sara Young	2017-02-15 11:39:58 +0000	004_s4 added exclusion where hrly rate is null or zero. 003_s3 getting ready for new flag weekly file or monthly file
+2f20359	Jim Leach	2017-02-15 11:15:41 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/./osbourne-repo into build_008
+a32e2d9	Jim Leach	2017-02-15 10:05:42 +0000	Add in DoJ and age cleaning to script
+f9c6eb8	Jim Leach	2017-02-15 10:05:21 +0000	Add some detail in comment block at base of script
+c80d63d	Nicola McCabe	2017-02-15 09:58:24 +0000	Add comments to script
+5aa5b45	Nicola McCabe	2017-02-15 09:56:52 +0000	Update script to include new file names for 13 pay period data
+f09c29e	Nicola McCabe	2017-02-15 08:38:54 +0000	Update hourly rate DQ check script
+531ebb1	Nicola McCabe	2017-02-14 18:08:17 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+205ecd2	Nicola McCabe	2017-02-14 18:08:10 +0000	Update hourly rate DQ checks script
+7657832	Sara Young	2017-02-14 17:57:49 +0000	morrrrrrrrrrre changes to data DQ 003
+ad844e0	Sara Young	2017-02-14 17:04:22 +0000	changes to DQ
+5b0af7e	Sara Young	2017-02-14 16:59:12 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+785679f	Sara Young	2017-02-14 16:58:45 +0000	edit DQ scripts
+da73f82	Nicola McCabe	2017-02-14 16:54:54 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+c280123	Nicola McCabe	2017-02-14 16:54:42 +0000	Add new DQ checks
+e7507d2	Nicola McCabe	2017-02-14 16:53:50 +0000	Took out as null for wk1542 as table contains data for hol pay 368
+3436a7a	Jim Leach	2017-02-14 16:26:00 +0000	Minor change in (commented out) section of logic explanation
+4a5d961	Jim Leach	2017-02-14 16:25:00 +0000	Remove 20160101 from list of new years to avoid reducing ages too eagerly
+38b1504	Jim Leach	2017-02-14 16:24:22 +0000	Re-align fields for easier scan
+5f79fd9	Sara Young	2017-02-14 15:38:26 +0000	updated s1 for new unions
+63cecc3	Sara Young	2017-02-14 10:38:41 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+c35e564	Sara Young	2017-02-14 10:38:30 +0000	Updated s1 payments to give hol pay a null for 5 yearly data
+dc6a3c1	Jim Leach	2017-02-14 10:37:49 +0000	Add flag to indicate if payment week contains new years
+f284b8d	Jim Leach	2017-02-14 10:01:24 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/./osbourne-repo into build_008
+a4ae0d8	Jim Leach	2017-02-14 10:01:06 +0000	Subset to different group of ref_no to develop subtracting age logic
+077e63d	Sara Young	2017-02-14 09:44:03 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+f0cd03b	Sara Young	2017-02-14 09:43:39 +0000	added DQ folder to data_001
+12af0c1	Jim Leach	2017-02-14 09:43:07 +0000	Add logic to clean up NULL join dates and 2 of the easy scenarios for NULL age (where they are not in 13 data, and where they are in 13 data and are at least 32 - in both we set age to be 25)
+d650101	Jim Leach	2017-02-14 08:40:34 +0000	Create table of employees and join dates
+f55a8b7	Jim Leach	2017-02-13 15:57:18 +0000	Begin work on cleaning of NULL age and NULL date of joining
+d098430	Jim Leach	2017-02-13 15:44:32 +0000	Add in where clause to filter payments for speed of dev
+f5e33d2	Jim Leach	2017-02-13 15:26:54 +0000	Update reporting at build_008
+1937f45	Jim Leach	2017-02-13 14:37:09 +0000	Move age cleaning to prep b script
+4c9ffd8	Jim Leach	2017-02-13 14:36:43 +0000	Update comment at end of file
+1409714	Jim Leach	2017-02-13 10:36:45 +0000	Reformat code slightly to be more legible
+9a03edf	Jim Leach	2017-02-13 10:20:57 +0000	Fix test so it doesnt point at BUILD_002!
+1471a07	Jim Leach	2017-02-13 10:18:06 +0000	Add comment out select statement to bottom of file
+e6ee52d	Jim Leach	2017-02-13 10:16:38 +0000	Clean up loose mention of [build_008]. Damn square bracked
+686dbca	Sara Young	2017-02-13 10:10:59 +0000	changed build_008 to build_008_data for all in files 002_calc
+b2575c5	Sara Young	2017-02-13 10:03:12 +0000	 changed build_008 to build_008_data in all data_001
+60d8990	Jim Leach	2017-02-13 09:55:35 +0000	Add script to create schema for build_008_data
+7de79fb	Jim Leach	2017-02-13 09:54:27 +0000	Change schema from build_008 to build_008_data for all build_008 data
+7fbc04e	Jim Leach	2017-02-13 09:51:59 +0000	Ensure build script for build_008 only points at calc folder
+9d3455c	Jim Leach	2017-02-13 09:51:40 +0000	Move teardown into calc subfolder for running build
+9b421cb	Sara Young	2017-02-13 09:45:30 +0000	moved s345 9  to sub folder calc_002
+099597c	Sara Young	2017-02-13 09:44:15 +0000	moved s1 and 2 to sub folder data_001
+1da449f	Jim Leach	2017-02-13 09:26:28 +0000	Update ignore
+b40361c	Nicola McCabe	2017-02-08 17:02:27 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+0eb4ca2	Nicola McCabe	2017-02-08 17:01:53 +0000	Add data to s1 payments
+13b267c	Jim Leach	2017-02-08 16:53:06 +0000	Minor change to clearning script
+930646b	unknown	2017-02-08 15:41:16 +0000	Add 2013 data to s1 payments
+30b59ab	Nicola McCabe	2017-02-08 12:52:02 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/osbourne-repo into build_008
+4175e9f	Nicola McCabe	2017-02-08 12:51:39 +0000	Add 13 pay periods flag to s1 payments
+7155198	Jim Leach	2017-02-08 12:31:06 +0000	Merge branch 'build_008' of //na02/da/Projects/Osbourne/./osbourne-repo into build_008
+c212cec	Jim Leach	2017-02-08 12:30:54 +0000	Add cleaning of dates to this cleaning step
+e69da86	Jim Leach	2017-02-08 12:30:21 +0000	Integrate logic of checking if payment is from 13 pay periods directly
+dcd4159	Nicola McCabe	2017-02-08 12:25:01 +0000	Add 2010 and 13 pay periods data to s1 payments
+7a80231	Jim Leach	2017-02-08 12:16:38 +0000	Remove cleaning of dates (as need some logic based on whether they are in 13 pay periods or not
+2a4c8d4	Jim Leach	2017-02-08 12:15:09 +0000	Add cleaning for paterpay_982, cleaning of dates will now be broken as 13 pay periods formatted differently
+fd85a68	Jim Leach	2017-02-08 12:05:01 +0000	Add in (commented out) logic to begin flagging payments as occuring within the 13 pay periods
+c67f0a5	Jim Leach	2017-02-08 11:40:39 +0000	Add script that will clear down any prep tables created when cleaning s2 payments
+e259b09	Jim Leach	2017-02-08 11:34:48 +0000	Pull out s2_payments creation in to its own script file for ease of code reasoning
+c32c6c4	Jim Leach	2017-02-08 11:32:03 +0000	Remove code from prep b file such that it only creates and operates on s2_payments_prep_b
+6bacc38	Jim Leach	2017-02-08 11:28:52 +0000	Rename file
+ed4090a	Jim Leach	2017-02-08 11:28:18 +0000	Begin process of pulling out s2 payments cleaning into separate code files
+b05db4a	Jim Leach	2017-02-08 11:25:53 +0000	Rename file to give space for earlier queries prepping s2 payments cleaning
+019f974	Jim Leach	2017-02-08 11:24:37 +0000	Add table that lists 13 pay period files to its own query
+3f45d75	Jim Leach	2017-02-08 11:12:49 +0000	Add small prep table of files that are in 13 pay periods to help with age lookup logic
+61f6ebf	Jim Leach	2017-02-08 10:42:54 +0000	Update cleaning script for first step of s2_payments
+b900fcb	Nicola McCabe	2017-02-07 15:03:08 +0000	Write s1 for build_008
+3ec7a2e	Nicola McCabe	2017-02-07 10:48:42 +0000	Remove test comment
+5390d37	Jim Leach	2017-02-07 10:46:21 +0000	Add small test comment to readme
+04035e3	Jim Leach	2017-02-07 10:35:09 +0000	Update to build_008 on this branch
+76e838c	Nicola McCabe	2017-02-07 10:32:42 +0000	Add file wk1540 to s1 payments
+8977e23	Jim Leach	2017-02-07 10:07:13 +0000	Remove duff raw data file from payments union at S1 (it is a duplicate of another file)
+d15f24d	Jim Leach	2017-02-07 08:49:09 +0000	Ensure that script writes data into a table
+8026899	Jim Leach	2017-02-07 08:46:56 +0000	Tidy up code as part of review
+50e4ae0	Jim Leach	2017-02-07 08:46:22 +0000	Add is_weekly flag
+3317e32	Somto Okoye	2017-02-06 18:13:23 +0000	900_all_calcs\015 exclusion reporting calc updated to include career break
+36a87b2	Jim Leach	2017-02-06 17:19:23 +0000	Add review markup comments
+2a4fd72	Sara Young	2017-02-03 16:34:33 +0000	sara adding new tax week conifrmation logic and updating file name new to filenm in s2 payments
+8b77de0	Somto Okoye	2017-02-03 11:58:31 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+88c80aa	Somto Okoye	2017-02-03 11:58:22 +0000	weekly files tc088 tc089 tc090 created and scripted, monthly file tc089 minor naming error corected - was wrongly called referring to tc090 in the code
+b6bbcdf	Sara Young	2017-02-03 11:42:23 +0000	updating changes to calc logic remiving two fields
+45fd8b3	Somto Okoye	2017-02-03 11:17:43 +0000	tc_090 created and scripted, tc_089 modified
+a4b068b	Somto Okoye	2017-02-03 11:14:59 +0000	tc_089 editd to look more fancy, just the way Jim likes it
+825eae8	Somto Okoye	2017-02-03 11:06:48 +0000	Tests tc_088 and tc_089 created and scripted
+9ebde00	Sara Young	2017-02-03 10:31:55 +0000	fixing rate lookup problem
+e7ee087	Sara Young	2017-02-03 09:55:33 +0000	update file to build007
+55aa225	Sara Young	2017-02-03 09:52:16 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+bfe2339	Sara Young	2017-02-03 09:51:23 +0000	Sara updating build_007
+03e30df	Somto Okoye	2017-02-02 15:18:05 +0000	011 renamed to 015 (was initially wrongly named)
+6e3d5a7	Somto Okoye	2017-02-02 15:16:08 +0000	14_s5 script completed
+89911c9	Somto Okoye	2017-02-02 13:21:52 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+2730ce9	Somto Okoye	2017-02-02 13:21:16 +0000	fixed incorrect script in 011
+27b09d7	Jim Leach	2017-02-02 13:16:50 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+da4f09e	Jim Leach	2017-02-02 13:16:44 +0000	Add new summaries requested for reporting
+db0ccc3	Somto Okoye	2017-02-02 13:07:50 +0000	vol of records excluded created and scripted - 011
+5eabc50	Jim Leach	2017-02-02 12:54:03 +0000	Create population exclusions summary
+0ba76c2	Jim Leach	2017-02-02 12:53:47 +0000	Add numbers to description to preserve ordering
+811c33e	Jim Leach	2017-02-02 12:26:55 +0000	Create first new reporting table of nmw overview
+b70a1a1	Nicola McCabe	2017-02-02 10:32:17 +0000	Remove salaried employees from exclusion list
+511c335	Jim Leach	2017-02-02 10:18:41 +0000	Update name of file for brand new files relating to pay periods in 2016
+ea525a5	Nicola McCabe	2017-02-02 10:15:28 +0000	Add additional 2016 data to s1 payments
+0a1b305	Somto Okoye	2017-02-01 10:38:01 +0000	bank holiday code edited to drop view not table if exists, and paygroup to branch table renamed from paycode to branch - not too important, but if I dont do it, someone might get hurt - true story
+7853350	Jim Leach	2017-02-01 08:27:04 +0000	Update build script to remove unnecessary lines
+5bef620	Jim Leach	2017-01-31 16:04:42 +0000	Add in extra summary of breaches with holiday pay
+6225cd3	Nicola McCabe	2017-01-31 14:48:16 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+3a54a08	Nicola McCabe	2017-01-31 14:48:04 +0000	Add new filename column to s1 payments
+d66a9ed	Somto Okoye	2017-01-31 14:24:24 +0000	Company Branch to Employee Group table created
+9d9bdac	Nicola McCabe	2017-01-31 14:10:19 +0000	Update s1 with refresh data
+25068f3	Jim Leach	2017-01-31 13:22:12 +0000	Update reporting to also break down employee types by leaver status
+b7496d7	Jim Leach	2017-01-31 09:24:01 +0000	Update build to build_006
+62605a4	Jim Leach	2017-01-31 09:20:38 +0000	Add in summary row for leavers (NB leavers overlap with the other catagories)
+aca2a06	Jim Leach	2017-01-30 17:01:54 +0000	Put additional exclusions in place for reporting
+6160a98	Jim Leach	2017-01-30 12:35:56 +0000	Correct 2 payments where age is NULL
+2c93cee	Jim Leach	2017-01-30 12:14:06 +0000	Make nmw lookup only depend on end date of pay period
+d626573	Jim Leach	2017-01-30 10:49:58 +0000	Update script to account for payment periods spanning more than 1 bank holiday, as well as update to the test logic
+4b7d8e6	Jim Leach	2017-01-27 16:11:48 +0000	Add extra step in S5 summaries: total critical failures
+c9e0f3b	Jim Leach	2017-01-27 16:06:30 +0000	Fix bug in weekly tests summary
+e6d9545	Jim Leach	2017-01-27 15:52:39 +0000	Add two further summaries to S5
+7d807bf	Jim Leach	2017-01-27 15:40:40 +0000	Add summary of remediation cost across all breaching payments
+d5dc0ec	Jim Leach	2017-01-27 15:32:22 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+3ff8473	Jim Leach	2017-01-27 15:16:57 +0000	Add flag for critical tests
+862a514	Jim Leach	2017-01-27 15:14:40 +0000	Fix bug to ensure we dont count duplicates
+ebd821d	Thanachai Wudhapitak	2017-01-27 15:03:31 +0000	Added sum of critical failures to testing script for weekly calculations.
+099ec19	Thanachai Wudhapitak	2017-01-27 14:58:05 +0000	Added sum of critical failures to testing script.
+c8e0285	Jim Leach	2017-01-27 14:06:06 +0000	Add code to remove dupes from s2 payments
+aac6ff6	Jim Leach	2017-01-27 14:05:17 +0000	Remove payment ID from S1 table as it means cant get rid of dupes easily
+e71a311	Jim Leach	2017-01-27 12:46:16 +0000	Ensure no duplicated in summary check;
+2a0d9b3	Jim Leach	2017-01-27 11:57:05 +0000	Update definition of maternity pay and salaried payments
+3f23c51	Jim Leach	2017-01-27 11:33:06 +0000	Remove maternity emp from the build
+9957832	Jim Leach	2017-01-27 11:32:44 +0000	Further check on summaries to ensure the groups are mutually exclusive
+4455180	Jim Leach	2017-01-27 11:05:32 +0000	Ensure summaries follow correct hierarchy of division of payments into groups
+e02f085	Jim Leach	2017-01-27 10:32:24 +0000	Add more pay groups to set of salaried groups (to be excluded)
+332d5bf	Jim Leach	2017-01-27 10:19:37 +0000	Remove salaried employees (again!)
+73882ff	Jim Leach	2017-01-27 09:37:07 +0000	Create new total breaches and remediation cost summaries
+4b471a2	Jim Leach	2017-01-27 09:36:40 +0000	Minor change in comments section
+20a3f63	Jim Leach	2017-01-27 09:36:06 +0000	Add in check to see if underpaid including holiday pay
+e0ba9e2	Jim Leach	2017-01-27 09:35:47 +0000	Add in check to see if underpaid including holiday pay
+ff8133a	Jim Leach	2017-01-27 09:09:04 +0000	BReak up file in to separate chunks and add to sub-folder
+8fd86ad	Jim Leach	2017-01-27 09:08:04 +0000	Fix bug in current NMW lookup in final step of calc
+bcbaf41	Jim Leach	2017-01-27 09:07:40 +0000	Add flag if NMW is current NMW
+a85568d	Jim Leach	2017-01-26 17:36:30 +0000	Tidy up summary table
+0858a85	Jim Leach	2017-01-26 17:36:13 +0000	Add 2nd step of remediation cost calc to use holiday pay, too
+eb2e18a	Jim Leach	2017-01-26 17:24:15 +0000	Fix bug in test
+7a993fc	Jim Leach	2017-01-26 17:24:03 +0000	Add furter summary table
+a210280	Jim Leach	2017-01-26 17:08:46 +0000	Update tests for build 005
+801ce7e	Jim Leach	2017-01-26 17:08:30 +0000	Add in remediation cost ((nmw now - net hrly rate ) * adjusted hours)"
+bbc53c6	Jim Leach	2017-01-26 16:53:09 +0000	Fix bug in build (thanks Sara for catching it!)
+99c1fb3	Jim Leach	2017-01-26 16:20:25 +0000	Tidy up code
+50f8642	Jim Leach	2017-01-26 16:13:23 +0000	Update weekly calc testing summary table
+af13eec	Jim Leach	2017-01-26 16:13:06 +0000	Fix bugs in tests for weekly build
+644ee20	Jim Leach	2017-01-26 16:12:36 +0000	Update monthly calc testing summary table
+2c31177	Jim Leach	2017-01-26 16:12:04 +0000	Fix bug in test 01 for weekly calc
+d48d3bf	Jim Leach	2017-01-26 16:11:46 +0000	Add unified view for Lizzie for reporting
+a041fbf	Jim Leach	2017-01-26 14:47:53 +0000	Add weekly tests to build
+9d505c8	Jim Leach	2017-01-26 14:43:48 +0000	Put maternity pay-group employees back into the build
+d35d245	Jim Leach	2017-01-26 14:23:11 +0000	Update calc to set salary sacrifice fields to 0 if they are ever positive
+31580c8	Jim Leach	2017-01-26 14:22:45 +0000	Add flag to remove payments that contain annualised hours
+f894a0a	Jim Leach	2017-01-26 14:17:46 +0000	Add annual hours payments flag
+05e140f	Jim Leach	2017-01-26 14:16:23 +0000	Update to build 005
+bb951a6	Sara Young	2017-01-26 14:14:14 +0000	77
+7bad815	Sara Young	2017-01-26 13:18:54 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+c350b4f	Sara Young	2017-01-26 13:18:43 +0000	77 workds
+8aefa41	Jim Leach	2017-01-26 12:31:30 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+6aa75b8	Jim Leach	2017-01-26 12:31:21 +0000	Ensure test recs back to total payments in the calc
+ac8a8af	Jim Leach	2017-01-26 12:26:32 +0000	Ensure test recs back to total payments in the calc
+00d244b	Somto Okoye	2017-01-26 12:13:21 +0000	tc_071 modified to include cases where total was equal to 35
+0594246	Jim Leach	2017-01-26 12:05:47 +0000	Ensure test recs back to total payments in the calc
+f310611	Jim Leach	2017-01-26 12:01:13 +0000	Ensure test recs back to total payments in the calc
+1b50a44	Jim Leach	2017-01-26 11:57:46 +0000	Ensure test recs back to total payments
+fef1635	Sara Young	2017-01-26 11:31:55 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+c851ba2	Sara Young	2017-01-26 11:31:48 +0000	Sras updates
+1253d28	Jim Leach	2017-01-26 11:22:31 +0000	Ensure that all tests point at build_004
+70a7c3f	Somto Okoye	2017-01-26 11:15:38 +0000	scripts mofified to incliude null cases as fails - tc_079, tc_081, tc_082, tc_083, tc_084, tc_085, tc_086
+8ab3169	Sara Young	2017-01-26 10:59:03 +0000	NewChanges to Sara
+ed1da3d	Sara Young	2017-01-26 10:44:43 +0000	 Sara changing 62 and 68 bacl
+d86b439	Jim Leach	2017-01-26 07:56:54 +0000	Update build to build_004
+dde3d60	Jim Leach	2017-01-26 07:55:50 +0000	Remove fields from calc in step 1
+41cfed1	Jim Leach	2017-01-26 07:48:40 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+680e79a	Jim Leach	2017-01-26 07:48:32 +0000	Minor re-factor of code
+0b60b0a	Somto Okoye	2017-01-25 18:29:02 +0000	tc_083 modified to acknowledge null values as fails
+a0551ea	Somto Okoye	2017-01-25 18:26:39 +0000	tc079 modified to acknowledge nulls as fails
+1d1f730	Somto Okoye	2017-01-25 18:19:43 +0000	tc_60 modified to acknowledge null values as fails
+312f158	Somto Okoye	2017-01-25 18:13:41 +0000	tc_067 modified to include all null cases
+48dfcde	Somto Okoye	2017-01-25 18:06:15 +0000	tc_069 and tc_071 modified to fail nulls
+01635a5	Somto Okoye	2017-01-25 17:48:00 +0000	tc_073 modfied to include nulls as fails
+ae3588e	Somto Okoye	2017-01-25 17:46:46 +0000	082 modified
+8f1a8f6	Somto Okoye	2017-01-25 17:43:29 +0000	tc_082 modified
+9b23bc3	Somto Okoye	2017-01-25 17:37:18 +0000	tc_076 created but not complete yet
+79e7fe4	Somto Okoye	2017-01-25 17:22:00 +0000	tc_078 created and scripted
+c38b389	Somto Okoye	2017-01-25 16:17:48 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+b6aa555	Somto Okoye	2017-01-25 16:17:40 +0000	I created and scripted tc_074 and Jim modified tc_032, tc_033, tc_034, tc_038 and tc_042
+bcf7b9a	Jim Leach	2017-01-25 16:16:47 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+91140eb	Jim Leach	2017-01-25 16:16:41 +0000	Update tc031
+43995f7	Somto Okoye	2017-01-25 15:51:23 +0000	tc_086 scripted
+3557b1f	Somto Okoye	2017-01-25 15:44:36 +0000	tc_086 created
+aedc656	Somto Okoye	2017-01-25 15:16:47 +0000	tc_084 modified to acknowledge st-dev of null as pass, as this occurs when only one payment entry exists within a group
+fb2d79d	Jim Leach	2017-01-25 14:48:31 +0000	Add back total fails per payment
+f53c0d4	Jim Leach	2017-01-25 14:03:46 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+12624c8	Jim Leach	2017-01-25 14:03:39 +0000	Remove summation - takes too long to calc all in one go
+8045dd7	Somto Okoye	2017-01-25 13:10:08 +0000	tc_81 modified to include null values in FAIL column
+e446e8b	Somto Okoye	2017-01-25 13:00:13 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+b9cb394	Somto Okoye	2017-01-25 13:00:00 +0000	tc_080 and tc_081 created and scripted
+85e9b65	Jim Leach	2017-01-25 12:52:48 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+8d36cb3	Jim Leach	2017-01-25 12:52:39 +0000	Add new S5 reporting views
+3a2eb80	Somto Okoye	2017-01-25 12:50:41 +0000	tc85 edited and completed successfully
+0b3b986	Somto Okoye	2017-01-25 12:46:02 +0000	tc_085 created and scripted
+7a94070	Somto Okoye	2017-01-25 12:44:40 +0000	tc_084 modified to fail cases of null standard deviation
+821fe5a	Jim Leach	2017-01-25 12:35:24 +0000	Create two new summaries for weekly emp: by cohort and by cohort by group
+93ace94	Jim Leach	2017-01-25 12:34:20 +0000	Create two new summaries for monthly emp: by cohort and by cohort by group
+66e7bd6	Jim Leach	2017-01-25 12:33:55 +0000	Add code for 2 new cohorts (salaried emp and leavers)
+c81e98b	Somto Okoye	2017-01-25 12:20:29 +0000	tc_084 created and scripted
+44b558c	Jim Leach	2017-01-25 12:11:14 +0000	Add two new cohorts: salaried employees and leavers
+fe9cb84	Jim Leach	2017-01-25 12:05:37 +0000	Add final summary of total tests failed for each payment
+8975f5f	Somto Okoye	2017-01-25 12:04:26 +0000	tc_082 and tc_083 created and scripted
+800c146	Jim Leach	2017-01-25 11:58:40 +0000	Move S5 post-tests so test results may be used in reporting
+80ab8c9	Somto Okoye	2017-01-25 11:56:53 +0000	tc_079 created and scripted
+0ba101e	Somto Okoye	2017-01-25 11:47:32 +0000	tc_067n created and scripted
+3435118	Jim Leach	2017-01-25 11:13:35 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+ad375bf	Jim Leach	2017-01-25 11:13:28 +0000	Update list of test views included in final payment-level summary
+ac9fd59	Somto Okoye	2017-01-25 11:12:09 +0000	modified to build_003 from build_002
+25f03bf	Somto Okoye	2017-01-25 11:10:48 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+97304d6	Somto Okoye	2017-01-25 11:10:42 +0000	commented out script
+234a604	Jim Leach	2017-01-25 11:09:06 +0000	Add all currently-scripted tests to summary table
+7a76e28	Somto Okoye	2017-01-25 10:44:10 +0000	tc_035 reverted to saras original - still rendered inactive by Jim
+8d14603	Jim Leach	2017-01-25 10:36:42 +0000	Deprecate test 035 as not needed in build_003
+83186c1	Jim Leach	2017-01-25 10:33:41 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+2788570	Jim Leach	2017-01-25 10:33:34 +0000	Add test 005 and correct test 025 and 065
+361e894	Somto Okoye	2017-01-25 10:29:40 +0000	cosick variable corrected to lk.cosick_816
+ef7d505	Jim Leach	2017-01-25 10:23:17 +0000	Rename field in summary views
+b3faa45	Jim Leach	2017-01-25 10:16:22 +0000	Change code to pull from weekly calc tables rather than basic calc
+18e05ec	Jim Leach	2017-01-25 10:15:22 +0000	Rename files
+abb8bad	Jim Leach	2017-01-25 10:14:11 +0000	Copy basic calc S5 code into new folder ready to change to weekly calc
+f03fb8f	Somto Okoye	2017-01-25 10:02:32 +0000	Ensure tests use tax_year raather than payment_year
+5412627	Somto Okoye	2017-01-25 10:01:39 +0000	Update tests to build_003
+1e75dc9	Jim Leach	2017-01-25 08:22:36 +0000	Set hrly_rte to NULL if it is 0 (to avoid later divide-by-0 errors)
+7de7c91	Jim Leach	2017-01-25 08:17:11 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+a77b16f	Jim Leach	2017-01-25 08:17:06 +0000	Update payment_year to tax_year
+44e77a5	Somto Okoye	2017-01-24 18:39:01 +0000	bank holiday tables moved to build_002 from build_003
+d0e186f	Somto Okoye	2017-01-24 18:33:49 +0000	tc_67 created but not fully scripted
+8cd49fa	Somto Okoye	2017-01-24 17:42:36 +0000	s2_bank holiday script completed
+4db1511	Jim Leach	2017-01-24 17:24:40 +0000	Update references to payment_year to tax_year
+767af7e	Jim Leach	2017-01-24 17:22:49 +0000	Update references to payment_year to tax_year
+bf34fee	Jim Leach	2017-01-24 17:19:13 +0000	Ensure clarity in update statement. Bloody SQL
+675f9ca	Jim Leach	2017-01-24 17:15:27 +0000	Script update statements to put tax week and tax year in place from Dons confirmation
+8587f54	Jim Leach	2017-01-24 17:15:06 +0000	Ensure correct fields brought through to S2
+0e33866	Jim Leach	2017-01-24 17:05:22 +0000	Ensure filenm is kept from S1 table to ensure it can be used with Dons confirmation tbl
+57af920	Jim Leach	2017-01-24 17:04:03 +0000	Make sure this code actually works! Write the data into a table
+00e3a7c	Jim Leach	2017-01-24 17:02:54 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+201c54d	Jim Leach	2017-01-24 17:02:44 +0000	"Correct" bonus apportionment to use client week as per tax team instructions
+7e15c4f	Jim Leach	2017-01-24 17:01:27 +0000	Add bnkdddct field to calculation
+6a86a63	Somto Okoye	2017-01-24 16:59:08 +0000	s1 bank holiday table modified to table scheme = build_003 + s2 bank holiday created but not scripted
+17598d6	Jim Leach	2017-01-24 16:49:40 +0000	Rename file
+7d8623d	Jim Leach	2017-01-24 16:48:55 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+ccd4019	Jim Leach	2017-01-24 16:48:50 +0000	Remove field from select which broke the build
+cfe1cd6	Jim Leach	2017-01-24 16:48:31 +0000	Add and clean tax week confirmation to build
+a40dbeb	Somto Okoye	2017-01-24 16:48:03 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+e7f877e	Somto Okoye	2017-01-24 16:47:56 +0000	tc_073 created and scripted + view for bank holiday 2010 to 2020 table created
+9199e05	Jim Leach	2017-01-24 16:33:13 +0000	Add cohorts logic to build
+720f342	Jim Leach	2017-01-24 13:07:58 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+8885621	Jim Leach	2017-01-24 13:07:49 +0000	Change how bonus apportionment works for weekly calc (now changes depending on how many pay weeks in the year)
+9841207	Sara Young	2017-01-24 12:48:31 +0000	new testcase files
+5db5b61	Somto Okoye	2017-01-24 12:19:34 +0000	false tc_075 deleted
+3df32b6	Somto Okoye	2017-01-24 12:17:53 +0000	tc_71 created and scripted, also wrongly named tc_075 previously
+4765784	Jim Leach	2017-01-24 12:14:53 +0000	Remove cosick_816 and ssp_days_809 from calc
+3d8a033	Jim Leach	2017-01-24 11:56:56 +0000	Remove cosick_816 and ssp_days_809 from calc
+3bb47e9	Jim Leach	2017-01-24 11:34:26 +0000	Exclude maternity leave payments from build
+d06bcab	Jim Leach	2017-01-24 11:32:51 +0000	Add maternity pay flag
+204010e	Somto Okoye	2017-01-24 11:29:58 +0000	tc_069 created and scripted
+9636687	Jim Leach	2017-01-24 11:13:18 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+bd4fec8	Somto Okoye	2017-01-24 11:01:21 +0000	tc_63 created and scripted
+72c1f3f	Jim Leach	2017-01-24 11:00:48 +0000	Change logic of test such that it correctly mirrors logic of the build
+e662346	Somto Okoye	2017-01-24 10:40:27 +0000	tc_63 created and scripted like a boss
+5ed6859	Jim Leach	2017-01-24 08:36:03 +0000	Add salaried employees back to build in v 003
+8fda260	Jim Leach	2017-01-24 08:35:23 +0000	Update tables to build_003
+bbd71eb	Jim Leach	2017-01-23 17:08:18 +0000	Update test to ensure it runs correctly.
+9f66af5	Jim Leach	2017-01-23 16:59:25 +0000	Add minor changes to testing scripts
+f111870	Somto Okoye	2017-01-23 16:33:23 +0000	tc_61 created
+61c3900	Jim Leach	2017-01-23 16:08:26 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+2d47818	Jim Leach	2017-01-23 16:08:18 +0000	Correct logic in test
+c30ebdc	Jim Leach	2017-01-23 16:04:07 +0000	Check test logic
+82034e1	Jim Leach	2017-01-23 16:03:56 +0000	Include fields used in sum for checking purposes
+5e84d8f	Sara Young	2017-01-23 16:02:42 +0000	changes to testscripts
+9f34657	Jim Leach	2017-01-23 15:53:39 +0000	Update script to ensure check if exists logic is correct
+9b5d18c	Jim Leach	2017-01-23 15:32:42 +0000	Remove weekly calc tests until Sara has finished montly tests
+646faae	Jim Leach	2017-01-23 15:29:50 +0000	Replicate monthly build tests for weekly calc and update schema/table names etc
+72d4bca	Jim Leach	2017-01-23 15:22:14 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+bd11b84	Jim Leach	2017-01-23 15:22:04 +0000	Move tests on basic calc to subfolder
+d0dd848	Jim Leach	2017-01-23 15:21:31 +0000	Add weekly calc to build
+f373672	Sara Young	2017-01-23 15:11:19 +0000	message added
+0b7c208	Sara Young	2017-01-23 15:09:24 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+31e6075	Sara Young	2017-01-23 15:09:14 +0000	changes to 35 and 36
+09dfa92	Jim Leach	2017-01-23 14:52:20 +0000	Add some derived fields in to table for Sara to check against in tests
+bb46f63	Sara Young	2017-01-23 14:47:09 +0000	sara added test script 35,36 and 500 table
+14e8fd5	Jim Leach	2017-01-23 14:37:54 +0000	Add test 56 to repo
+14121c9	Jim Leach	2017-01-23 14:37:37 +0000	Update tests based on revised logic provided by tax team (fields should be positive as we subtract in the calc
+8227a86	Somto Okoye	2017-01-23 13:28:55 +0000	tc_60 created and scripted
+f09cd76	Somto Okoye	2017-01-23 12:53:14 +0000	t_024 renamed, wrong nomenclature used initially
+0a02de4	Somto Okoye	2017-01-23 12:52:35 +0000	t_023 renamed, wrong nomenclature used initially
+343a88d	Somto Okoye	2017-01-23 12:51:57 +0000	t_022 renamed, wrong nomenclature used initially
+9d84894	Somto Okoye	2017-01-23 12:51:28 +0000	t_021 renamed, wrong nomenclature used initially
+de8dd48	Somto Okoye	2017-01-23 12:50:55 +0000	t_020 renamed, wrong nomenclature used initially
+d9a220b	Somto Okoye	2017-01-23 12:50:23 +0000	t_019 renamed, wrong nomenclature used initially
+55280b1	Somto Okoye	2017-01-23 12:49:39 +0000	t_018 renamed, wrong nomenclature used initially
+92491ba	Somto Okoye	2017-01-23 12:48:56 +0000	t_017 renamed, wrong nomenclature used initially
+f9d9a2e	Somto Okoye	2017-01-23 12:48:19 +0000	t_016 renamed, wrong nomenclature used initially
+b31986a	Somto Okoye	2017-01-23 12:47:14 +0000	t_015 renamed, wrong nomenclature used initially
+9110d74	Somto Okoye	2017-01-23 12:46:28 +0000	t_014 renamed, wrong nomenclature used initially
+1097d8c	Somto Okoye	2017-01-23 12:45:22 +0000	t_008 to t_013 and t_053: deleting wrongly named files to complete renaming process
+f5b3800	Somto Okoye	2017-01-23 12:29:33 +0000	t_013 renamed, wrong nomenclature used initially
+c055fc6	Somto Okoye	2017-01-23 12:28:50 +0000	t_012 renamed, wrong nomenclature used initially
+5c731cd	Somto Okoye	2017-01-23 12:28:09 +0000	t_011 renamed, wrong nomenclature used initially
+f26c6e8	Somto Okoye	2017-01-23 12:27:37 +0000	t_010 renamed, wrong nomenclature used initially
+82dc8e0	Somto Okoye	2017-01-23 12:27:01 +0000	t_009 renamed, wrong nomenclature used initially
+e8b9721	Somto Okoye	2017-01-23 12:26:22 +0000	t_008 renamed, wrong nomenclature used initially
+0b1ea82	Somto Okoye	2017-01-23 12:24:39 +0000	t_053 renamed, wrong nomenclature used initially
+fce8d94	Somto Okoye	2017-01-23 12:22:10 +0000	tc_054, tc_055, tc_057, tc_058, tc_059 created and scripted
+4e61068	Somto Okoye	2017-01-23 12:05:34 +0000	tc_053 created and scripted
+7a1f1d0	Somto Okoye	2017-01-23 12:02:24 +0000	tc_052 created and scripted
+25deaad	Jim Leach	2017-01-23 12:01:29 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+8061e41	Jim Leach	2017-01-23 12:01:24 +0000	Add test 50
+901e993	Somto Okoye	2017-01-23 11:58:36 +0000	tc_51 created and scripted
+e1de734	Jim Leach	2017-01-23 11:51:46 +0000	Add tests 48 (not scripted) and 49 to the build
+7d694d2	Jim Leach	2017-01-23 11:50:59 +0000	Add individual fields into output table for testing purposes
+416460b	Sara Young	2017-01-23 11:40:36 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+09050e6	Sara Young	2017-01-23 11:40:26 +0000	Saras added test sripts
+50e2a0a	Somto Okoye	2017-01-23 11:38:29 +0000	tc_024 created and scripted
+603abae	Somto Okoye	2017-01-23 11:35:48 +0000	tc_023 created and scripted
+89dd78d	Somto Okoye	2017-01-23 11:31:51 +0000	tc_022 created and scripted
+b74d503	Somto Okoye	2017-01-23 11:28:15 +0000	tc_21 created and scripted
+416a0e2	Somto Okoye	2017-01-23 11:24:56 +0000	tc_020 created and scripted
+2b72644	Jim Leach	2017-01-23 11:22:30 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+312dfe6	Jim Leach	2017-01-23 11:22:26 +0000	Add tests 45, 46, and 47
+e968c81	Somto Okoye	2017-01-23 11:21:33 +0000	tc_019 created and scripted
+811fe8b	Somto Okoye	2017-01-23 11:17:25 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+0f11dc1	Somto Okoye	2017-01-23 11:17:13 +0000	tc_018 created and scripted
+c9086c3	Jim Leach	2017-01-23 11:16:59 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+6d89a9f	Jim Leach	2017-01-23 11:16:53 +0000	Add logic for tc044 and tc043
+bad2cfd	Somto Okoye	2017-01-23 11:12:42 +0000	tc_17 created and scripted
+e74bf0c	Somto Okoye	2017-01-23 11:02:24 +0000	tc_016 created and scripted
+43ae597	Somto Okoye	2017-01-23 10:58:03 +0000	tc_015 created and scripted
+36f6f47	Somto Okoye	2017-01-23 10:54:39 +0000	tc_014 created and scripted
+afaf73a	Somto Okoye	2017-01-23 10:51:29 +0000	tc_013 created and scripted
+0a25448	Jim Leach	2017-01-23 10:48:35 +0000	Add s2 cleaning script for headcounts data
+0b4e909	Somto Okoye	2017-01-23 10:46:37 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+e690d5b	Somto Okoye	2017-01-23 10:46:18 +0000	tc-012 created and scripted
+120b56e	Jim Leach	2017-01-23 10:45:14 +0000	Add S1 view for headcount data
+2c33bb7	Somto Okoye	2017-01-23 10:40:18 +0000	tc_011 created and scripted (was previously saved under wrong name)
+cd8edb4	Somto Okoye	2017-01-23 10:36:22 +0000	tc_010 created and scripted
+c02ec5a	Somto Okoye	2017-01-23 10:31:30 +0000	TC_009 created and scripted
+cb805c8	Somto Okoye	2017-01-23 10:21:47 +0000	TC_008 file created and test scripted
+d33dd74	Jim Leach	2017-01-23 09:47:06 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+6d08dd3	Jim Leach	2017-01-23 09:46:55 +0000	Rename files
+44c1b3e	Somto Okoye	2017-01-23 09:40:28 +0000	REMOVED FIELDS FROM BONUS APP. CALCULATIONS
+8123609	Jim Leach	2017-01-23 09:32:04 +0000	Add more tests
+4fbceeb	Jim Leach	2017-01-23 09:27:24 +0000	Add initial test scripts
+ea5f9f0	Jim Leach	2017-01-23 08:39:39 +0000	Rename file
+48dcda9	Jim Leach	2017-01-23 08:39:13 +0000	Remove insert into from script - will add this as we go in individual tests
+e30e296	Jim Leach	2017-01-23 08:38:07 +0000	Add simple tests log tbl ready for results to be written in to
+0ae77fc	Thanachai Wudhapitak	2017-01-20 15:06:34 +0000	Add the same-period bonus component to the bonus and hourly rate calculations.
+221a4ef	Jim Leach	2017-01-20 14:38:41 +0000	Change bonus apportionment code logic
+30e42aa	Jim Leach	2017-01-20 14:36:23 +0000	Rename files ready to add new step in calc
+c572bf3	Jim Leach	2017-01-20 13:58:44 +0000	Update build to build_002
+e56a257	Thanachai Wudhapitak	2017-01-20 12:00:38 +0000	Add work product exception testing to S5.
+bbd3886	Thanachai Wudhapitak	2017-01-20 11:45:34 +0000	Add testing statistics into the build.
+727daba	Jim Leach	2017-01-20 11:32:04 +0000	Add some extra fields into prep table if we need to debug
+07d445b	Jim Leach	2017-01-20 10:53:33 +0000	Include bonus amounts in the calculation of hrly rate (rate = pay-pre-sal-sac + bonus - deductions / hours worked)
+838e353	Jim Leach	2017-01-20 10:52:31 +0000	Add logic for apportioning bonus across pay periods for monthly employees
+9fc7e05	Jim Leach	2017-01-20 10:15:52 +0000	Rename files to preserve ordering with bonus apportionment
+3f05411	Jim Leach	2017-01-20 08:57:50 +0000	Update JML hours adjustments with new logic
+2c92a73	Jim Leach	2017-01-20 08:33:59 +0000	Update hours adjustment logic
+5d4afaf	Jim Leach	2017-01-20 08:33:39 +0000	Update logic for identifying leavers (use the leave date in place of left_in_prd flag
+5556fe4	Jim Leach	2017-01-19 16:22:39 +0000	Remove weekly calc as monthyl changing (again) and more sensible to re-implement weekly once monthly is done@
+5b9172b	Jim Leach	2017-01-19 14:22:09 +0000	Ensure weekly build does not multiply hours by 4
+30eeaa5	Jim Leach	2017-01-19 14:21:41 +0000	Ensure weekly build looks at weekly employees
+3d68d5b	Jim Leach	2017-01-19 14:21:15 +0000	Rename files
+e108cd8	Jim Leach	2017-01-19 14:19:46 +0000	Add weekly calc files
+db6170c	Jim Leach	2017-01-19 14:18:06 +0000	Remove weekly files to update again frmo basic calc
+7f2efe0	Jim Leach	2017-01-19 14:17:13 +0000	Ensure build looks at hours adjusted for any JML status
+c9642d2	Jim Leach	2017-01-19 12:50:31 +0000	Rename files
+ef31fb6	Jim Leach	2017-01-19 12:50:13 +0000	Add JML employees back in
+6bf9a26	Jim Leach	2017-01-19 12:49:13 +0000	Add initial code for making JML hours adjustments
+b0a3d98	Jim Leach	2017-01-19 12:33:14 +0000	Create corrected flag for joiners
+031c667	Jim Leach	2017-01-19 12:21:19 +0000	Update cleaning script for pay calendar
+3d07157	Jim Leach	2017-01-19 11:54:42 +0000	Rename references to pay calendar table
+da2bdac	Jim Leach	2017-01-19 11:52:59 +0000	Rename pay calendar files
+b2fef4a	Jim Leach	2017-01-19 11:52:17 +0000	Rename pay calendar tables
+d8c177d	Jim Leach	2017-01-19 11:48:36 +0000	Update calendar cleaning script for new fields in calendar
+d02b088	Jim Leach	2017-01-19 11:38:14 +0000	Refactor code based on updates to S3 payments_to_employees table
+4c08fad	Jim Leach	2017-01-19 11:37:13 +0000	Add indicator flags for exzclusions, and create this as a table not a view (to speed later computation)
+c77d9a4	Jim Leach	2017-01-19 11:36:14 +0000	Refactor code based on updates to S3 payments_to_employees table
+cea7eb0	Jim Leach	2017-01-19 11:35:27 +0000	Remove *4 from hours worked for weekly employees
+70820e2	Jim Leach	2017-01-19 08:52:47 +0000	Ensure weekly calc employees is filtering to just the weekly employees
+fe518a5	Jim Leach	2017-01-19 08:51:42 +0000	Rename weekly calc files
+bf0912d	Jim Leach	2017-01-19 08:46:53 +0000	Convert basic_calc to weekly_calc
+1b4ef46	Jim Leach	2017-01-19 08:45:27 +0000	Copy basic calc code into weekly calc folder ready to convert to weekly calc logic
+eabb77c	Jim Leach	2017-01-19 08:38:15 +0000	Correct small bug in drop if exists logic, and rename percent underpaid field to be explicit is percent underpid employees
+fb3b736	Jim Leach	2017-01-18 16:27:18 +0000	Add secondary calc including holiday hours
+bbf9ee2	Jim Leach	2017-01-18 15:39:25 +0000	Remove old comment that was misleading re: calc logic
+fd2d79e	Jim Leach	2017-01-18 15:36:44 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+7a863a3	Jim Leach	2017-01-18 15:36:36 +0000	Add deductions into calc for hourly rate
+cac03cb	Somto Okoye	2017-01-18 15:34:11 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+54f73fa	Jim Leach	2017-01-18 15:32:55 +0000	Rename files to re-order
+45acdbe	Somto Okoye	2017-01-18 15:32:48 +0000	New MI information into Repo
+883c06a	Somto Okoye	2017-01-18 15:25:40 +0000	Add S5 MI summary tables to repo
+cb61ad9	Jim Leach	2017-01-18 15:22:54 +0000	Add new calc logic
+35dfceb	Jim Leach	2017-01-18 15:18:57 +0000	Add total deductions to basic calc
+d341816	Jim Leach	2017-01-18 11:23:51 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+68be41a	Jim Leach	2017-01-18 11:23:44 +0000	Add basic summary of basic calc
+38bdbc2	Somto Okoye	2017-01-18 11:10:39 +0000	add test comment into thr readme. prretty useless
+6e49747	Jim Leach	2017-01-17 12:29:37 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+da00a91	Jim Leach	2017-01-17 12:29:26 +0000	Add calc. step to determine if employee was underpaid
+87d18c4	Lizzie Nairn	2017-01-17 12:10:04 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+ac271b9	Lizzie Nairn	2017-01-17 12:08:47 +0000	remove example comment in build-readme
+48d3583	Sara young	2017-01-17 11:52:32 +0000	Sara editing S1 payments to include weeklyfiles
+701acc9	Jim Leach	2017-01-17 10:51:40 +0000	Add lookup to payment period calendar dates, NMW at that date and determine if they were underpaid
+9856ec4	Jim Leach	2017-01-17 10:50:54 +0000	Ensure weekly-paid employees are left out of calc
+6eebcce	Jim Leach	2017-01-17 10:50:28 +0000	Add additional stat-payments into definition
+b7b2ad3	Jim Leach	2017-01-17 09:00:47 +0000	Ensure employee age is retained as a field
+fb65ee1	Sara young	2017-01-16 17:01:54 +0000	tesco calendar added to s2
+3955e1d	Sara young	2017-01-16 16:54:04 +0000	add s1 view of tesco calendar
+bcddb0e	Jim Leach	2017-01-16 16:15:01 +0000	Add restrictions to employee list based on leaver, as well as employee group
+e56d80b	Jim Leach	2017-01-16 16:14:12 +0000	Parameterise build script to allow individual folders to be run
+e89fe3b	Jim Leach	2017-01-16 15:22:33 +0000	Add filter to basic-calc employees
+7befe45	Jim Leach	2017-01-16 15:22:19 +0000	Add filter to non-stat payment employees
+25c19cb	Jim Leach	2017-01-16 15:09:40 +0000	Add flag for statutory payments calc
+90f88f1	Jim Leach	2017-01-16 14:11:03 +0000	Add table to filter employees for basic calc
+42db260	Jim Leach	2017-01-16 14:10:40 +0000	Remove selection of subset of payments
+82707a1	Jim Leach	2017-01-16 12:33:23 +0000	Add calculation steps for total salary sacrifice, ss hourly equivalent and net hrly rate
+17c9957	Jim Leach	2017-01-16 12:17:21 +0000	Add hourly rate recalc/check
+6ad4d3e	Jim Leach	2017-01-16 11:44:24 +0000	Add code to perform first two steps of calculation
+cdf9ff9	Jim Leach	2017-01-16 11:44:06 +0000	Change S3 to views as they will use the index from s2
+a2feb27	Jim Leach	2017-01-16 11:43:39 +0000	Change cleaning script to set NULL value fields to 0, and re-format code to improve performance
+b1e8b5e	Jim Leach	2017-01-16 09:51:02 +0000	Add work_days field into to s3_payments_days
+ba3cc33	Jim Leach	2017-01-16 09:50:33 +0000	Add row-number as payment ID, but retain hash for uniqueness checks
+2e0084b	Jim Leach	2017-01-16 09:14:55 +0000	Add single employee lookup table
+37bb832	Jim Leach	2017-01-16 09:14:41 +0000	Remove duff old comments
+21ef439	Jim Leach	2017-01-16 09:14:26 +0000	Add in weekly (NI) staff to S1 payments
+a533093	Jim Leach	2017-01-13 16:08:23 +0000	Begin to split up payments table into separate tables corresponding to each type of data for a payment (e.g. hours worked, amount paid etc)
+8c1229e	Jim Leach	2017-01-13 14:52:06 +0000	Add S2 and S3 for population reference indicators
+def37a1	Jim Leach	2017-01-13 14:27:35 +0000	Remove payment ID from the index
+25a4229	Jim Leach	2017-01-13 14:27:16 +0000	Remove conversion of payment_id to varchar
+ec35bad	Jim Leach	2017-01-13 14:26:37 +0000	Add S1 population lookup
+66f8173	Jim Leach	2017-01-13 14:13:28 +0000	Add payment ID in to S2 table
+7978951	Jim Leach	2017-01-13 14:12:47 +0000	Change index on S1 table
+7d67400	Jim Leach	2017-01-13 14:07:21 +0000	Use case logic to deal with numeric fields with embedded "CR" characters, and create an index on the table
+812936b	Jim Leach	2017-01-13 14:06:02 +0000	Add simple payment_id (hash of employee code, group, tax week and payment year
+4b19ecf	Jim Leach	2017-01-13 13:58:21 +0000	Add filename as variable to S1 table (for tracking)
+ad6060a	Jim Leach	2017-01-13 10:18:25 +0000	Add further cleaning and make note of problem fields to be cleaned further
+cab464a	Jim Leach	2017-01-13 09:46:56 +0000	Add further cleaning code
+c8e19c5	Jim Leach	2017-01-13 08:35:56 +0000	Remove stored procedure rename and replace with select X as x, begin cleaning
+45b8408	Jim Leach	2017-01-12 16:59:28 +0000	Minor tweaks of code in prep for major cleaning
+87aba41	Jim Leach	2017-01-12 16:47:14 +0000	Create index on table
+59f66b6	Jim Leach	2017-01-12 16:23:02 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+95c0f86	Jim Leach	2017-01-12 16:22:47 +0000	Add all tables into union of s1_payments
+0002e23	Sara young	2017-01-12 16:00:43 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+56e157c	Sara young	2017-01-12 15:59:25 +0000	write sara updating s2
+8520bb5	Jim Leach	2017-01-12 15:41:07 +0000	Begin process of adding tables into single view
+54667b2	Nicola McCabe	2017-01-12 13:55:30 +0000	Change input for creating s1 view
+97b072f	Nicola McCabe	2017-01-12 13:52:41 +0000	Alter enddate field
+71585a9	Jim Leach	2017-01-12 13:41:34 +0000	Change back to 2016 payment year label
+5d9d6e2	Jim Leach	2017-01-12 13:35:37 +0000	Rename file
+3158ae4	Jim Leach	2017-01-12 13:26:20 +0000	Rename files to match the tables they create
+e277e08	Jim Leach	2017-01-12 13:25:03 +0000	Rename payment year field
+1605a21	Sara young	2017-01-12 12:18:29 +0000	Write code to rename columns
+a9372e1	Nicola McCabe	2017-01-12 11:03:10 +0000	Update script to remove CR from numeric columns
+d5df614	Nicola McCabe	2017-01-12 10:41:59 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+fa46e15	Nicola McCabe	2017-01-12 10:41:32 +0000	To clean s1_payments data
+83c5b32	Jim Leach	2017-01-12 10:09:29 +0000	Add build logging script to repo
+6204eb5	Jim Leach	2017-01-12 10:06:41 +0000	Add sql teardown script to repo
+8df730f	Sara young	2017-01-12 09:50:50 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+584b8ba	Sara young	2017-01-12 09:49:33 +0000	Sara is testing Git
+9c6f4ef	Nicola McCabe	2017-01-12 09:46:58 +0000	Create s1 view and add year column
+a0f84a7	Jim Leach	2017-01-12 08:37:03 +0000	Rename view to match name of script
+0503848	Jim Leach	2017-01-12 08:36:01 +0000	Add .sql extension to filename
+226039a	Jim Leach	2017-01-12 08:35:04 +0000	Rename file to preserve ordering
+d350d7f	Nicola McCabe	2017-01-11 18:17:37 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/osbourne-repo
+0446c3f	Nicola McCabe	2017-01-11 18:17:26 +0000	Add s1 table for wk40 data
+d38c89c	Jim Leach	2017-01-11 14:04:46 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+dc081bc	Jim Leach	2017-01-11 14:03:58 +0000	Remove test message from build readme
+c7eb905	Nicola McCabe	2017-01-11 12:32:23 +0000	Edit server and database in powershell build script
+e12c56e	Nicola McCabe	2017-01-11 11:15:35 +0000	Add s3 view of rates lookup
+b8c1788	Nicola McCabe	2017-01-11 10:42:51 +0000	Transpose rate lookup table
+0d92e52	Nicola McCabe	2017-01-11 10:20:01 +0000	Add s1 table for rate lookups
+7bce1e6	Jim Leach	2017-01-10 16:55:02 +0000	Merge branch 'master' of //na02/da/Projects/Osbourne/./osbourne-repo
+46125f8	Jim Leach	2017-01-10 16:54:35 +0000	Add cleanup schema script to repo
+5e48930	Nicola McCabe	2017-01-10 16:50:54 +0000	Make minor change to build readme to illustrate git
+29e3d01	Jim Leach	2017-01-10 11:55:26 +0000	Add build script to repo
+4ca33d3	Jim Leach	2017-01-10 11:52:48 +0000	Add simple build readme to repo
