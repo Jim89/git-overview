@@ -180,6 +180,11 @@ commits_cln <- commits %>%
 
 * Vague delivery objectives
 
+<aside class="notes">
+* Vauge = understood main objective, but not _exactly_ what we needed to deliver
+* In other words, a fairly typical project (based on my experiences)
+</aside>
+
 ## Project Osbourne
 
 * Very messy data
@@ -192,6 +197,14 @@ commits_cln <- commits %>%
 
 * Tight deadlines
 
+<aside class="notes">
+* Lots of messy data
+* Cleaning rules importan
+    * interpretation of codes in fields could have major impact
+* Calculation logic evolved (rapidly) iterated over the the course of the project
+    * And impact of changes needed
+</aside>
+
 ## Project Osbourne
 
 * Clear audit trails
@@ -203,6 +216,14 @@ commits_cln <- commits %>%
 <br>
 
 * Strict version control
+
+<aside class="notes">
+* Needed a clear trail of what had happened
+    * What code produced what numbers?
+    * What was the impact to a change in calc logic
+* 4-5 team members all needed to read, write, and collaborate on code
+* Need to maintain strict versions to reproduce later
+</aside>
 
 ## Commits vs time
 
@@ -276,6 +297,21 @@ knitr::include_graphics("www/bb2.png")
 * Several related products, e.g. Jira and Confluence (also Atlassian) to give us full PM side of work
     * Jira: to do lists, issues, tasks etc
     * Confluence: documentation, articles, longer-form project
+</aside>
+
+## `git` for me
+
+```{r gh}
+knitr::include_graphics("www/gh.png")
+```
+
+<aside class="notes">
+* GitHub != `git`. _GitHub_ is just another git hosting service
+    * I don't pay, so it's public, but there are also paid private/enterprise versions
+* I use it for tracking progress of personal projects
+    * E.g. work from MSc
+    * Personal blog, little projects etc
+* Others use it to release software (e.g. the software I wrote the presentation with!)
 </aside>
 
 # How to `git`
