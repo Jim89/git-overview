@@ -8,10 +8,19 @@ output:
     reveal_plugins: "notes"
 ---
 
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(fig.align = 'center',
+                      message = FALSE,
+                      warning = FALSE)
+
+# Load the required libraries
+library(tidyverse)
+```
+
 ## In this session
 
 * An overview of `git`
-* `git` how-to
+* How to `git`
 
 <aside class="notes">
 * Start with an overview of git, what is is, why it is
@@ -78,11 +87,14 @@ can be controlled
 it, enhance it etc
 </aside>
 
-## 
+# How to `git`
 
+## git
 
-
-
+<blockquote><p align="left">"If you're having `git` problems I feel bad for you, son. I got 99 problems but `git` ain't one."</p>
+<footer><cite><a href="mailto:jim.leach@kpmg.co.uk?subject=having%20git%20problems">Anonymous</a></cite>
+</footer>
+</blockquote>
 
 
 
