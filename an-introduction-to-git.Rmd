@@ -1,7 +1,7 @@
 ---
 title: "An Introduction to `git`"
 author: "Jim Leach"
-data: "`r Sys.Date()`"
+date: "`r Sys.Date()`"
 output: 
   revealjs::revealjs_presentation:
     self_contained: false
@@ -56,6 +56,8 @@ important_script_v2_FINAL_FINAL.sql
 MASTER_important_script_v2_FINAL_FINAL.sql
 ```
 
+<br>
+
 > [Excuse me, do you have a moment to talk about version control?](https://peerj.com/preprints/3159/) - Jenny Bryan, UBC
 
 ## What is `git`?
@@ -86,6 +88,18 @@ can be controlled
 * Tools for collaboration, easily get your colleagues work, review it, change
 it, enhance it etc
 </aside>
+
+## The `git` log
+
+```{r ggkpmg-log, message = FALSE, warning = FALSE, echo = FALSE}
+ggkpmg <- readr::read_tsv("./ggkpmg/ggkpmg-log.tsv", col_names = FALSE) %>% 
+  set_names(c("commit_id", "author", "datetime", "message")) %>% 
+  mutate(datetime = gsub("\\ \\+[0-9]+", "", datetime))
+
+knitr::kable(head(ggkpmg, 5))
+```
+
+A history of _every_ change made to the code.
 
 # How to `git`
 
