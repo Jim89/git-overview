@@ -23,7 +23,6 @@ library(ggkpmg)
 ## In this session
 
 * An overview of `git`
-* A `git` case study
 * How to `git`
 
 <aside class="notes">
@@ -126,7 +125,7 @@ knitr::include_graphics("./www/commit-diff.png")
 * git will summarise one, or a thousand files
 </aside>
     
-# Case study - Project Osbourne
+## Case study - Project Osbourne
 
 ```{r get-logs, message = FALSE, warning = FALSE, echo = FALSE}
 # List out all files to be read in
@@ -170,8 +169,6 @@ commits_cln <- commits %>%
   filter(version_number <=  9) %>% 
   mutate(ver = forcats::fct_reorder(ver, datetime, min))
 ```
-
-## Project Osbourne
 
 * Regulatory calculation/remediation
 
@@ -247,13 +244,39 @@ commits_cln %>%
 ```
 
 <aside class="notes">
-* The same chart, but with the different versions of the code coloured in
 * Each version of the code had slightly different rules/code
-* Each "version" was ~200 code files with various logic for data cleaning, calculations, test suites etc
+* Each "version" ~200 code files with logic for data cleaning, calculations, test suites etc
 * git let us manage all those versions
 * easily jump between them, compare results, asses the impact of changes to script logic
 </aside>
 
+## `git` hosting
+
+```{r show_bb}
+knitr::include_graphics("www/bb.png")
+```
+
+<aside class="notes">
+* Lots of servies offering git _hosting_
+* I.e. store a repository on the (private) web
+* Within KPMG we use BitBucket - an Atlassian product
+* Available through CloudOps in Lighthouse
+</aside>
+
+## `git` hosting
+
+```{r show_bb2}
+knitr::include_graphics("www/bb2.png")
+```
+
+<aside class="notes">
+* Eeasy way for project overview, without local code
+* Restrict access on a project-by-project basis
+* Integrates with markdown
+* Several related products, e.g. Jira and Confluence (also Atlassian) to give us full PM side of work
+    * Jira: to do lists, issues, tasks etc
+    * Confluence: documentation, articles, longer-form project
+</aside>
 
 # How to `git`
 
