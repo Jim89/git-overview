@@ -1,0 +1,83 @@
+---
+title: "An Introduction to `git`"
+author: "Jim Leach"
+data: "`r Sys.Date()`"
+output: 
+  revealjs::revealjs_presentation:
+    self_contained: false
+    reveal_plugins: "notes"
+---
+
+## In this session
+
+* An overview of `git`
+* `git` how-to
+
+<aside class="notes">
+* Start with an overview of git, what is is, why it is
+    * 30-40 mins
+    * Break
+* Git how-to. Technical, hands on. 
+  * All installed git?
+  * All installed SourceTree?
+</aside>
+
+# An overview of `git`
+
+## What is `git`?
+
+<img src="https://imgs.xkcd.com/comics/git.png">
+
+<aside class="notes">
+* git is a system for version control
+* vc?
+  * ever created _v2, _v3, _vfinal, _vfinalfinal?
+  * you have done vc
+* git automates that, and more
+</aside>
+
+## Version control?
+
+```
+important_script.sql
+important_script_v2.sql
+important_script_v2_JIM.sql
+important_script_v2_JIM_FINAL.sql
+important_script_v2_FINAL_FINAL.sql
+```
+
+> [Excuse me, do you have a moment to talk about version control?](https://peerj.com/preprints/3159/) - Jenny Bryan, UBC
+
+<div class="notes">
+* _Critical_ for _clear audit trails_. 
+
+* Manual VC = saving multiple versions, with a date, or your name, or some comment "FINAL"
+
+* When collaborating, services will help manage. Dropbox on steroids (and KPMG approved!)
+</div>
+
+## What is `git`
+
+* Free
+* Built for collaboration
+* Distributed
+
+<aside class="notes">
+* Free as in £, free as in open source
+* Collaborative - enables many people to work on the same project code
+* Distributed - every "developer" has a complete history of the code
+</aside>
+
+## What is `git` to KPMG?
+
+* Clear audit trail
+* "Track changes on steroids" (Jenny Bryan)
+* Minimise confusion
+
+
+
+
+
+
+
+
