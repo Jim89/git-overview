@@ -222,6 +222,12 @@ commits_cln %>%
   theme_kpmg()
 ```
 
+<aside class="notes">
+* Here's an overview of commits per day
+* We were busiest in late Jan and Feb
+* But what this doesn't show is the changing between versions
+</aside>
+
 ## Versions over time
 
 ```{r commit_versions_vs_date, cache = TRUE}
@@ -239,6 +245,14 @@ commits_cln %>%
   theme_kpmg() +
   theme(legend.position = "bottom")
 ```
+
+<aside class="notes">
+* The same chart, but with the different versions of the code coloured in
+* Each version of the code had slightly different rules/code
+* Each "version" was ~200 code files with various logic for data cleaning, calculations, test suites etc
+* git let us manage all those versions
+* easily jump between them, compare results, asses the impact of changes to script logic
+</aside>
 
 
 # How to `git`
