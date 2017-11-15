@@ -7,7 +7,7 @@ On Windows, this will install `git`, and `git bash`, a command-line environment
 for working with `git`.
 
 All `git` commands/processes can be executed directly from the command line. But
-it is often a bit nicer (especially for beginners) to use a graphical tool.
+it is often a bit nicer (and easier) to use a graphical tool:
 
 ## Installing Source Tree
 
