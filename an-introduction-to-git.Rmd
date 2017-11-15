@@ -9,17 +9,21 @@ output:
 ---
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(fig.align = 'center',
+knitr::opts_chunk$set(fig.align = "center",
+                      echo = FALSE,
                       message = FALSE,
                       warning = FALSE)
 
 # Load the required libraries
 library(tidyverse)
+library(lubridate)
+library(ggkpmg)
 ```
 
 ## In this session
 
 * An overview of `git`
+* A `git` case study
 * How to `git`
 
 <aside class="notes">
@@ -91,15 +95,150 @@ it, enhance it etc
 
 ## The `git` log
 
-```{r ggkpmg-log, message = FALSE, warning = FALSE, echo = FALSE}
+```{r ggkpmg-log}
 ggkpmg <- readr::read_tsv("./ggkpmg/ggkpmg-log.tsv", col_names = FALSE) %>% 
   set_names(c("commit_id", "author", "datetime", "message")) %>% 
-  mutate(datetime = gsub("\\ \\+[0-9]+", "", datetime))
+  mutate(datetime = gsub("\\ \\+[0-9]+", "", datetime)) %>% 
+  slice(1:5)
 
-knitr::kable(head(ggkpmg, 5))
+knitr::kable(head(ggkpmg))
 ```
 
 A history of _every_ change made to the code.
+
+<aside class="notes">
+* Each change/set of related changes is saved as a _commit_
+* Each commit has an ID
+* We can use the ID to go backwards and forwards in time
+* Each commit stores a set of _changes_ to a file
+</aside>
+
+## Tracking changes with `git`
+
+```{r}
+knitr::include_graphics("./www/commit-diff.png")
+```
+
+* Makes reviewing code very easy
+
+<aside class="notes">
+* Red = removed; green = added
+* git will summarise one, or a thousand files
+</aside>
+    
+# Case study - Project Osbourne
+
+```{r get-logs, message = FALSE, warning = FALSE, echo = FALSE}
+# List out all files to be read in
+files_dir <- list.files("./logs", pattern = ".tsv", full.names = T)
+files <- gsub(".tsv", "", list.files("./logs", pattern = ".tsv"))
+
+# Define function to read commit tsv (weird formatting prevents read_tsv)
+read_commits <- function(commits_data, data_name) {
+  readr::read_lines(commits_data) %>% 
+    map(stringr::str_split, '\t') %>% 
+    map(`[[`, 1) %>% 
+    map(t) %>% 
+    map(as_tibble) %>% 
+    bind_rows() %>% 
+    set_names(c("commit", "author", "datetime", "comment")) %>% 
+    mutate(version = data_name)
+}  
+
+# Read in data
+commits <- map2(files_dir, files, read_commits) %>% # Read in
+  bind_rows()  # Collapse in to single table
+
+commits_cln <- commits %>% 
+  extract(version, "version_number", regex = "([[0-9]]+)", remove = F) %>% 
+  mutate(datetime = gsub("\\ \\+0000", "", datetime),
+         datetime = ymd_hms(datetime),
+         date = date(datetime),
+         hour = hour(ceiling_date(datetime, unit = "hours")),
+         day = wday(date, label = T, abbr = F),
+         version_number = as.numeric(version_number),
+         author = if_else(author == "Sara young", "Sara Young", author),
+         author = if_else(author == "unknown", "Unknown", author)) %>%
+  group_by(commit) %>% 
+  mutate(earliest_version = min(version_number)) %>% 
+  ungroup() %>% 
+  filter(version_number == earliest_version) %>% 
+  distinct() %>% 
+  arrange(datetime) %>% 
+  separate(version, c("label", "ver"), "_") %>% 
+  select(-label) %>% 
+  mutate(ver = forcats::fct_reorder(ver, datetime, min))
+```
+
+## Project Osbourne
+
+* Regulatory calculation/remediation
+
+<br>
+
+* Major UK retailer
+
+<br>
+
+* Vague delivery objectives
+
+## Project Osbourne
+
+* Very messy data
+
+<br>
+
+* Dynamic requirements
+
+<br>
+
+* Tight deadlines
+
+## Project Osbourne
+
+* Clear audit trails
+
+<br>
+
+* Code and work-product collaboration
+
+<br>
+
+* Strict version control
+
+## Commits vs time
+
+```{r commits_vs_day, cache = TRUE}
+commits_cln %>% 
+  group_by(date) %>% 
+  summarise(commits = n()) %>% 
+  ggplot(aes(date, commits)) +
+  geom_line(colour = kpmgcolours("primary")[1], size = 1.25) +
+  labs(x = "Date", 
+       y = "Commits",
+       title = "Total commits per date",
+       subtitle = "A single commit can represent dozens of changes across multiple code files") +
+  theme_kpmg()
+```
+
+## Versions over time
+
+```{r commit_versions_vs_date, cache = TRUE}
+commits_cln %>% 
+  group_by(version_number, date) %>% 
+  summarise(commits = n()) %>% 
+  ggplot(aes(date, commits)) +
+  geom_line(aes(colour = as.factor(version_number)), size = 1.25) +
+  #scale_colour_manual(values = unname(kpmgcolours("graphs")[1:9])) +
+  labs(x = "Date", 
+       y = "Commits",
+       title = "Total commits per date, per build version",
+       subtitle = "Some versions overlapped as we switched back and forth\nbetween different calculation logics") +
+  guides(colour = guide_legend("Build version", nrow = 2, byrow = T)) +
+  theme_kpmg() +
+  theme(legend.position = "bottom")
+```
+
 
 # How to `git`
 
