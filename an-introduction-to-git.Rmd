@@ -44,19 +44,12 @@ important_script_v2.sql
 important_script_v2_JIM.sql
 important_script_v2_JIM_FINAL.sql
 important_script_v2_FINAL_FINAL.sql
+MASTER_important_script_v2_FINAL_FINAL.sql
 ```
 
 > [Excuse me, do you have a moment to talk about version control?](https://peerj.com/preprints/3159/) - Jenny Bryan, UBC
 
-<div class="notes">
-* _Critical_ for _clear audit trails_. 
-
-* Manual VC = saving multiple versions, with a date, or your name, or some comment "FINAL"
-
-* When collaborating, services will help manage. Dropbox on steroids (and KPMG approved!)
-</div>
-
-## What is `git`
+## What is `git`?
 
 * Free
 * Built for collaboration
@@ -66,13 +59,26 @@ important_script_v2_FINAL_FINAL.sql
 * Free as in £, free as in open source
 * Collaborative - enables many people to work on the same project code
 * Distributed - every "developer" has a complete history of the code
+* Not just for code, anything that is _stored as_ text (e.g. Markdown not Word!)
+can be controlled
 </aside>
 
-## What is `git` to KPMG?
+## What is `git` for us?
 
-* Clear audit trail
 * "Track changes on steroids" (Jenny Bryan)
+* Clear audit trail
 * Minimise confusion
+
+<aside class="notes">
+* clear log of _every_ change on a project
+    * go back and forward in time
+    * get the code at a specific point in time
+* View changes, comment on changes, accept/reject/merge
+* Tools for collaboration, easily get your colleagues work, review it, change
+it, enhance it etc
+</aside>
+
+## 
 
 
 
