@@ -150,7 +150,7 @@ commits <- map2(files_dir, files, read_commits) %>% # Read in
   bind_rows()  # Collapse in to single table
 
 commits_cln <- commits %>% 
-  extract(version, "version_number", regex = "([[0-9]]+)", remove = F) %>% 
+  extract(version, "version_number", regex = "([[0-9]]+)", remove = FALSE) %>% 
   mutate(datetime = gsub("\\ \\+0000", "", datetime),
          datetime = ymd_hms(datetime),
          date = date(datetime),
@@ -167,6 +167,7 @@ commits_cln <- commits %>%
   arrange(datetime) %>% 
   separate(version, c("label", "ver"), "_") %>% 
   select(-label) %>% 
+  filter(version_number <=  9) %>% 
   mutate(ver = forcats::fct_reorder(ver, datetime, min))
 ```
 
@@ -229,7 +230,7 @@ commits_cln %>%
   summarise(commits = n()) %>% 
   ggplot(aes(date, commits)) +
   geom_line(aes(colour = as.factor(version_number)), size = 1.25) +
-  #scale_colour_manual(values = unname(kpmgcolours("graphs")[1:9])) +
+  scale_colour_manual(values = unname(kpmgcolours("graphs")[1:9])) +
   labs(x = "Date", 
        y = "Commits",
        title = "Total commits per date, per build version",
