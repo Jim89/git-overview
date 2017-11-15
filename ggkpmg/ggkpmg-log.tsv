@@ -1,0 +1,24 @@
+cfcace1	Jim Leach	2017-01-27 12:12:05 +0000	Move back to named colours set for better show_kpmgcolours() function
+25f18d1	Jim Leach	2017-01-26 14:46:06 +0000	Change show colours function to show colour codes
+303b8ac	Jim Leach	2016-12-05 14:32:31 +0000	Add misc-test updates to repo (non-breaking)
+1f012e1	Jim Leach	2016-12-05 14:31:52 +0000	Remove names from colour vector
+0373fd6	Jim Leach	2016-11-04 08:56:45 +0000	Add basic code to try and create a HTML RMarkdown KPMG report theme
+59a7fbf	Jim Leach	2016-11-01 12:56:00 +0000	Merge branch 'master' of https://hdp-service.uk.kworld.kpmg.com/stash/scm/dis/ggkpmg
+92c1b12	Jim Leach	2016-11-01 12:55:52 +0000	Add simple function to display colours on request
+d39adf0	Jim Leach	2016-10-28 10:36:11 +0100	Update theme_kpmg() to check if extrafont is even available before trying to use it!
+1f0c6cf	Jim Leach	2016-10-27 14:20:24 +0100	Update theme_kpmg() and assocaited docs
+373b2a5	Jim Leach	2016-10-26 16:59:05 +0100	Add auto-documentation
+e77ed0a	Jim Leach	2016-10-26 16:57:53 +0100	Add basic theme functionality
+803dfb1	Jim Leach	2016-10-26 16:33:18 +0100	Update namespace
+d107d80	Jim Leach	2016-10-26 16:33:09 +0100	Generate sample documentation for theme_kmpg
+a977d0d	Jim Leach	2016-10-26 16:32:50 +0100	Rename documentation to be correct for new function name
+db4ac63	Jim Leach	2016-10-26 16:31:41 +0100	Update function name and add to namespace
+09ae1bf	Jim Leach	2016-10-26 16:27:41 +0100	Add template for kpmg ggplot2 theme
+dcc90d2	Jim Leach	2016-10-26 16:27:23 +0100	Rename function to spell colour correctly
+c05367b	Jim Leach	2016-10-26 10:53:51 +0100	Add Rbuildignore to repo
+df08260	Jim Leach	2016-10-26 10:53:38 +0100	Update of documentation (auto)
+686def6	Jim Leach	2016-10-26 10:53:22 +0100	Add @export keyword to ensure function gets included in the package!
+d0e8301	Jim Leach	2016-10-26 10:52:50 +0100	Add colour mapping to repo for reference
+f60fd92	Jim Leach	2016-10-25 12:00:28 +0100	Add simple license file
+fa56c54	Jim Leach	2016-10-25 11:32:30 +0100	Add function definition
+e9cb149	Jim Leach	2016-10-25 11:32:08 +0100	Update ignore
