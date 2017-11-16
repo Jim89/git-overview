@@ -25,6 +25,8 @@ library(ggkpmg)
 * An overview of `git`
 * How to `git`
 
+<br>
+
 <aside class="notes">
 * Start with an overview of git, what is is, why it is
     * 30-40 mins
@@ -41,11 +43,13 @@ library(ggkpmg)
 <img src="https://imgs.xkcd.com/comics/git.png">
 
 <aside class="notes">
-* git is a system for version control
-* vc?
-  * ever created _v2, _v3, _vfinal, _vfinalfinal?
-  * you have done vc
-* git automates that, and more
+* developed to help manage the (whole) linux kernel
+
+* git is a system for:
+    * collaboration
+    * management
+    * version control
+* of complex projects
 </aside>
 
 ## Version control?
@@ -61,9 +65,15 @@ MASTER_important_script_v2_FINAL_FINAL.sql
 
 <br>
 
-> [Excuse me, do you have a moment to talk about version control?](https://peerj.com/preprints/3159/) - Jenny Bryan, UBC
+> In collaborative settings based on email distribution, the original file swiftly becomes part of a complicated phylogeny that no amount of "Track Changes" and good intentions can resolve. - Prof. Jenny Bryan, UBC
 
-## What is `git`?
+<aside class="notes">
+* "Many people who don't use `git` unwittingly re-invent a poor man's version of it."
+* Manual vc != good
+* So we need an automated solution - enter `git`
+</aside>
+
+## What is `git`? {data-background="www/git-bg.jpg"}
 
 * Free
 * Built for collaboration
@@ -106,10 +116,12 @@ knitr::kable(head(ggkpmg))
 A history of _every_ change made to the code.
 
 <aside class="notes">
-* Each change/set of related changes is saved as a _commit_
-* Each commit has an ID
+* git tracks file evolution with a series of _commits_, each with an explanatory
+message and unique ID
+* gives us a timeline of the whole project
+* We can use the messages to understand the changes
 * We can use the ID to go backwards and forwards in time
-* Each commit stores a set of _changes_ to a file
+* Each commit stores a set of _changes_ to a file (not the whole file)
 </aside>
 
 ## Tracking changes with `git`
@@ -314,15 +326,202 @@ knitr::include_graphics("www/gh.png")
 * Others use it to release software (e.g. the software I wrote the presentation with!)
 </aside>
 
+## Why `git`
+
+* _Doing_ integrated with _organising, recording, disseminating, ..._
+* Structured collaboration
+* Tools for asynchronous work and version control
+
+## References: 
+* Professor Jenny Bryan, UBC:
+    * [Excuse me, do you have a moment to talk about version control?](https://peerj.com/preprints/3159v2/)
+    * [Happy Git with R](http://happygitwithr.com/)
+
 # How to `git`
 
-## git
+## `git`
+
+> Now the bad news: `git` was built neither for the exact usage described here, nor for broad usability. 
+
+<aside class="notes">
+* You will undoubtedly notice this so it's best to know in advance. 
+* git is massive and complicated
+    * but we don't need it all
+* But there are many tools and habits that can soften the sharpest edges, and
+reduce frustration.    
+</aside>
+
+## We're aiming to avoid this
+
+![git-merge](www/git-merge.gif)
+
+## An instead get to this
 
 <blockquote><p align="left">"If you're having `git` problems I feel bad for you, son. I got 99 problems but `git` ain't one."</p>
 <footer><cite><a href="mailto:jim.leach@kpmg.co.uk?subject=having%20git%20problems">Anonymous</a></cite>
 </footer>
 </blockquote>
 
+![jay](www/jay.gif)
 
+## Some encouragement
 
+![larry](www/larry-presenter.gif)
 
+<aside class="notes">
+* I started with git ~4 years ago
+* I had no idea what I was doing
+* I still have a lot to to learn
+* But, look at me now - this can be you!
+</aside>
+
+## The three areas of git
+
+![areas](www/git-areas.png)
+
+<aside class="notes">
+* Working directory - your files, the things you see on your computer
+* Staging area - doesn't exist, it's a `git` concept
+* `.git` directory - the repository - the "database" that stores the changes and "does git"
+</aside>
+
+## Basic `git`
+
+Use `git <command>` :
+
+* `init`
+* `status`
+* `add`
+* `commit`
+* `diff`
+* `log`
+* `clone`
+* `push`
+* `pull`
+
+[Reference](http://rogerdudler.github.io/git-guide/)
+
+<aside class="notes">
+* I've told you about 3 git areas, one of which doesn't exits
+* I've shown you some weird looking commands
+* Do you feel like this?
+</aside>
+
+## {data-background="www/confused.gif"}
+
+<aside class="notes">
+Don't worry, we'll take it step by step
+1. Start with setting up a repository
+1. Add some files
+1. _Commit_ them to `git`
+1. Make some changes
+1. Add them
+1. Commit them
+</aside>
+
+## Setting up a repository
+
+In SourceTree
+
+* File > New > Create Local Repository
+* Choose a location and repository name
+* Click "create"
+
+```
+cd path/to/my/project/directory
+git init
+```
+
+<aside class="notes">
+* Command is for the command line (if you're familiar great, don't worry if not)
+* This will create the folder, and inside will be a (hidden) `.git` folder
+* (May need to show hidden folders through control pannel)
+* Can do this in folders that have files already
+</aside>
+
+## Doing & reviewing work
+
+* Add some files (e.g. the ones I sent)
+* These files are now in the _Working Directory_
+* Remember, `git` manages code/text files
+* See the files in SourceTree
+
+```
+git status
+```
+
+![status](www/initial-status.png)
+
+<aside class="notes">
+* The new files will show up in SourceTree
+    * Marked with ? - tells us they are new
+* `git status` will show us these files on the command line
+* Shows us new files in the _Working Directory_
+</aside>
+
+## Adding files to the index
+
+* Right click a file in SourceTree
+* Select 'Add to Index'
+* Moves files in to the _Staging Area_
+
+```
+git add <filename>
+git add *
+git add *.R
+git add *.sql
+```
+
+<aside class="notes">
+* Remember - staging area is the one that "doesn't exist"
+* This is us telling `git` to include these files in the next commit
+* Not actually necessary in SourceTree, but I'm showing you here so you get
+what's going on
+    * Or if you want to work on command line!
+</aside>
+
+## Commiting files - saving changes
+
+* Click file(s) in SourceTree (the checkbox)
+* Enter a message
+* Click "Commit"
+
+```
+git commit -m "A message that describes the changes"
+```
+
+<aside class="notes">
+* Writes a new entry in the commit timeline
+* The message should be an action:
+    * "The purpose of this commit is to..."
+* If you use the command line - remember to use a message!
+</aside>
+
+## Make some changes
+
+* Open, edit, and save the files:
+    * dplyr.R: Add `library(dplyr)`
+    * pandas.py: Add `import pandas as pd`
+    * select.sql: Add `select * from my_table`
+    * readme.md: Remove `Some example text to remove later`
+    
+<aside class="notes">
+* Use an editor (even notepad)
+* You can make different changes if you want
+* Just need something for git to pick up!
+</aside>
+
+## See your changes
+
+![g-changes](www/git-changes.png)
+
+You're looking at a `git diff`
+
+```
+git diff <filename>
+```
+
+<aside class="notes">
+* Diff = summary of the changes made to a file
+* Green = added
+* Red = removed
