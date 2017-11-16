@@ -595,6 +595,15 @@ git pull
 * Add, commit as usual in SourceTree
 * Then _Push_
 
+```
+git push
+```
+
+<aside class="notes">
+* Push is used to send our _local_ changes to the _remote_ repository
+* We can't `push` before we `pull`
+</aside>
+
 ## Questions?
 
 ![questions](www/questions.gif)
