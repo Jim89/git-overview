@@ -604,6 +604,19 @@ git push
 * We can't `push` before we `pull`
 </aside>
 
+## Some useful (advanced) functionality
+
+* Undo changes (right click > _Reset_)
+    * Back to the last commit, or a specific commit
+* Create/delete a branch (click _Branch_)
+* Switch branches (click on branch name under _Branches_) 
+* _Tag_ a commit (right click > _Tag_)
+
+<aside class="notes">
+* branches are an "alternative timeline" - used to work on specific features/versions in isolation
+* tags are really just labels on commits, useful for marking (e.g.) a release/version
+</aside>
+
 ## Questions?
 
 ![questions](www/questions.gif)
