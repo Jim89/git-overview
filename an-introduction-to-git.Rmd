@@ -336,9 +336,10 @@ knitr::include_graphics("www/gh.png")
 * Professor Jenny Bryan, UBC:
     * [Excuse me, do you have a moment to talk about version control?](https://peerj.com/preprints/3159v2/)
     * [Happy Git with R](http://happygitwithr.com/)
-* [git - the simple guide](http://rogerdudler.github.io/git-guide/)
+* [`git` - the simple guide](http://rogerdudler.github.io/git-guide/)
+* `git` [book](https://git-scm.com/book/en/v2)
 
-## Questions? {data-background="www/questions.gif"}
+## Questions?
 
 # How to `git`
 
@@ -546,5 +547,30 @@ git log
 * Can view the log on cli with `git log`
 * Can see, the commit message, the file(s) which were changed
 * _What_ the changes were
-* 
+* Who made them
+* When they were made
+</aside>
 
+## Checkout a repository
+
+In SourceTree:
+
+* File > New > Clone from URL
+    * Choose a location on your machine to save the code to
+    * Give it a name
+* Get a local copy of a repository's code
+
+```
+git clone <repository url>
+```
+
+<aside class="notes">
+* Checkout - get a local copy of the files _and_ the repository (i.e. the commit log)
+    * Hence _distributed_
+* The other repository is called _remote_    
+* Can also check out a "local" repository if it's actually a remote on a fileshare
+</aside>
+
+## Questions?
+
+![questions](www/questions.gif)
