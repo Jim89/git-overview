@@ -569,7 +569,31 @@ git clone <repository url>
     * Hence _distributed_
 * The other repository is called _remote_    
 * Can also check out a "local" repository if it's actually a remote on a fileshare
+* Clone the repo for this presentation
+* The remote repository has the default name "origin"
 </aside>
+
+## Update your local copy
+
+* Collaborator(s) update the repository you cloned
+* You need to update
+* SourceTree > Pull
+
+```
+git pull
+```
+
+<aside class="notes">
+* Full syntax `git pull origin master`
+    * Pull from origin into our `master` branch
+* Branches more complex - multiple timelines exising at once (e.g. for multiple versions)
+* Will get the commit log, and overwrite changes in our local file
+</aside>
+
+## Send in your changes
+
+* Add, commit as usual in SourceTree
+* Then _Push_
 
 ## Questions?
 
