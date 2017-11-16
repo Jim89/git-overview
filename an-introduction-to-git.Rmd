@@ -336,6 +336,9 @@ knitr::include_graphics("www/gh.png")
 * Professor Jenny Bryan, UBC:
     * [Excuse me, do you have a moment to talk about version control?](https://peerj.com/preprints/3159v2/)
     * [Happy Git with R](http://happygitwithr.com/)
+* [git - the simple guide](http://rogerdudler.github.io/git-guide/)
+
+## Questions? {data-background="www/questions.gif"}
 
 # How to `git`
 
@@ -375,7 +378,7 @@ reduce frustration.
 * But, look at me now - this can be you!
 </aside>
 
-## The three areas of git
+## Work flow - the three areas of git
 
 ![areas](www/git-areas.png)
 
@@ -383,11 +386,12 @@ reduce frustration.
 * Working directory - your files, the things you see on your computer
 * Staging area - doesn't exist, it's a `git` concept
 * `.git` directory - the repository - the "database" that stores the changes and "does git"
+* Flow: make changes, `add` to staging area,  `commit` to save as a change
 </aside>
 
 ## Basic `git`
 
-Use `git <command>` :
+Use:  `git <command>`
 
 * `init`
 * `status`
@@ -419,7 +423,7 @@ Don't worry, we'll take it step by step
 1. Commit them
 </aside>
 
-## Setting up a repository
+## Create a new repository
 
 In SourceTree
 
@@ -525,3 +529,22 @@ git diff <filename>
 * Diff = summary of the changes made to a file
 * Green = added
 * Red = removed
+* Add and commit these changes again
+</aside>
+
+## View the log
+
+Use the _History_ tab to see the timeline in SourceTree
+
+![log](www/git-log.png)
+
+```
+git log
+```
+
+<aside class="notes">
+* Can view the log on cli with `git log`
+* Can see, the commit message, the file(s) which were changed
+* _What_ the changes were
+* 
+
