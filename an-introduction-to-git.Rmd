@@ -36,6 +36,14 @@ library(ggkpmg)
   * All installed SourceTree?
 </aside>
 
+## Who am I?
+
+* Started at KPMG in 2012
+* Early career as a data analyst
+* Self study, then MSc Data Science
+* Transferred to data scientist post-MSc
+* `r as.numeric(ceiling(difftime(Sys.Date(), as.Date("2013-01-01"), units = "days")/365))` years using (and sometimes teaching) `git`
+
 # An overview of `git`
 
 ## What is `git`?
@@ -50,6 +58,8 @@ library(ggkpmg)
     * management
     * version control
 * of complex projects
+
+* Similar to SVN/Microsoft TFS
 </aside>
 
 ## Version control?
