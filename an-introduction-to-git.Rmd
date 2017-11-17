@@ -137,7 +137,6 @@ knitr::include_graphics("./www/commit-diff.png")
 * git will summarise one, or a thousand files
 </aside>
     
-## Case study - Project Osbourne
 
 ```{r get-logs, message = FALSE, warning = FALSE, echo = FALSE}
 # List out all files to be read in
@@ -182,22 +181,11 @@ commits_cln <- commits %>%
   mutate(ver = forcats::fct_reorder(ver, datetime, min))
 ```
 
-* Regulatory calculation/remediation
-
-<br>
-
-* Major UK retailer
-
-<br>
-
-* Vague delivery objectives
-
-<aside class="notes">
-* Vauge = understood main objective, but not _exactly_ what we needed to deliver
-* In other words, a fairly typical project (based on my experiences)
-</aside>
-
 ## Project Osbourne
+
+* Regulatory calculation & remediation
+
+<br>
 
 * Very messy data
 
@@ -210,6 +198,7 @@ commits_cln <- commits %>%
 * Tight deadlines
 
 <aside class="notes">
+* Vauge objectives = understood main but not _exact_ requirements
 * Lots of messy data
 * Cleaning rules importan
     * interpretation of codes in fields could have major impact
@@ -611,12 +600,64 @@ git push
 * Create/delete a branch (click _Branch_)
 * Switch branches (click on branch name under _Branches_) 
 * _Tag_ a commit (right click > _Tag_)
+* Make a "server" repository on a shared drive:
+
+```
+git init --bare /path/to/repo.git
+```
 
 <aside class="notes">
 * branches are an "alternative timeline" - used to work on specific features/versions in isolation
 * tags are really just labels on commits, useful for marking (e.g.) a release/version
+* `bare` - without a working copy
+* add `.git` extension by convention
+* users can then `clone` and `push`/`pull` that repo
+</aside>
+
+# Summary
+
+## What is `git`?
+
+* "Track changes on steroids"
+* Distributed
+* Built for collaboration
+
+<aside class="notes">
+* Not GitHub - git is just software
+</aside>
+
+
+## Why `git`
+
+* _Doing_ integrated with _organising, recording, disseminating, ..._
+* Structured collaboration
+* Asynchronous work and version control
+
+## You may feel like this
+
+![mind](www/complicated.gif)
+
+<aside class="notes">
+* Don't worry - it is.
+</aside>
+
+## But remember
+
+![got](www/you-can.gif)
+
+* Professor Jenny Bryan, UBC:
+    * [Excuse me, do you have a moment to talk about version control?](https://peerj.com/preprints/3159v2/)
+    * [Happy Git with R](http://happygitwithr.com/)
+* [`git` - the simple guide](http://rogerdudler.github.io/git-guide/)
+* `git` [book](https://git-scm.com/book/en/v2)
+
+<aside class="notes">
+* But you can do it (I did)
+* There are lots of excellent resources
+* You can safely ignore large parts of git
+    * They're not for us
 </aside>
 
 ## Questions?
 
-![questions](www/questions.gif)
+![questions](www/questions-largest.gif)
