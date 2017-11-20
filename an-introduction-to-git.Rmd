@@ -440,6 +440,7 @@ Use:  `git <command>`
 
 <aside class="notes">
 Don't worry, we'll take it step by step
+
 1. Start with setting up a repository
 1. Add some files
 1. _Commit_ them to `git`
