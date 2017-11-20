@@ -374,7 +374,8 @@ knitr::include_graphics("www/gh.png")
 * git is massive and complicated
     * but we don't need it all
 * But there are many tools and habits that can soften the sharpest edges, and
-reduce frustration.    
+reduce frustration.
+* We will get the most gain for you pain.
 </aside>
 
 ## We're aiming to avoid this
