@@ -455,6 +455,7 @@ In SourceTree
 
 * File > New > Create Local Repository
 * Choose a location and repository name
+    * The location will become your _working directory_
 * Click "create"
 
 ```
