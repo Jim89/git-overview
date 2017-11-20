@@ -614,6 +614,7 @@ git pull
 ```
 
 <aside class="notes">
+* Jim to make a change and submit that to the repo
 * Full syntax `git pull origin master`
     * Pull from origin into our `master` branch
 * Branches more complex - multiple timelines exising at once (e.g. for multiple versions)
@@ -632,6 +633,7 @@ git push
 <aside class="notes">
 * Push is used to send our _local_ changes to the _remote_ repository
 * We can't `push` before we `pull`
+* N.B. you won't be able to push to the pres. repository as you don't have permission to do so!
 </aside>
 
 ## Some useful (advanced) functionality
