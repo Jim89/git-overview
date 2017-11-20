@@ -48,18 +48,18 @@ library(ggkpmg)
 
 ## What is `git`?
 
-<img src="https://imgs.xkcd.com/comics/git.png">
+![xkcd](https://imgs.xkcd.com/comics/git.png)
 
 <aside class="notes">
+* Joke is that "no one" really knows what it is, just how to use/break it
+* This is how most people (including me!) come to learn about `git`
+* Hope today we will explain what `git` does, and how to use
 * developed to help manage the (whole) linux kernel
-
+* Similar to SVN/Microsoft TFS
 * git is a system for:
     * collaboration
     * management
     * version control
-* of complex projects
-
-* Similar to SVN/Microsoft TFS
 </aside>
 
 ## Version control?
@@ -78,6 +78,8 @@ MASTER_important_script_v2_FINAL_FINAL.sql
 > In collaborative settings based on email distribution, the original file swiftly becomes part of a complicated phylogeny that no amount of "Track Changes" and good intentions can resolve. - Prof. Jenny Bryan, UBC
 
 <aside class="notes">
+* You may have seen this on projects
+    * I have, e.g. AH "the number"
 * "Many people who don't use `git` unwittingly re-invent a poor man's version of it."
 * Manual vc != good
 * So we need an automated solution - enter `git`
