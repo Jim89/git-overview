@@ -660,8 +660,25 @@ git init --bare /path/to/repo.git
 ## Why `git`
 
 * _Doing_ integrated with _organising, recording, disseminating, ..._
+* Version control & audit trails
+* Tools for QA
+* Better use of the team
+* Faster releases
 * Structured collaboration
-* Asynchronous work and version control
+* Community
+
+<aside class="notes">
+* As the team _does_, they are already organising, recording...
+* VC, tag, branch, test out new features in isolation (better management of code)
+* Tools - diffs, pull requests, merges
+    * Senior team discuss changes, junior team treat as QA opportunities
+* Team can code "safely" in their own environment & only integrate changes after QA
+    * Less time (money) spent integrating & fixing, focus on "doing", QA, and delivering
+* Faster -> code, review, release (not a monolith)
+* Less overhead as there is "one way" to collab - "enforced" standards
+    * Distributed - hard for one person to "break" others' environments; reliable (burn it all down)    
+* Community - people know it, less upskilling, better onboarding    
+</aside>
 
 ## You may feel like this
 
@@ -684,6 +701,7 @@ git init --bare /path/to/repo.git
 
 ## Resources
 
+* [This presentation](https://hdp-service.uk.kworld.kpmg.com/stash/projects/JL/repos/git/browse)
 * Professor Jenny Bryan, UBC:
     * [Excuse me, do you have a moment to talk about version control?](https://peerj.com/preprints/3159v2/)
     * [Happy Git with R](http://happygitwithr.com/)
