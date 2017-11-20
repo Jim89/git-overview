@@ -376,6 +376,7 @@ knitr::include_graphics("www/gh.png")
 * But there are many tools and habits that can soften the sharpest edges, and
 reduce frustration.
 * We will get the most gain for you pain.
+    * But really, for not much pain there is a _lot_ of gain to be had
 </aside>
 
 ## We're aiming to avoid this
