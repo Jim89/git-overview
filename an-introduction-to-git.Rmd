@@ -105,6 +105,8 @@ can be controlled
 * Clear audit trail
 * Minimise confusion
 
+![git-timeline](www/git-timeline.png)
+
 <aside class="notes">
 * clear log of _every_ change on a project
     * go back and forward in time
