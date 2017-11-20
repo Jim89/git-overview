@@ -465,6 +465,7 @@ git init
 ```
 
 <aside class="notes">
+* May need to tell `git` who you are in SourceTree first
 * Command is for the command line (if you're familiar great, don't worry if not)
 * This will create the folder, and inside will be a (hidden) `.git` folder
 * (May need to show hidden folders through control pannel)
