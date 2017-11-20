@@ -94,6 +94,7 @@ MASTER_important_script_v2_FINAL_FINAL.sql
 <aside class="notes">
 * Free as in £, free as in open source
 * Collaborative - enables many people to work on the same project code
+    * Or just you and future-you
 * Distributed - every "developer" has a complete history of the code
 * Not just for code, anything that is _stored as_ text (e.g. Markdown not Word!)
 can be controlled
