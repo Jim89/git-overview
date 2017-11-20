@@ -150,6 +150,7 @@ knitr::include_graphics("./www/commit-diff.png")
 <aside class="notes">
 * Red = removed; green = added
 * git will summarise one, or a thousand files
+* demo jumping back and forth with SourceTree?
 </aside>
     
 
