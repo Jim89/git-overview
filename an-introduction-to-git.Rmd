@@ -136,7 +136,7 @@ message and unique ID
 * gives us a timeline of the whole project
 * We can use the messages to understand the changes
 * We can use the ID to go backwards and forwards in time
-* Each commit stores a set of _changes_ to a file (not the whole file)
+* Built in audit-trail, future-me (and others) can understand
 </aside>
 
 ## Tracking changes with `git`
