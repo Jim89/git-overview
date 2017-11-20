@@ -102,7 +102,7 @@ can be controlled
 
 ## What is `git` for us?
 
-* "Track changes on steroids" (Jenny Bryan)
+* "Track changes on steroids"
 * Clear audit trail
 * Minimise confusion
 
