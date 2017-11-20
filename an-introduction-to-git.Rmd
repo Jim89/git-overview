@@ -520,6 +520,8 @@ what's going on
 git commit -m "A message that describes the changes"
 ```
 
+![git-commit](www/git-commit.png)
+
 <aside class="notes">
 * Writes a new entry in the commit timeline
 * The message should be an action:
@@ -719,3 +721,4 @@ git init --bare /path/to/repo.git
 ## Questions?
 
 ![questions](www/questions-largest.gif)
+
