@@ -593,32 +593,64 @@ git log
 
 # Working with BitBucket
 
-## Checkout a remote repository
+## General workflow
+
+1. Create a repository on BitBucket
+2. Clone the (empty) repository
+    * Or link an existing project to the repository on BitBucket
+3. Do some work
+4. `add`, `commit` changes
+5. Share changes back to BitBucket
+
+<aside class="notes">
+* Basic way of working with git on a server & collaborating with future self + others
+* This does not include branching, pull request etc, come to that later
+    * I.e. limited git features, limiting review and full benefits of git hosting
+* The repository on BB will be _remote_ (i.e. not local)
+    * _remote_ is a git term for a repository we are tracking, but that lives elsewhere
+</aside>
+
+## Create a repository
 
 On BitBucket:
 
-* Create a repository in the project you're working in
-* (Or File > New > Create Remote Repository in SourceTree if you linked to BitBucket)
-* Get the (HTTPS) URL to clone in your repository (or click "Clone in SourceTree")
+* Navigate to your _project_
+* Create a repository (`+`)
+
+<br>
+
+In SourceTree:
+
+* File > New > Create Remote Repository
+    * Need to have linked you BB account in SourceTree (Preferences > Accounts)
+    * Choose a _project_ to create the repository in
+    * Give it a name
+
+<aside class="notes">
+* If you create a remote in SourceTree you refer to the project by it's acronym - check BB
+* Doesn't do anything on our laptop, just creates a repository on the BB server
+* Process is basically the same for working with github, too
+</aside>
+
+## Clone/link work
 
 In SourceTree:
 
 * File > New > Clone from URL
-    * Choose a location on your machine to save the code to
-    * Give it a name
-* Get a local copy of a repository's code
-
+    * Give it the remote repository URL
+    * Set the file path to save the code to
+    * (Optionally) change the name (just for SourceTree)
+    
 ```
 cd path/to/where/you/want/your/local/repo
-git clone <repository url>
+git clone <https://url.git> [./into/here]
 ```
 
-<aside class="notes">
-* _remote_ is a git term for a repository we are tracking, but that lives elsewhere
-* Checkout - get a local copy of the files _and_ the repository (i.e. the commit log)
+<aside class="notes>"
+* clone - does a checkout to get a local copy of the files _and_ the repository (i.e. the commit log)
     * Hence _distributed_
 * The the default name for the first remote is "origin"
-* Clone the test repo in my project area on BitBucket
+* Clone the git-testing repo in training-and-testing project on BitBucket
 </aside>
 
 ## Update your local copy
