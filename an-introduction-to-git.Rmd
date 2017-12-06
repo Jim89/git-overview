@@ -591,7 +591,7 @@ git log
 * When they were made
 </aside>
 
-# Working with BitBucket
+# Working with `git` and BitBucket
 
 ## General workflow
 
@@ -610,7 +610,7 @@ git log
     * _remote_ is a git term for a repository we are tracking, but that lives elsewhere
 </aside>
 
-## Create a repository
+## Create a project repository
 
 On BitBucket:
 
@@ -632,7 +632,20 @@ In SourceTree:
 * Process is basically the same for working with github, too
 </aside>
 
-## Clone/link work
+## Create a personal repository
+
+* Only possible directly on BitBucket
+* Navigate to profile
+    * https://hdp-service.uk.kworld.kpmg.com/stash/profile
+* Click "Create Repository"
+
+<aside class="notes">
+* Personal repo is just for you - not associated with a project
+* If you _fork_ (see later) a repository it will be personal, too
+* Nice for testing out git/bb
+</aside>
+
+## Get a repository
 
 In SourceTree:
 
@@ -647,10 +660,45 @@ git clone <https://url.git> [./into/here]
 ```
 
 <aside class="notes>"
-* clone - does a checkout to get a local copy of the files _and_ the repository (i.e. the commit log)
+* clone - checkout to get a local copy of the files _and_ the repository (i.e. the commit log)
     * Hence _distributed_
 * The the default name for the first remote is "origin"
 * Clone the git-testing repo in training-and-testing project on BitBucket
+</aside>
+
+## Link your existing work
+
+If you have already done some work _before_ creating a BitBucket repository:
+
+In SourceTree:
+
+* Right click on "Remotes"
+* Click "New Remote" & add details
+
+```
+git remote add origin [https://repo-url.git]
+```
+
+<aside class="notes">
+* Usually better to create BB _then_ work, but can add a remote if we need
+* Note in CLI using default name _origin_
+    * Can change this to whatever we want
+* Can have multiple remotes with different names if we want
+</aside>
+
+## Do some work, `add` and `commit`
+
+* Work as usual
+* `add`
+* `commit`
+* Changes are saved in _local_ repository
+
+<aside class="notes">
+* We work as normal, making changes, adding and commiting as usual
+* All the changes are just saved in our _local_ repository
+* We can do what we want, really
+    * Our code won't cause "fuck ups" until we share it with others
+    * Empowers us to work, experiment, test etc
 </aside>
 
 ## Update your local copy
