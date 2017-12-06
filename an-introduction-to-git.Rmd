@@ -106,8 +106,6 @@ can be controlled
 * Clear audit trail
 * Minimise confusion
 
-![git-timeline](www/git-timeline.png)
-
 <aside class="notes">
 * clear log of _every_ change on a project
     * go back and forward in time
@@ -119,14 +117,7 @@ it, enhance it etc
 
 ## The `git` log
 
-```{r ggkpmg-log}
-ggkpmg <- readr::read_tsv("./ggkpmg/ggkpmg-log.tsv", col_names = FALSE) %>% 
-  set_names(c("commit_id", "author", "datetime", "message")) %>% 
-  mutate(datetime = gsub("\\ \\+[0-9]+", "", datetime)) %>% 
-  slice(1:5)
-
-knitr::kable(head(ggkpmg))
-```
+![](www/git-commits-log.png)
 
 A history of _every_ change made to the code.
 
@@ -403,6 +394,12 @@ reduce frustration.
 * I still have a lot to to learn
 * But, look at me now - this can be you!
 </aside>
+
+## The details - how git works
+
+![git-timeline](www/git-timeline.png)
+
+Stores data as a series of _snapshots_ of a mini file system.
 
 ## Work flow - the three areas of git
 
