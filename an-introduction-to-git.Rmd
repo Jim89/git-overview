@@ -518,7 +518,7 @@ git add *.sql
 <aside class="notes">
 * Remember - staging area is the one that "doesn't exist"
 * This is us telling `git` to include these files in the next commit
-* Not actually necessary in SourceTree, but I'm showing you here so you get
+* Not actually necessary in Mac SourceTree, but I'm showing you here so you get
 what's going on
     * Or if you want to work on command line!
 </aside>
@@ -591,7 +591,15 @@ git log
 * When they were made
 </aside>
 
-## Checkout a repository
+# Working with BitBucket
+
+## Checkout a remote repository
+
+On BitBucket:
+
+* Create a repository in the project you're working in
+* (Or File > New > Create Remote Repository in SourceTree if you linked to BitBucket)
+* Get the (HTTPS) URL to clone in your repository (or click "Clone in SourceTree")
 
 In SourceTree:
 
@@ -601,16 +609,16 @@ In SourceTree:
 * Get a local copy of a repository's code
 
 ```
+cd path/to/where/you/want/your/local/repo
 git clone <repository url>
 ```
 
 <aside class="notes">
+* _remote_ is a git term for a repository we are tracking, but that lives elsewhere
 * Checkout - get a local copy of the files _and_ the repository (i.e. the commit log)
     * Hence _distributed_
-* The other repository is called _remote_    
-* Can also check out a "local" repository if it's actually a remote on a fileshare
-* Clone the repo for this presentation
-* The remote repository has the default name "origin"
+* The the default name for the first remote is "origin"
+* Clone the test repo in my project area on BitBucket
 </aside>
 
 ## Update your local copy
