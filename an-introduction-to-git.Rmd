@@ -102,17 +102,21 @@ can be controlled
 
 ## What is `git` for us?
 
-* "Track changes on steroids"
-* Clear audit trail
-* Minimise confusion
+* Better collaboration
+* Better reproducibility
+* Better version control - "track changes on steroids"
+* Better audit trails
+
+![brent](www/brent.gif)
 
 <aside class="notes">
-* clear log of _every_ change on a project
-    * go back and forward in time
-    * get the code at a specific point in time
-* View changes, comment on changes, accept/reject/merge
-* Tools for collaboration, easily get your colleagues work, review it, change
+* Tools for collaboration, easily get your + colleagues work, review it, change
 it, enhance it etc
+* Get the code, understand the history, reproduce the results
+* go back and forward in time
+* get the code at a specific point in time
+* View changes, comment on changes, accept/reject/merge
+
 </aside>
 
 ## The `git` log
@@ -132,11 +136,9 @@ message and unique ID
 
 ## Tracking changes with `git`
 
-```{r}
-knitr::include_graphics("./www/commit-diff.png")
-```
+![](www/commit-diff.png)
 
-* Makes reviewing code very easy
+Makes reviewing code very easy
 
 <aside class="notes">
 * Red = removed; green = added
@@ -281,37 +283,33 @@ commits_cln %>%
 
 ## `git` hosting
 
-```{r show_bb}
-knitr::include_graphics("www/bb.png")
-```
+![bb](www/bb.png)
 
 <aside class="notes">
+* GitHub/Stash != git
 * Lots of servies offering git _hosting_
 * I.e. store a repository on the (private) web
 * Within KPMG we use BitBucket - an Atlassian product
-* Available through CloudOps in Lighthouse
+* Common open source equivalent is _GitHub_
 </aside>
 
 ## `git` hosting
 
-```{r show_bb2}
-knitr::include_graphics("www/bb2.png")
-```
+![bb2](www/bb2.png)
 
 <aside class="notes">
-* Eeasy way for project overview, without local code
+* Easy way for project overview, without local code
 * Restrict access on a project-by-project basis
-* Integrates with markdown
 * Several related products, e.g. Jira and Confluence (also Atlassian) to give us full PM side of work
     * Jira: to do lists, issues, tasks etc
     * Confluence: documentation, articles, longer-form project
+* Integrates with markdown - free project website!
+    * Especially on GitHub
 </aside>
 
 ## `git` for me
 
-```{r gh}
-knitr::include_graphics("www/gh.png")
-```
+![gh](www/gh.png)
 
 <aside class="notes">
 * GitHub != `git`. _GitHub_ is just another git hosting service
@@ -347,15 +345,44 @@ knitr::include_graphics("www/gh.png")
 
 ## References
 
+* [`git` - the simple guide, no deep shit](http://rogerdudler.github.io/git-guide/)
+* `git` [book](https://git-scm.com/book/en/v2)
 * Professor Jenny Bryan, UBC:
     * [Excuse me, do you have a moment to talk about version control?](https://peerj.com/preprints/3159v2/)
     * [Happy Git with R](http://happygitwithr.com/)
-* [`git` - the simple guide](http://rogerdudler.github.io/git-guide/)
-* `git` [book](https://git-scm.com/book/en/v2)
 
 ## Questions?
 
-# How to `git`
+![questions](www/questions-largest.gif)
+
+# How `git` works
+
+## Snapshots of files
+
+![git-timeline](www/git-timeline.png)
+
+Stores data as a series of _snapshots_ of a mini file system.
+
+<aside class="notes">
+* Talk through picture
+* This is different from other systems which store a series of differences
+* if a file has not changed, git just point backs in time to most recent version
+* git ~ mini file system - gives us the powerful tools for branching etc
+    * see `.git` folder when we create a repository
+</aside>
+
+## The three areas of git
+
+![areas](www/git-areas.png)
+
+<aside class="notes">
+* Working directory - your files, the things you see on your computer
+* Staging area - doesn't exist, it's a `git` concept
+* `.git` directory - the repository - the "database" that stores the changes and "does git"
+* Flow: make changes, `add` to staging area,  `commit` to save as a change
+</aside>
+
+# Working with `git` commands
 
 ## `git`
 
@@ -395,23 +422,6 @@ reduce frustration.
 * But, look at me now - this can be you!
 </aside>
 
-## The details - how git works
-
-![git-timeline](www/git-timeline.png)
-
-Stores data as a series of _snapshots_ of a mini file system.
-
-## Work flow - the three areas of git
-
-![areas](www/git-areas.png)
-
-<aside class="notes">
-* Working directory - your files, the things you see on your computer
-* Staging area - doesn't exist, it's a `git` concept
-* `.git` directory - the repository - the "database" that stores the changes and "does git"
-* Flow: make changes, `add` to staging area,  `commit` to save as a change
-</aside>
-
 ## Basic `git`
 
 Use:  `git <command>`
@@ -431,10 +441,12 @@ Use:  `git <command>`
 <aside class="notes">
 * I've told you about 3 git areas, one of which doesn't exits
 * I've shown you some weird looking commands
-* Do you feel like this?
+* You've read some stuff on the internet
+* Or heard Dave ranting about git
+* Do you ever feel like this?
 </aside>
 
-## {data-background="www/confused.gif"}
+## huh? {data-background="www/confused.gif"}
 
 <aside class="notes">
 Don't worry, we'll take it step by step
@@ -462,10 +474,11 @@ git init
 ```
 
 <aside class="notes">
+* (Remote repository will come later)
 * May need to tell `git` who you are in SourceTree first
-* Command is for the command line (if you're familiar great, don't worry if not)
+* Command is for the command line
 * This will create the folder, and inside will be a (hidden) `.git` folder
-* (May need to show hidden folders through control pannel)
+    * (May need to show hidden folders through control pannel)
 * Can do this in folders that have files already
 </aside>
 
@@ -642,9 +655,6 @@ git push
 * _Tag_ a commit (right click > _Tag_)
 * Make a "server" repository on a shared drive:
 
-```
-git init --bare /path/to/repo.git
-```
 
 <aside class="notes">
 * branches are an "alternative timeline" - used to work on specific features/versions in isolation
@@ -658,9 +668,10 @@ git init --bare /path/to/repo.git
 
 ## What is `git`?
 
-* "Track changes on steroids"
-* Distributed
-* Built for collaboration
+* Better collaboration
+* Better reproducibility
+* Better version control - "track changes on steroids"
+* Better audit trails
 
 <aside class="notes">
 * Not GitHub - git is just software
@@ -719,8 +730,4 @@ git init --bare /path/to/repo.git
 * [Atlassian](https://www.atlassian.com/git)
 * [Atlassian cheatsheet](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
 * `git` [book](https://git-scm.com/book/en/v2)
-
-## Questions?
-
-![questions](www/questions-largest.gif)
 
