@@ -733,6 +733,25 @@ Cannot `git push` before you `git pull`
 * We can't `push` before we `pull`
 </aside>
 
+## The commands
+
+* `git`
+    * `clone`
+    * `remote`
+    * `pull`
+    * `fetch`
+    * `merge`
+    * `push`
+* Useful to know the commands, even if you use SourceTree
+    * (For when stuff inevitably goes wrong)
+
+<aside class="notes">
+* These are the most basic commands for working with git on a server and
+collaborating with others
+* Things like pull requests are not strictly necessary for the basics, we'll
+talk about them later
+</aside>
+
 # Branching
 
 ## `git` branches
