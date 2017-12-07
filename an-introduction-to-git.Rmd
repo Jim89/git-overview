@@ -192,72 +192,6 @@ commits_cln <- commits %>%
 
 ## Project Osbourne
 
-* Regulatory calculation & remediation
-
-<br>
-
-* Very messy data
-
-<br>
-
-* Dynamic requirements
-
-<br>
-
-* Tight deadlines
-
-<aside class="notes">
-* Vauge objectives = understood main but not _exact_ requirements
-* Lots of messy data
-* Cleaning rules importan
-    * interpretation of codes in fields could have major impact
-* Calculation logic evolved (rapidly) iterated over the the course of the project
-    * And impact of changes needed
-</aside>
-
-## Project Osbourne
-
-* Clear audit trails
-
-<br>
-
-* Code and work-product collaboration
-
-<br>
-
-* Strict version control
-
-<aside class="notes">
-* Needed a clear trail of what had happened
-    * What code produced what numbers?
-    * What was the impact to a change in calc logic
-* 4-5 team members all needed to read, write, and collaborate on code
-* Need to maintain strict versions to reproduce later
-</aside>
-
-## Commits vs time
-
-```{r commits_vs_day, cache = TRUE}
-commits_cln %>% 
-  group_by(date) %>% 
-  summarise(commits = n()) %>% 
-  ggplot(aes(date, commits)) +
-  geom_line(colour = kpmgcolours("primary")[1], size = 1.25) +
-  labs(x = "Date", 
-       y = "Commits",
-       title = "Total commits per date",
-       subtitle = "A single commit can represent dozens of changes across multiple code files") +
-  theme_kpmg()
-```
-
-<aside class="notes">
-* Here's an overview of commits per day
-* We were busiest in late Jan and Feb
-* But what this doesn't show is the changing between versions
-</aside>
-
-## Versions over time
-
 ```{r commit_versions_vs_date, cache = TRUE}
 commits_cln %>% 
   group_by(version_number, date) %>% 
@@ -267,18 +201,18 @@ commits_cln %>%
   scale_colour_manual(values = unname(kpmgcolours("graphs")[1:9])) +
   labs(x = "Date", 
        y = "Commits",
-       title = "Total commits per date, per build version",
-       subtitle = "Some versions overlapped as we switched back and forth\nbetween different calculation logics") +
+       title = "Total commits per date, per build version") +
   guides(colour = guide_legend("Build version", nrow = 2, byrow = T)) +
   theme_kpmg() +
   theme(legend.position = "bottom")
 ```
 
 <aside class="notes">
-* Each version of the code had slightly different rules/code
+* Osbourne - regulatory calculation & remediation, needed audit trail
+* Very messy data, dynamic requirements, tight deadlines
 * Each "version" ~200 code files with logic for data cleaning, calculations, test suites etc
-* git let us manage all those versions
 * easily jump between them, compare results, asses the impact of changes to script logic
+* In DSE versions could be alernative product features/developments, experiments, new data logic
 </aside>
 
 ## `git` hosting
@@ -382,8 +316,6 @@ Stores data as a series of _snapshots_ of a mini file system.
 * Flow: make changes, `add` to staging area,  `commit` to save as a change
 </aside>
 
-# Working with `git` commands
-
 ## `git`
 
 > Now the bad news: `git` was built neither for the exact usage described here, nor for broad usability. 
@@ -411,36 +343,8 @@ reduce frustration.
 
 ![jay](www/jay.gif)
 
-## Some encouragement
-
-![larry](www/larry-presenter.gif)
-
-<aside class="notes">
-* I started with git ~4 years ago
-* I had no idea what I was doing
-* I still have a lot to to learn
-* But, look at me now - this can be you!
-</aside>
-
-## Basic `git`
-
-Use:  `git <command>`
-
-* `init`
-* `status`
-* `add`
-* `commit`
-* `diff`
-* `log`
-* `clone`
-* `push`
-* `pull`
-
-[Reference](http://rogerdudler.github.io/git-guide/)
-
 <aside class="notes">
 * I've told you about 3 git areas, one of which doesn't exits
-* I've shown you some weird looking commands
 * You've read some stuff on the internet
 * Or heard Dave ranting about git
 * Do you ever feel like this?
@@ -459,6 +363,32 @@ Don't worry, we'll take it step by step
 1. Commit them
 </aside>
 
+## Some encouragement
+
+![larry](www/larry-presenter.gif)
+
+<aside class="notes">
+* I started with git ~4 years ago
+* I had no idea what I was doing
+* I still have a lot to to learn
+* But, look at me now - this can be you!
+</aside>
+
+# Working with `git` commands
+
+## Basic, local `git`
+
+Use:  `git <command>`
+
+* `init`
+* `status`
+* `add`
+* `commit`
+* `diff`
+* `log`
+
+[Reference](http://rogerdudler.github.io/git-guide/)
+
 ## Create a new repository
 
 In SourceTree
@@ -474,7 +404,6 @@ git init
 ```
 
 <aside class="notes">
-* (Remote repository will come later)
 * May need to tell `git` who you are in SourceTree first
 * Command is for the command line
 * This will create the folder, and inside will be a (hidden) `.git` folder
@@ -488,6 +417,7 @@ git init
 * These files are now in the _Working Directory_
 * Remember, `git` manages code/text files
 * See the files in SourceTree
+* `status` on the command line shows other useful information
 
 ```
 git status
@@ -545,10 +475,10 @@ git commit -m "A message that describes the changes"
 ## Make some changes
 
 * Open, edit, and save the files:
-    * dplyr.R: Add `library(dplyr)`
-    * pandas.py: Add `import pandas as pd`
-    * select.sql: Add `select * from my_table`
-    * readme.md: Remove `Some example text to remove later`
+    * dplyr.R: Remove `library(dplyr)`
+    * pandas.py: Do nothing
+    * select.sql: Add a `where` clause to the `select`
+    * readme.md: Add some markdown (e.g. paragraph, couple of bullet points)
     
 <aside class="notes">
 * Use an editor (even notepad)
@@ -570,7 +500,7 @@ git diff <filename>
 * Diff = summary of the changes made to a file
 * Green = added
 * Red = removed
-* Add and commit these changes again
+* Add and commit these changes in the same way as before
 </aside>
 
 ## View the log
@@ -589,6 +519,56 @@ git log
 * _What_ the changes were
 * Who made them
 * When they were made
+</aside>
+
+## Some useful functionality
+
+* _Tag_ a commit (right click > _Tag_): `git tag -a <tag label> -m "<message/description on the tag>"
+* Unstage a file (uncheck SourceTree box): `git reset HEAD <file>`
+* Undo unstaged changes : `git checkout <file>`
+
+<aside class="notes">
+* Easy to do these in SourceTree
+* tags are really just labels on commits, useful for marking (e.g.) a release/version
+* checkout/reset in SourceTree will _delete_ changes in files, so be careful
+    * (but useful if stuff gets messy and easier to wipe out recent history)
+* `checkout` is also useful for moving backwards/forwards/sideways in time in
+`git`, but we'll talk about that later
+</aside>
+
+## Do's and dont's
+
+<br>
+
+> - Do commit code, markdown/text, _small_ data, configs
+> - Do add and commit often (even for small changes)
+> - Don't commit anything with passwords/access keys in it
+> - Don't commit large files (e.g. big `csv`)
+> - Don't commit non-text files (e.g. MS Office, strange data formats, pdf)
+> - Don't version things manually (e.g. `file_v2`)
+    
+    
+<aside class="notes">
+* Commit as much as possible (whilst staying organised and sane) - you never know if you will want to roll back later
+* 1 commit per 1 change/group of related changes
+    * You can squash commits together later
+    * Small commits makes it easy for you to jump around if you need
+* DON'T PUT PASSWORDS OR ACCESS KEYS IN TO FILES TRACKED WITH GIT    
+* Large files will clog up git
+* Binary files cannot be properly managed by git - so don't bother with them
+* Manual versioning is not needed with git
+    * Keep back up if paranoid, but really, it's not needed
+</aside>
+
+## Good to go
+
+![st](www/sunny-thumbs.gif)
+
+<aside class="notes">
+* For the basics that's pretty much it
+    * For local-only, single-user code base with a simple timeline
+* But we probably want more
+* One of the first things - collaboration over the 'net
 </aside>
 
 # Working with `git` and BitBucket
@@ -634,7 +614,7 @@ In SourceTree:
 
 ## Create a personal repository
 
-* Only possible directly on BitBucket
+* Only possible directly on BitBucket (i.e. not SourceTree)
 * Navigate to profile
     * https://hdp-service.uk.kworld.kpmg.com/stash/profile
 * Click "Create Repository"
@@ -659,7 +639,7 @@ cd path/to/where/you/want/your/local/repo
 git clone <https://url.git> [./into/here]
 ```
 
-<aside class="notes>"
+<aside class="notes">
 * clone - checkout to get a local copy of the files _and_ the repository (i.e. the commit log)
     * Hence _distributed_
 * The the default name for the first remote is "origin"
@@ -669,6 +649,8 @@ git clone <https://url.git> [./into/here]
 ## Link your existing work
 
 If you have already done some work _before_ creating a BitBucket repository:
+
+<br>
 
 In SourceTree:
 
@@ -711,46 +693,51 @@ git remote add origin [https://repo-url.git]
 git pull
 ```
 
+Or maybe:
+
+```
+git fetch
+git merge
+```
+
+![fetch](www/fetch.gif)
+
 <aside class="notes">
 * Jim to make a change and submit that to the repo
 * Full syntax `git pull origin master`
     * Pull from origin into our `master` branch
-* Branches more complex - multiple timelines exising at once (e.g. for multiple versions)
-* Will get the commit log, and overwrite changes in our local file
+* Will get the commit log, and overwrite changes in our local file - so be careful
+* Safer (what `git pull` does):
+    * `git fetch` - get remote commits but don't merge + overwrite
+    * `git merge` - overwrite local files with commits we just `fetch`ed
+* Should usually be fine to just `git pull`, but if you're worried about
+conflicts, `fetch` and `merge` manually
 </aside>
 
 ## Send in your changes
 
-* Add, commit as usual in SourceTree
-* Then _Push_
+* `add` and `commit` as usual
+* Then SourceTree > Push
 
 ```
-git push
+git push 
 ```
+
+<br> 
+
+Cannot `git push` before you `git pull`
 
 <aside class="notes">
 * Push is used to send our _local_ changes to the _remote_ repository
+* Sends the log _and_ the files, so others get the changes and our history
 * We can't `push` before we `pull`
-* N.B. you won't be able to push to the pres. repository as you don't have permission to do so!
 </aside>
 
-## Some useful (advanced) functionality
+# Branching
 
-* Undo changes (right click > _Reset_)
-    * Back to the last commit, or a specific commit
-* Create/delete a branch (click _Branch_)
-* Switch branches (click on branch name under _Branches_) 
-* _Tag_ a commit (right click > _Tag_)
-* Make a "server" repository on a shared drive:
+## `git` branches
 
-
-<aside class="notes">
-* branches are an "alternative timeline" - used to work on specific features/versions in isolation
-* tags are really just labels on commits, useful for marking (e.g.) a release/version
-* `bare` - without a working copy
-* add `.git` extension by convention
-* users can then `clone` and `push`/`pull` that repo
-</aside>
+![branch](www/branches.svg)
 
 # Summary
 
