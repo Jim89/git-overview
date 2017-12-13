@@ -556,6 +556,7 @@ git log
 * DON'T PUT PASSWORDS OR ACCESS KEYS IN TO FILES TRACKED WITH GIT    
 * Large files will clog up git
 * Binary files cannot be properly managed by git - so don't bother with them
+    * If you want MS Word, write in markdown, convert with pandoc
 * Manual versioning is not needed with git
     * Keep back up if paranoid, but really, it's not needed
 </aside>
@@ -572,6 +573,28 @@ git log
 </aside>
 
 # Working with `git` and BitBucket
+
+## Remote `git`
+
+* `git`
+    * `clone`
+    * `remote`
+    * `pull`
+    * `fetch`
+    * `merge`
+    * `push`
+* Useful to know the commands, even if you use SourceTree
+* Simplest workflow - [centralised remote repo](https://www.atlassian.com/git/tutorials/comparing-workflows#centralized-workflow)
+
+<aside class="notes">
+* These are the most basic commands for working with git on a server and
+collaborating with others
+* Simple workflow
+    * 1 central
+    * All clone, work
+    * Push/pull
+* Talk about other workflows later  
+</aside>
 
 ## General workflow
 
@@ -730,24 +753,8 @@ Cannot `git push` before you `git pull`
 <aside class="notes">
 * Push is used to send our _local_ changes to the _remote_ repository
 * Sends the log _and_ the files, so others get the changes and our history
-* We can't `push` before we `pull`
-</aside>
-
-## The commands
-
-* `git`
-    * `clone`
-    * `remote`
-    * `pull`
-    * `fetch`
-    * `merge`
-    * `push`
-* Useful to know the commands, even if you use SourceTree
-    * (For when stuff inevitably goes wrong)
-
-<aside class="notes">
-* These are the most basic commands for working with git on a server and
-collaborating with others
+* We can't `push` before we `pull` (if using simple, centralised workflow)
+    * Discuss other workflows later
 * Things like pull requests are not strictly necessary for the basics, we'll
 talk about them later
 </aside>
@@ -757,6 +764,48 @@ talk about them later
 ## `git` branches
 
 ![branch](www/branches.svg)
+
+<aside class="notes">
+* where git can get complicated
+* BUT - branches are really just pointers to a commit/series of commits
+* Very lightweight, can be used regularly
+* Help keep features/items independant
+* Can be separated + joined at will
+* Several models for branching, we'll look at a couple
+</aside>
+
+## `git` branching commands
+
+* `git`
+    * `branch`
+    * `checkout`
+    * `merge`
+
+<aside class="notes">
+* `branch` - used to create new branches, delete branches, see branches
+* `checkout` - used to switch between branches (and commits)
+* Often easier to use SourceTree/GUI for this instead, but commands are good to know
+</aside>
+
+## Creating a branch
+
+* SourceTree > Branch
+    * Optionally select a specific commit to branch from
+
+```
+git branch [branch name] # Just create
+```
+
+<aside class="notes">
+* Creates a new label on a commit
+    * Either specified or HEAD
+* CLI doesn't switch to that branch
+* SourceTree will optionally switch to (`checkout`) the new branch
+</aside>
+
+## Switching branches
+
+
 
 # Summary
 
