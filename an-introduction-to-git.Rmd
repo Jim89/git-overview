@@ -766,12 +766,22 @@ talk about them later
 ![branch](www/branches.svg)
 
 <aside class="notes">
-* where git can get complicated
-* BUT - branches are really just pointers to a commit/series of commits
 * Very lightweight, can be used regularly
-* Help keep features/items independant
+* Help keep "bits" of code independant
 * Can be separated + joined at will
 * Several models for branching, we'll look at a couple
+</aside>
+
+## `git` branches
+
+![branch](www/branch.gif)
+
+<aside class="notes">
+* Where git can get complicated if we're not careful
+* BUT - branches are really just pointers to a commit/series of commits
+* Perfectly possible to use branches for simple tasks - keeping various code/versions separate
+* Lots of the functionality of branches is probably not that useful for us day-to-day
+* So we'll keep it simple
 </aside>
 
 ## `git` branching commands
@@ -803,6 +813,17 @@ git branch [branch name] # Just create
 * SourceTree will optionally switch to (`checkout`) the new branch
 </aside>
 
+## See branches
+
+* SourceTree > Branches _or_ Remotes > Look! `r emo::ji('eyes')`
+* `git branch` - see _local_ branches
+* `git branch -r` - see _remote_ branches
+* `git branch -a` - see _all_ branches
+* `git branch -v` - see branches and most recent commit details
+
+<aside class="notes">
+* Commands useful to see what branches there are to get
+
 ## Switching branches (and commits!)
 
 * SourceTree > Double click branch name
@@ -824,6 +845,43 @@ git checkout [commit hash id]
 * Switching to commit/tag is usually done to either see the code at that point,
 or to get back to an earlier version to branch directly from it
 </aside>
+
+## Sharing branches
+
+* After creating a local branch:
+    * SourceTree > Push > Select the new branch
+    * `git push -u origin [branch name]` - push the branch to the remote (`origin`)
+* To get a remote branch:
+    * SourceTree > Fetch > Expand remote (`origin`) > Right click on branch > Checkout
+    * `git fetch` and then `git checkout [new branch name]`
+    
+<aside class="notes">
+* Make your branch available for other developers
+* This may never be necessary: you may branch, work, merge/abandon branch
+* Getting others' branch(es) is also easy
+</aside>
+
+## Merging branches
+
+* 
+
+## Deleting branches
+
+* Local:
+    * SourceTree > Right-click on branch > Delete
+    * `git branch -d [branch name]`
+* Remote    
+    * SourceTree > Expand remote > Right click on branch > Delete
+    * `git push origin --delete [branch name]`
+
+
+<aside class="notes">
+* Take care deleting branches, can be tricky 
+    * Might not be necessary if they're just local and you don't mind
+* Deleting local != deleting remote - they are separate!
+* Can delete one but not the other, so be careful what you delete
+</aside>
+
 
 # Summary
 
