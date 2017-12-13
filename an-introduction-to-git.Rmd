@@ -769,6 +769,7 @@ talk about them later
 * Very lightweight, can be used regularly
 * Help keep "bits" of code independant
 * Can be separated + joined at will
+* Default branch is usually called `master`
 * Several models for branching, we'll look at a couple
 </aside>
 
@@ -815,7 +816,7 @@ git branch [branch name] # Just create
 
 ## See branches
 
-* SourceTree > Branches _or_ Remotes > Look! `r emo::ji('eyes')`
+* SourceTree > Local _or_ Remote > Look! `r emo::ji('eyes')`
 * `git branch` - see _local_ branches
 * `git branch -r` - see _remote_ branches
 * `git branch -a` - see _all_ branches
@@ -823,6 +824,7 @@ git branch [branch name] # Just create
 
 <aside class="notes">
 * Commands useful to see what branches there are to get
+</aside>
 
 ## Switching branches (and commits!)
 
@@ -846,14 +848,15 @@ git checkout [commit hash id]
 or to get back to an earlier version to branch directly from it
 </aside>
 
-## Sharing branches
+## Sharing _your_ branch
 
-* After creating a local branch:
-    * SourceTree > Push > Select the new branch
-    * `git push -u origin [branch name]` - push the branch to the remote (`origin`)
-* To get a remote branch:
-    * SourceTree > Fetch > Expand remote (`origin`) > Right click on branch > Checkout
-    * `git fetch` and then `git checkout [new branch name]`
+* SourceTree > 
+    * Push > 
+    * Select your new branch
+
+```
+git push -u origin [branch name]
+```
     
 <aside class="notes">
 * Make your branch available for other developers
@@ -861,26 +864,136 @@ or to get back to an earlier version to branch directly from it
 * Getting others' branch(es) is also easy
 </aside>
 
+## Getting someone _else's_ branch
+
+* SourceTree > 
+    * Fetch > 
+    * Expand remote (`origin`) > 
+    * Right click on branch > 
+    * Checkout
+
+```
+git fetch
+git checkout [new branch name]
+```
+
+<aside class="notes">
+* Useful for getting the branch of another developer
+* Again, this might never be needed if they create branches and merge back into
+a common branch that you have
+</aside>
+
 ## Merging branches
+
+Join branches together
+
+![merge](www/merge.jpg)
+
+* SourceTree >
+    * Select branch to merge _into_ > 
+    * Merge > 
+    * Select commit (other branch) to merge
+
+```
+git checkout [a branch]
+git merge [another branch]
+```
+
+<
+
+## Deleting local branches
+
+* SourceTree > 
+    * Right-click on branch > 
+    * Delete
+
+```
+git branch -d [branch name]
+```
+
+<aside class="notes">
+* Deleting local != deleting remote - they are separate!
+* Can delete one but not the other, so be careful what you delete
+* Useful if you branched locally but don't need to share it and want a clean
+local repo
+</aside>
+
+## Deleting remote branches
+
+* SourceTree > 
+    * Expand remote > 
+    * Right click on branch > 
+    * Delete
+
+```
+git push origin --delete [branch name]
+```
+
+<aside class="notes">
+* Take care deleting remote branches, can be tricky 
+    * Might not be necessary if they're just local and you don't mind
+* Can delete one but not the other, so be careful what you delete
+</aside>
+
+# Workflow & branching models
+
+## Centralised repository
+
+[Reference](https://www.atlassian.com/git/tutorials/comparing-workflows#centralized-workflow)
+
+* What we've already covered
+* One central repo
+* Team push to/pull from a single repo
+
+<aside class="notes">
+* The simplest model
+* Works for most straightforward projects with 1-3 people in close communication
+    * E.g. pensions
+* Don't need extensive branches
+</aside>
+
+## Feature branches
+
+[Reference](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
+
+* Still one centralised repo
+* One main branch (`master`)
+* Create a new branch for each new feature, based on the main branch
+* `master` contains the "official" code
+* Manage change with _pull requests_
+
+<aside class="notes">
+* Simple extension to centralised repo workflow
+* Have one "official" history - `master`
+* _Everything_ based on `master`
+* Pull requests shown later - encourage code reviews
+</aside>
+
+## Forking workflow
+
+[Reference](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow)
+
+* Start with a central repo
+* Developers _fork_ (UI in BitBucket)
+* Many server-side repo's (one per developer)
+* Developers commit to their own repo
+    * Still use local branching to keep code separate
+* Pull requests of code back to the central repo
+
+<aside class="notes">
+* Central repo - e.g. in the _project_ space
+* Forked repo - in the developer's personal space
+* Developers work in isolation
+* Pull requests for code review
+</aside>
+
+## GitFlow
+
+[Reference](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 
 * 
 
-## Deleting branches
-
-* Local:
-    * SourceTree > Right-click on branch > Delete
-    * `git branch -d [branch name]`
-* Remote    
-    * SourceTree > Expand remote > Right click on branch > Delete
-    * `git push origin --delete [branch name]`
-
-
-<aside class="notes">
-* Take care deleting branches, can be tricky 
-    * Might not be necessary if they're just local and you don't mind
-* Deleting local != deleting remote - they are separate!
-* Can delete one but not the other, so be careful what you delete
-</aside>
+## Pull requests
 
 
 # Summary
