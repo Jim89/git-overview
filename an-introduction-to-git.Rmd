@@ -803,9 +803,27 @@ git branch [branch name] # Just create
 * SourceTree will optionally switch to (`checkout`) the new branch
 </aside>
 
-## Switching branches
+## Switching branches (and commits!)
 
+* SourceTree > Double click branch name
+* SourceTree > Double click tag name
+* SourceTree > Double click commit
 
+```
+git checkout [branch name]
+git checkout [tag name]
+git checkout [commit hash id]
+```
+
+<aside class="notes">
+* Switches between different branches/tags/commits
+* Switching between branches is quick and usually safe
+* If checkout commit/tag, we get warning about 'Detached HEAD'
+    * This is (stupid) git-speak for "you're about to set your 'working pointer'
+    ("HEAD") to something in the past"
+* Switching to commit/tag is usually done to either see the code at that point,
+or to get back to an earlier version to branch directly from it
+</aside>
 
 # Summary
 
