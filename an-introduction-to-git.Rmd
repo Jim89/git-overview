@@ -264,7 +264,6 @@ commits_cln %>%
 * Version control & audit trails
 * Tools for QA
 * Better use of the team
-* Faster releases
 * Structured collaboration
 * Community
 
@@ -303,6 +302,8 @@ Stores data as a series of _snapshots_ of a mini file system.
 
 <aside class="notes">
 * Talk through picture
+* Each snapshot is a _commit_ in `git` parlance
+    * commit is $\therefore$ one or more change made to file(s) in the repo
 * This is different from other systems which store a series of differences
 * if a file has not changed, git just point backs in time to most recent version
 * git ~ mini file system - gives us the powerful tools for branching etc
@@ -318,11 +319,15 @@ Stores data as a series of _snapshots_ of a mini file system.
 * Staging area - doesn't exist, it's a `git` concept
 * `.git` directory - the repository - the "database" that stores the changes and "does git"
 * Flow: make changes, `add` to staging area,  `commit` to save as a change
+* e.g. make changes in 4 files, 3 are releated, 1 separate
+    * add the 3, and commit
+    * add the last 1, commit
+    * (keep changes together)
 </aside>
 
-## `git`
+## The bad news
 
-> Now the bad news: `git` was built neither for the exact usage described here, nor for broad usability. 
+> `git` was built neither for the exact usage described here, nor for broad usability.
 
 <aside class="notes">
 * You will undoubtedly notice this so it's best to know in advance. 
@@ -402,6 +407,8 @@ In SourceTree
     * The location will become your _working directory_
 * Click "create"
 
+<br>
+
 ```
 cd path/to/my/project/directory
 git init
@@ -421,7 +428,8 @@ git init
 * These files are now in the _Working Directory_
 * Remember, `git` manages code/text files
 * See the files in SourceTree
-* `status` on the command line shows other useful information
+
+<br>
 
 ```
 git status
@@ -441,6 +449,8 @@ git status
 * Right click a file in SourceTree
 * Select 'Add to Index'
 * Moves files in to the _Staging Area_
+
+<br>
 
 ```
 git add <filename>
@@ -463,6 +473,8 @@ what's going on
 * Enter a message
 * Click "Commit"
 
+<br>
+
 ```
 git commit -m "A message that describes the changes"
 ```
@@ -473,7 +485,8 @@ git commit -m "A message that describes the changes"
 * Writes a new entry in the commit timeline
 * The message should be an action:
     * "The purpose of this commit is to..."
-* If you use the command line - remember to use a message!
+* If you use the command line - remember to use a message, otherwise you get
+stuck in Vim
 </aside>
 
 ## Make some changes
@@ -496,6 +509,8 @@ git commit -m "A message that describes the changes"
 
 You're looking at a `git diff`
 
+<br>
+
 ```
 git diff <filename>
 ```
@@ -513,6 +528,8 @@ Use the _History_ tab to see the timeline in SourceTree
 
 ![log](www/git-log.png)
 
+<br>
+
 ```
 git log
 ```
@@ -527,13 +544,16 @@ git log
 
 ## Some useful functionality
 
-* _Tag_ a commit (right click > _Tag_): `git tag -a <tag label> -m "<message/description on the tag>"
-* Unstage a file (uncheck SourceTree box): `git reset HEAD <file>`
-* Undo unstaged changes : `git checkout <file>`
+* _Tag_ a commit (right click > _Tag_)
+    * `git tag -a <tag label> -m "<description of tag>"`
+* Unstage a file (uncheck SourceTree box)
+    * `git reset HEAD <file>`
+* Undo unstaged changes
+    * `git checkout <file>`
 
 <aside class="notes">
 * Easy to do these in SourceTree
-* tags are really just labels on commits, useful for marking (e.g.) a release/version
+* tags are really just labels on commits, useful for marking a release/version/specific point
 * checkout/reset in SourceTree will _delete_ changes in files, so be careful
     * (but useful if stuff gets messy and easier to wipe out recent history)
 * `checkout` is also useful for moving backwards/forwards/sideways in time in
@@ -546,11 +566,11 @@ git log
 
 > - Do commit code, markdown/text, _small_ data, configs
 > - Do add and commit often (even for small changes)
-> - Don't commit anything with passwords/access keys in it
+> - <p style="color:red">DON'T COMMIT PASSWORDS</p>
 > - Don't commit large files (e.g. big `csv`)
 > - Don't commit non-text files (e.g. MS Office, strange data formats, pdf)
 > - Don't version things manually (e.g. `file_v2`)
-    
+
     
 <aside class="notes">
 * Commit as much as possible (whilst staying organised and sane) - you never know if you will want to roll back later
@@ -661,6 +681,8 @@ In SourceTree:
     * Set the file path to save the code to
     * (Optionally) change the name (just for SourceTree)
     
+<br>
+    
 ```
 cd path/to/where/you/want/your/local/repo
 git clone <https://url.git> [./into/here]
@@ -679,10 +701,11 @@ If you have already done some work _before_ creating a BitBucket repository:
 
 <br>
 
-In SourceTree:
+* SourceTree >
+    * Right click on "Remotes"
+    * Click "New Remote" & add details
 
-* Right click on "Remotes"
-* Click "New Remote" & add details
+<br>
 
 ```
 git remote add origin [https://repo-url.git]
@@ -746,13 +769,15 @@ conflicts, `fetch` and `merge` manually
 * `add` and `commit` as usual
 * Then SourceTree > Push
 
+<br>
+
 ```
 git push 
 ```
 
 <br> 
 
-Cannot `git push` before you `git pull`
+__Cannot `git push` before you `git pull`__
 
 <aside class="notes">
 * Push is used to send our _local_ changes to the _remote_ repository
@@ -799,6 +824,7 @@ talk about them later
 <aside class="notes">
 * `branch` - used to create new branches, delete branches, see branches
 * `checkout` - used to switch between branches (and commits)
+* `merge` - used to join branches together
 * Often easier to use SourceTree/GUI for this instead, but commands are good to know
 </aside>
 
@@ -806,6 +832,8 @@ talk about them later
 
 * SourceTree > Branch
     * Optionally select a specific commit to branch from
+    
+<br>    
 
 ```
 git branch [branch name] # Just create
@@ -836,6 +864,8 @@ git branch [branch name] # Just create
 * SourceTree > Double click tag name
 * SourceTree > Double click commit
 
+<br>
+
 ```
 git checkout [branch name]
 git checkout [tag name]
@@ -857,6 +887,8 @@ or to get back to an earlier version to branch directly from it
 * SourceTree > 
     * Push > 
     * Select your new branch
+    
+<br>    
 
 ```
 git push -u origin [branch name]
@@ -876,12 +908,16 @@ git push -u origin [branch name]
     * Right click on branch > 
     * Checkout
 
+<br>
+
 ```
 git fetch
 git checkout [new branch name]
 ```
 
 <aside class="notes">
+* `fetch` get's the details of the _remote_ branch
+* `checkout` actually gets us the code/files for that branch
 * Useful for getting the branch of another developer
 * Again, this might never be needed if they create branches and merge back into
 a common branch that you have
@@ -889,27 +925,36 @@ a common branch that you have
 
 ## Merging branches
 
-Join branches together
-
 ![merge](www/merge.jpg)
 
 * SourceTree >
     * Select branch to merge _into_ > 
     * Merge > 
     * Select commit (other branch) to merge
+    
+    <br>
 
 ```
 git checkout [a branch]
 git merge [another branch]
 ```
 
-<
+<aside class="notes">
+* Joins two branches together
+* Different ways of merging
+    * Don't worry for now
+    * Let SourceTree/git decide
+    * Purists may argue otherwise, but it is probably not critical
+* Merge a branch _into the one we are currently on_
+</aside>
 
 ## Deleting local branches
 
 * SourceTree > 
     * Right-click on branch > 
     * Delete
+
+<br>
 
 ```
 git branch -d [branch name]
@@ -928,6 +973,8 @@ local repo
     * Expand remote > 
     * Right click on branch > 
     * Delete
+
+<br>
 
 ```
 git push origin --delete [branch name]
@@ -948,7 +995,7 @@ git push origin --delete [branch name]
 ![central](www/centralised.png)
 
 * Team push to/pull from a single, central repo
-* Code review not built
+* Code review not built-in
 * Branches allowed but not defined
 
 <aside class="notes">
@@ -964,10 +1011,13 @@ git push origin --delete [branch name]
 
 [Reference](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 
+![feature](www/feature-branch.png)
+
 * Team still push to / pull from a single, central repo
 * One main branch (`master`) for "official" code
 * New branch for new feature, based on the main branch
 * Code review & manage change with _pull requests_
+* Simplest way to get the best collaboration features of `git` and BitBucket
 
 <aside class="notes">
 * Simple extension to centralised repo workflow
@@ -984,6 +1034,8 @@ git push origin --delete [branch name]
 ## Forking workflow
 
 [Reference](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow)
+
+![fork](www/fork.jpg)
 
 * Developers _fork_ (copy) a central repo
 * Developers commit to their own (forked) repo
@@ -1064,16 +1116,14 @@ get the basics
 
 ## Why `git`
 
-
+* As the team _does_, they are already organising, recording...
 * Version control & audit trails
 * Tools for QA
 * Better use of the team
-* Faster releases
 * Structured collaboration
 * Community
 
 <aside class="notes">
-* As the team _does_, they are already organising, recording...
 * VC, tag, branch, test out new features in isolation (better management of code)
 * Tools - diffs, pull requests, merges
     * Senior team discuss changes, junior team treat as QA opportunities
