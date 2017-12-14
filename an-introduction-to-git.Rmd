@@ -23,7 +23,11 @@ library(ggkpmg)
 ## In this session
 
 * An overview of `git`
-* How to `git`
+* How `git` works
+* Basic `git` commands
+* `git` and BitBucket
+* Branching
+* Workflows
 
 <br>
 
@@ -1041,21 +1045,26 @@ get the basics
 
 # Summary
 
-## What is `git`?
+## What is `git` for us?
 
-* Better collaboration
+![pretty](www/pretty-good.gif)
+
+* Just some more software
 * Better reproducibility
 * Better version control - "track changes on steroids"
 * Better audit trails
+* Better collaboration
 
 <aside class="notes">
-* Not GitHub - git is just software
+* Work can be more easily reproduced/understood (e.g. lottery after 3 years)
+* Version control - manage complexity + alternatives
+* Audit trails - maybe not critical for everything, but generally a good idea
+* Collaboration - needs the tools around git, but helps a LOT!
 </aside>
-
 
 ## Why `git`
 
-* _Doing_ integrated with _organising, recording, disseminating, ..._
+
 * Version control & audit trails
 * Tools for QA
 * Better use of the team
@@ -1095,14 +1104,19 @@ get the basics
 * There are lots of excellent resources
 </aside>
 
+## Questions
+
+![q](www/questions-largest.gif)
+
 ## Resources
 
 * [This presentation](https://hdp-service.uk.kworld.kpmg.com/stash/projects/JL/repos/git/browse)
-* Professor Jenny Bryan, UBC:
-    * [Excuse me, do you have a moment to talk about version control?](https://peerj.com/preprints/3159v2/)
-    * [Happy Git with R](http://happygitwithr.com/)
 * [`git` - the simple guide](http://rogerdudler.github.io/git-guide/)
 * [Atlassian](https://www.atlassian.com/git)
 * [Atlassian cheatsheet](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
+* Atlassian [workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
 * `git` [book](https://git-scm.com/book/en/v2)
+* Professor Jenny Bryan, UBC:
+    * [Excuse me, do you have a moment to talk about version control?](https://peerj.com/preprints/3159v2/)
+    * [Happy Git with R](http://happygitwithr.com/)
 
