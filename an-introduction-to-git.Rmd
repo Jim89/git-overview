@@ -54,7 +54,7 @@ library(ggkpmg)
 * Joke is that "no one" really knows what it is, just how to use/break it
 * This is how most people (including me!) come to learn about `git`
 * Hope today we will explain what `git` does, and how to use
-* developed to help manage the (whole) linux kernel
+* developed to help manage the (whole) Linux kernel
 * Similar to SVN/Microsoft TFS
 * git is a system for:
     * collaboration
@@ -212,7 +212,7 @@ commits_cln %>%
 * Very messy data, dynamic requirements, tight deadlines
 * Each "version" ~200 code files with logic for data cleaning, calculations, test suites etc
 * easily jump between them, compare results, asses the impact of changes to script logic
-* In DSE versions could be alernative product features/developments, experiments, new data logic
+* In DSE versions could be alternative product features/developments, experiments, new data logic
 </aside>
 
 ## `git` hosting
@@ -221,7 +221,7 @@ commits_cln %>%
 
 <aside class="notes">
 * GitHub/Stash != git
-* Lots of servies offering git _hosting_
+* Lots of services offering git _hosting_
 * I.e. store a repository on the (private) web
 * Within KPMG we use BitBucket - an Atlassian product
 * Common open source equivalent is _GitHub_
@@ -407,7 +407,7 @@ git init
 * May need to tell `git` who you are in SourceTree first
 * Command is for the command line
 * This will create the folder, and inside will be a (hidden) `.git` folder
-    * (May need to show hidden folders through control pannel)
+    * (May need to show hidden folders through control panel)
 * Can do this in folders that have files already
 </aside>
 
@@ -767,7 +767,7 @@ talk about them later
 
 <aside class="notes">
 * Very lightweight, can be used regularly
-* Help keep "bits" of code independant
+* Help keep "bits" of code independent
 * Can be separated + joined at will
 * Default branch is usually called `master`
 * Several models for branching, we'll look at a couple
@@ -941,48 +941,59 @@ git push origin --delete [branch name]
 
 [Reference](https://www.atlassian.com/git/tutorials/comparing-workflows#centralized-workflow)
 
-* What we've already covered
-* One central repo
-* Team push to/pull from a single repo
+![central](www/centralised.png)
+
+* Team push to/pull from a single, central repo
+* Code review not built
+* Branches allowed but not defined
 
 <aside class="notes">
 * The simplest model
+* Doesn't define branches, but they can be used ad-hoc
 * Works for most straightforward projects with 1-3 people in close communication
     * E.g. pensions
-* Don't need extensive branches
+* Doesn't enforce code review with pull requests - assumes review done in another way
+    * or that collaborators trust one another!
 </aside>
 
 ## Feature branches
 
 [Reference](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 
-* Still one centralised repo
-* One main branch (`master`)
-* Create a new branch for each new feature, based on the main branch
-* `master` contains the "official" code
-* Manage change with _pull requests_
+* Team still push to / pull from a single, central repo
+* One main branch (`master`) for "official" code
+* New branch for new feature, based on the main branch
+* Code review & manage change with _pull requests_
 
 <aside class="notes">
 * Simple extension to centralised repo workflow
 * Have one "official" history - `master`
 * _Everything_ based on `master`
-* Pull requests shown later - encourage code reviews
+* `master` remains "working", so main project product/code is never broken
+    * Although there might be broken code on a branch!
+* Pull requests (shown later) encourage/enforce code reviews
+* Good for most projects especially those with need for
+    * stable code that is developed on top of (e.g. build can't break)
+    * QA of new changes to the build
 </aside>
 
 ## Forking workflow
 
 [Reference](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow)
 
-* Start with a central repo
-* Developers _fork_ (UI in BitBucket)
-* Many server-side repo's (one per developer)
-* Developers commit to their own repo
+* Developers _fork_ (copy) a central repo
+* Developers commit to their own (forked) repo
     * Still use local branching to keep code separate
-* Pull requests of code back to the central repo
+* Pull requests for code back to the central repo
+* Typical open source model
 
 <aside class="notes">
+* UI in BitBucket and/or GitHub for forking a repo
+    * Just create a copy in our personal area
 * Central repo - e.g. in the _project_ space
 * Forked repo - in the developer's personal space
+    * Many server-side repo's (one per developer)
+* Not great for us - we can't see each others' personal repos easily!
 * Developers work in isolation
 * Pull requests for code review
 </aside>
@@ -991,10 +1002,42 @@ git push origin --delete [branch name]
 
 [Reference](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 
-* 
+![flow](www/git-flow.png)
+
+* More formal extension of feature branches
+* Stricter definition of branch names usage
+* Has its own `git` [tools](https://github.com/nvie/gitflow)
+
+<aside class="notes">
+* GitFlow is really just an extension of feature branch
+    * `master` is _just_ releases
+    * `develop` is for development
+    * feature branches created off develop
+    * Other branches with strict definitions (e.g. `hotfix`, `release`)
+* Suitable for mature, software-development style projects with fixed release
+cycles
+* good place to aim for, but maybe start with just feature branch workflow to
+get the basics
+</aside>
 
 ## Pull requests
 
+![pull](www/pull-request.gif)
+
+* Request a branch/repository to accept some changes
+* Great tool for code review & QA
+* Workflow built in to to BitBucket/GitHub
+
+<aside class="notes">
+* Demo workflow in BitBucket
+* Pull request is just asking another branch or repo to include our changes
+* Great for code review
+    * See commits
+    * See diffs
+    * Can add comments, documentation, additional supporting material
+* Workflows with review help keep "official" code clean and working
+    * Empowers junior team members to code and contribute without fear of breaking things!
+</aside>
 
 # Summary
 
