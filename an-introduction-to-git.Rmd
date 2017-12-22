@@ -17,7 +17,6 @@ knitr::opts_chunk$set(fig.align = "center",
 # Load the required libraries
 library(tidyverse)
 library(lubridate)
-library(ggkpmg)
 ```
 
 ## In this session
@@ -150,75 +149,6 @@ Makes reviewing code very easy
 * demo jumping back and forth with SourceTree?
 </aside>
     
-
-```{r get-logs, message = FALSE, warning = FALSE, echo = FALSE}
-# List out all files to be read in
-files_dir <- list.files("./logs", pattern = ".tsv", full.names = T)
-files <- gsub(".tsv", "", list.files("./logs", pattern = ".tsv"))
-
-# Define function to read commit tsv (weird formatting prevents read_tsv)
-read_commits <- function(commits_data, data_name) {
-  readr::read_lines(commits_data) %>% 
-    map(stringr::str_split, '\t') %>% 
-    map(`[[`, 1) %>% 
-    map(t) %>% 
-    map(as_tibble) %>% 
-    bind_rows() %>% 
-    set_names(c("commit", "author", "datetime", "comment")) %>% 
-    mutate(version = data_name)
-}  
-
-# Read in data
-commits <- map2(files_dir, files, read_commits) %>% # Read in
-  bind_rows()  # Collapse in to single table
-
-commits_cln <- commits %>% 
-  extract(version, "version_number", regex = "([[0-9]]+)", remove = FALSE) %>% 
-  mutate(datetime = gsub("\\ \\+0000", "", datetime),
-         datetime = ymd_hms(datetime),
-         date = date(datetime),
-         hour = hour(ceiling_date(datetime, unit = "hours")),
-         day = wday(date, label = T, abbr = F),
-         version_number = as.numeric(version_number),
-         author = if_else(author == "Sara young", "Sara Young", author),
-         author = if_else(author == "unknown", "Unknown", author)) %>%
-  group_by(commit) %>% 
-  mutate(earliest_version = min(version_number)) %>% 
-  ungroup() %>% 
-  filter(version_number == earliest_version) %>% 
-  distinct() %>% 
-  arrange(datetime) %>% 
-  separate(version, c("label", "ver"), "_") %>% 
-  select(-label) %>% 
-  filter(version_number <=  9) %>% 
-  mutate(ver = forcats::fct_reorder(ver, datetime, min))
-```
-
-## Project Osbourne
-
-```{r commit_versions_vs_date, cache = TRUE}
-commits_cln %>% 
-  group_by(version_number, date) %>% 
-  summarise(commits = n()) %>% 
-  ggplot(aes(date, commits)) +
-  geom_line(aes(colour = as.factor(version_number)), size = 1.25) +
-  scale_colour_manual(values = unname(kpmgcolours("graphs")[1:9])) +
-  labs(x = "Date", 
-       y = "Commits",
-       title = "Total commits per date, per build version") +
-  guides(colour = guide_legend("Build version", nrow = 2, byrow = T)) +
-  theme_kpmg() +
-  theme(legend.position = "bottom")
-```
-
-<aside class="notes">
-* Osbourne - regulatory calculation & remediation, needed audit trail
-* Very messy data, dynamic requirements, tight deadlines
-* Each "version" ~200 code files with logic for data cleaning, calculations, test suites etc
-* easily jump between them, compare results, asses the impact of changes to script logic
-* In DSE versions could be alternative product features/developments, experiments, new data logic
-</aside>
-
 ## `git` hosting
 
 ![bb](www/bb.png)
@@ -227,15 +157,7 @@ commits_cln %>%
 * GitHub/Stash != git
 * Lots of services offering git _hosting_
 * I.e. store a repository on the (private) web
-* Within KPMG we use BitBucket - an Atlassian product
 * Common open source equivalent is _GitHub_
-</aside>
-
-## `git` hosting
-
-![bb2](www/bb2.png)
-
-<aside class="notes">
 * Easy way for project overview, without local code
 * Restrict access on a project-by-project basis
 * Several related products, e.g. Jira and Confluence (also Atlassian) to give us full PM side of work
@@ -346,7 +268,7 @@ reduce frustration.
 ## An instead get to this
 
 <blockquote><p align="left">"If you're having `git` problems I feel bad for you, son. I got 99 problems but `git` ain't one."</p>
-<footer><cite><a href="mailto:jim.leach@kpmg.co.uk?subject=having%20git%20problems">Anonymous</a></cite>
+<footer><cite><a href="mailto:jimmy22theave@gmail.com?subject=having%20git%20problems">Anonymous</a></cite>
 </footer>
 </blockquote>
 
@@ -663,7 +585,6 @@ In SourceTree:
 
 * Only possible directly on BitBucket (i.e. not SourceTree)
 * Navigate to profile
-    * https://hdp-service.uk.kworld.kpmg.com/stash/profile
 * Click "Create Repository"
 
 <aside class="notes">
@@ -1160,7 +1081,6 @@ get the basics
 
 ## Resources
 
-* [This presentation](https://hdp-service.uk.kworld.kpmg.com/stash/projects/JL/repos/git/browse)
 * [`git` - the simple guide](http://rogerdudler.github.io/git-guide/)
 * [Atlassian](https://www.atlassian.com/git)
 * [Atlassian cheatsheet](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
